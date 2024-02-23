@@ -1,0 +1,8 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Prueba de Lilliefors}{2}{section.2}%
+\contentsline {section}{\numberline {3}Prueba de Cramér-van Mises}{2}{section.3}%
+\contentsline {section}{\numberline {4}Prueba de Shapiro-Wilk}{3}{section.4}%
+\contentsline {section}{\numberline {5}Prueba de Anderson-Darling}{3}{section.5}%
+\contentsline {section}{\numberline {6}Prueba de Jarque-Bera}{4}{section.6}%
+\contentsline {section}{\numberline {7}Conclusiones}{4}{section.7}%

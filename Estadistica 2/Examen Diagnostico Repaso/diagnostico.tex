@@ -1,0 +1,204 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Material de Repaso para Examen Diagnóstico en Estadística}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Medidas Descriptivas}
+\begin{itemize}
+    \item Media, mediana, y moda
+    \item Rango, varianza, y desviación estándar
+    \item Coeficiente de variación
+    \item Asimetría y curtosis
+\end{itemize}
+
+\subsection{Media, Mediana y Moda}
+
+\textbf{Ejercicios:}
+
+\textbf{Datos:} 10, 15, 10, 20, 15, 25, 30.
+
+\textbf{Solución:}
+
+\begin{itemize}
+    \item \textbf{Media:} $\frac{10 + 15 + 10 + 20 + 15 + 25 + 30}{7} = \frac{125}{7} \approx 17.86$
+    \item \textbf{Mediana:} Ordenamos los datos (10, 10, 15, 15, 20, 25, 30). El dato del medio es 15.
+    \item \textbf{Moda:} El número que más se repite es 10 y 15 (ambos se repiten dos veces), así que son bimodales.
+\end{itemize}
+
+\subsection{Rango, Varianza y Desviación Estándar}
+
+
+\textbf{Datos:} 8, 12, 16, 24, 28.
+
+\textbf{Solución:}
+
+\begin{itemize}
+    \item \textbf{Rango:} $28 - 8 = 20$.
+    \item \textbf{Varianza:}
+          \begin{itemize}
+              \item Media = $\frac{8 + 12 + 16 + 24 + 28}{5} = \frac{88}{5} = 17.6$.
+              \item Varianza = $\frac{(8 - 17.6)^2 + (12 - 17.6)^2 + (16 - 17.6)^2 + (24 - 17.6)^2 + (28 - 17.6)^2}{5} = 74.4$.
+          \end{itemize}
+    \item \textbf{Desviación Estándar:} $\sqrt{74.4} \approx 8.63$.
+\end{itemize}
+
+\subsection{Coeficiente de Variación}
+
+\textbf{Datos:} 7, 9, 12, 15, 18.
+
+\textbf{Solución:}
+
+\begin{itemize}
+    \item \textbf{Media:} $\frac{7 + 9 + 12 + 15 + 18}{5} = \frac{61}{5} = 12.2$.
+    \item \textbf{Desviación Estándar:} Supongamos que es $D$.
+    \item \textbf{Coeficiente de Variación:} $\frac{D}{12.2} \times 100\%$.
+\end{itemize}
+
+\subsection{Asimetría y Curtosis}
+
+\textbf{Datos:} 1, 2, 2, 3, 4, 4, 4, 5, 6.
+
+\textbf{Solución:}
+
+\begin{itemize}
+    \item \textbf{Asimetría:} Se calcula utilizando la fórmula de asimetría.
+    \item \textbf{Curtosis:} Se calcula utilizando la fórmula de curtosis.
+\end{itemize}
+
+\section{Propiedades de los Estimadores Puntuales}
+\begin{itemize}
+    \item Sesgo (bias) y consistencia
+    \item Eficiencia
+    \item Suficiencia
+\end{itemize}
+
+\subsection{Sesgo (Bias) y Consistencia}
+
+\textbf{Ejercicio:} Sea $\hat{\theta}$ un estimador de un parámetro $\theta$. Demuestre que si $E[\hat{\theta}] = \theta$ entonces $\hat{\theta}$ es insesgado. Además, explique qué significa que un estimador sea consistente.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item Un estimador $\hat{\theta}$ es insesgado si su valor esperado es igual al parámetro real $\theta$. Es decir, $E[\hat{\theta}] = \theta$.
+    \item Un estimador es consistente si, a medida que el tamaño de la muestra aumenta, la probabilidad de que el estimador se aproxime al valor real del parámetro tiende a uno.
+\end{itemize}
+
+\subsection{Eficiencia}
+
+\textbf{Ejercicio:} Explique qué es un estimador eficiente y cómo se relaciona con la varianza de otros estimadores insesgados.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item Un estimador es eficiente si tiene la menor varianza posible entre todos los estimadores insesgados para un tamaño de muestra dado.
+    \item Esto significa que, entre todos los estimadores insesgados, el estimador eficiente proporciona la estimación más precisa del parámetro.
+\end{itemize}
+
+\subsection{Suficiencia}
+
+\textbf{Ejercicio:} Defina qué es un estimador suficiente y proporcione un ejemplo de cómo se determina si un estimador es suficiente.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item Un estimador es suficiente si no se puede obtener más información sobre el parámetro a estimar de la muestra que la que proporciona el estimador.
+    \item Por ejemplo, en el caso de una distribución normal con varianza conocida, la media muestral es un estimador suficiente para la media poblacional.
+\end{itemize}
+
+
+\section{Intervalos de Confianza}
+\begin{itemize}
+    \item Intervalos de confianza para medias y proporciones
+    \item Niveles de confianza y significancia
+    \item Interpretación de intervalos de confianza
+\end{itemize}
+
+\subsection{Intervalos de Confianza para Medias y Proporciones}
+
+\textbf{Ejercicio 1:} Suponga que se tiene una muestra de tamaño 40 de una población normalmente distribuida con una desviación estándar conocida de 5. La media de la muestra es 50. Calcule el intervalo de confianza del 95\% para la media poblacional.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item Utilizando la fórmula del intervalo de confianza para la media con desviación estándar conocida y un nivel de confianza del 95\%, obtenemos el intervalo.
+\end{itemize}
+
+\textbf{Ejercicio 2:} Calcule el intervalo de confianza del 90\% para una proporción, dada una muestra de tamaño 200 con 120 éxitos.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item Utilizamos la fórmula del intervalo de confianza para proporciones y un nivel de confianza del 90\% para encontrar el intervalo.
+\end{itemize}
+
+\subsection{Niveles de Confianza y Significancia}
+
+\textbf{Ejercicio:} Explique la diferencia entre el nivel de confianza y el nivel de significancia en el contexto de los intervalos de confianza.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item El nivel de confianza indica la proporción de veces que el intervalo de confianza contiene el parámetro real cuando el experimento se repite un número infinito de veces.
+    \item El nivel de significancia, denotado comúnmente como $\alpha$, es el complemento del nivel de confianza y representa la probabilidad de cometer un error de Tipo I (rechazar la hipótesis nula cuando es verdadera).
+\end{itemize}
+
+\subsection{Interpretación de Intervalos de Confianza}
+
+\textbf{Ejercicio:} Explique cómo se debe interpretar un intervalo de confianza del 95\% para la media poblacional.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item Un intervalo de confianza del 95\% significa que si tomamos muchas muestras y calculamos el intervalo de confianza para cada una, esperamos que aproximadamente el 95\% de estos intervalos contenga la media poblacional real.
+    \item No significa que haya un 95\% de probabilidad de que la media poblacional real se encuentre dentro del intervalo calculado a partir de una sola muestra.
+\end{itemize}
+
+\section{Prueba de Hipótesis}
+\begin{itemize}
+    \item Hipótesis nula y alternativa
+    \item Errores Tipo I y Tipo II
+    \item Valor P
+    \item Pruebas t y z
+\end{itemize}
+
+
+\subsection{Hipótesis Nula y Alternativa}
+
+\textbf{Ejercicio 1:} Dado un estudio sobre la eficacia de un nuevo medicamento, formule la hipótesis nula y la hipótesis alternativa.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item \textbf{Hipótesis Nula (H0):} El medicamento no tiene efecto, o el efecto es igual al del tratamiento actual.
+    \item \textbf{Hipótesis Alternativa (H1):} El medicamento tiene un efecto significativamente diferente (mejor o peor) que el tratamiento actual.
+\end{itemize}
+
+\subsection{Errores Tipo I y Tipo II}
+
+\textbf{Ejercicio 2:} Explique la diferencia entre un error Tipo I y un error Tipo II en el contexto de pruebas de hipótesis.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item \textbf{Error Tipo I:} Ocurre cuando rechazamos la hipótesis nula siendo esta verdadera (falso positivo).
+    \item \textbf{Error Tipo II:} Ocurre cuando no rechazamos la hipótesis nula siendo esta falsa (falso negativo).
+\end{itemize}
+
+\subsection{Valor P}
+
+\textbf{Ejercicio 3:} Defina qué es el valor P en una prueba de hipótesis y cómo se interpreta.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item El valor P es la probabilidad de obtener un resultado al menos tan extremo como el observado, asumiendo que la hipótesis nula es cierta.
+    \item Un valor P bajo sugiere que es improbable observar los datos actuales si la hipótesis nula es cierta, lo que podría llevar a rechazar la hipótesis nula.
+\end{itemize}
+
+\subsection{Pruebas t y z}
+
+\textbf{Ejercicio 4:} Explique en qué situaciones se utilizaría una prueba t en lugar de una prueba z.
+
+\textbf{Solución:}
+\begin{itemize}
+    \item La prueba t se usa generalmente cuando el tamaño de la muestra es pequeño (n < 30) y la desviación estándar poblacional no es conocida.
+    \item La prueba z se utiliza cuando el tamaño de la muestra es grande $(n \geq 30)$ o la desviación estándar poblacional es conocida.
+\end{itemize}
+
+\end{document}

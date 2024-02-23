@@ -1,0 +1,561 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{geometry}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=green,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\geometry{
+  top=3cm,            % Margen superior
+  bottom=3cm,         % Margen inferior
+  left=3cm,           % Margen izquierdo
+  right=3cm           % Margen derecho
+}
+
+\title{Estadística 1}
+\author{Jorge Miguel Alvarado Reyes}
+\date{16 Agosto 2023}
+
+\setlength{\parindent}{0pt}
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.2\textwidth]{../unam.png}
+        \vspace*{.5cm}
+
+        \LARGE
+        \textbf{Universidad Nacional Autónoma de México}
+
+        \vspace{0.5cm}
+        \LARGE
+        Facultad de Estudios Superiores Acatlán
+
+        \vspace{2cm}
+
+        \textbf{Apuntes} \\
+        Procesos Estocasticos
+
+        \vfill
+
+        \vspace{1cm}
+
+        \textbf{\large Autor:} \\
+        Jorge Miguel Alvarado Reyes \\
+        \vspace{.5cm}
+        \normalsize \today
+
+    \end{center}
+\end{titlepage}
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{29/01/2024}
+
+\subsection{Contacto}
+
+\begin{itemize}
+    \item Numero: 5531185399
+    \item Clave SEA: fvuzef
+\end{itemize}
+
+\subsection{Evaluacion}
+
+\begin{itemize}
+    \item 2 Examenes parciales 60\%
+          \begin{itemize}
+              \item 1er examen $\rightarrow$ viernes de la semana 9
+              \item 2o examen $\rightarrow$ viernes de la semana 15
+          \end{itemize}
+    \item Tareas, Ejercicios, Practicas 20\%
+    \item Proyecto final 20\%
+          \begin{itemize}
+              \item Paquete, software de 6 algoritmos que resuelvan cualquier proceso markoviano de decision
+          \end{itemize}
+\end{itemize}
+
+\section{31/01/2024}
+
+\subsection{Repaso de probabilidad}
+
+\subsection{Espacio Muestral}
+
+El espacio muestral, generalmente denotado por $S$, representa el conjunto completo de todos los posibles resultados individuales de un experimento aleatorio. Este conjunto puede ser finito o infinito, y los elementos dentro de él pueden ser numerables o no numerables. En esencia, el espacio muestral abarca todas las eventualidades que pueden surgir en un experimento, configurando así el universo de posibilidades a considerar en el análisis probabilístico.
+
+\vspace{.25cm}
+
+\subsection{Evento}
+
+Un evento, en el contexto de la probabilidad, se refiere a cualquier subconjunto específico del espacio muestral. Esencialmente, es una colección de resultados del espacio muestral que comparten una o más características comunes. Los eventos son fundamentales en el estudio de la probabilidad, ya que representan los diferentes resultados que se pueden analizar y sobre los cuales se calculan las probabilidades.
+
+\vspace{.25cm}
+
+\subsection{Eventos mutuamente excluyentes}
+
+Tambien llamados eventos disjuntos son aquellos que no tienen resultados en comun, es decir:
+
+\[E_1 \cap E_2 = \emptyset\]
+
+\subsection{Función de Probabilidad}
+
+Sean \( S \) cualquier espacio muestral y \( E \) cualquier evento de este. Se llamará función de probabilidad sobre el espacio muestral \( S \) a \( P(E) \) si satisface los siguientes axiomas:
+
+\begin{enumerate}
+    \item \textbf{Axioma 1 (No negatividad):} Para cualquier evento \( E \) en \( S \), la probabilidad de \( E \) es siempre no negativa. Es decir, \( P(E) \geq 0 \).
+    \item \textbf{Axioma 2 (Certidumbre):} La probabilidad del espacio muestral completo es 1. Es decir, \( P(S) = 1 \).
+    \item \textbf{Axioma 3 (Aditividad):} Para cualquier secuencia de eventos mutuamente excluyentes \( E_1, E_2, E_3, \ldots \) en \( S \), la probabilidad de la unión de estos eventos es igual a la suma de sus probabilidades individuales. Es decir,
+          \[ P\left(\bigcup_{i=1}^{\infty} E_i\right) = \sum_{i=1}^{\infty} P(E_i) \],
+          siempre y cuando \( E_i \cap E_j = \emptyset \) para \( i \neq j \).
+\end{enumerate}
+
+\subsection{Probabilidad condicional}
+
+La probabilidad condicional de un evento \( A \) dado que otro evento \( B \) ha ocurrido, denotada como \( P(A|B) \), se define como la probabilidad de que ocurra el evento \( A \) una vez que se sabe que \( B \) ha ocurrido. Esto se expresa matemáticamente por la fórmula:
+\[ P(A|B) = \frac{P(A \cap B)}{P(B)} \]
+
+donde:
+\begin{itemize}
+    \item \( P(A \cap B) \) es la probabilidad de que ocurran ambos eventos \( A \) y \( B \).
+    \item \( P(B) \) es la probabilidad del evento \( B \).
+\end{itemize}
+
+Esta definición es válida siempre que \( P(B) > 0 \).
+
+\textbf{Eventos independientes}
+
+Dos eventos \( A \) y \( B \) en un espacio muestral \( S \) se consideran independientes si la ocurrencia de uno no afecta la probabilidad de ocurrencia del otro. Matemáticamente, esto se expresa diciendo que dos eventos \( A \) y \( B \) son independientes si y solo si:
+\[ P(A \cap B) = P(A) \times P(B) \]
+
+En otras palabras, la probabilidad de que ambos eventos ocurran juntos (la intersección de \( A \) y \( B \)) es igual al producto de sus probabilidades individuales. Si esta relación no se cumple, entonces los eventos se consideran dependientes.
+
+\subsection{Ley multiplicativa de la probabilidad}
+
+La ley multiplicativa de la probabilidad se utiliza para calcular la probabilidad de la intersección de dos eventos. Si tenemos dos eventos \( A \) y \( B \), la probabilidad de que ambos \( A \) y \( B \) ocurran, denotada como \( P(A \cap B) \), se calcula como:
+\[ P(A \cap B) = P(A) \times P(B|A) \]
+si \( P(A) > 0 \).
+
+De manera alternativa, si \( P(B) > 0 \), se puede calcular como:
+\[ P(A \cap B) = P(B) \times P(A|B) \]
+
+Esta ley es una extensión de la definición de probabilidad condicional y es crucial en el cálculo de probabilidades para eventos dependientes.
+
+\subsection{Variable aleatoria}
+
+
+Una variable aleatoria es una función que asigna un valor numérico a cada resultado en un espacio muestral. Se denota comúnmente con letras mayúsculas, como \( X \), \( Y \), etc. Hay dos tipos principales de variables aleatorias:
+
+\begin{itemize}
+    \item \textbf{Variable Aleatoria Discreta:} Toma un número finito o contablemente infinito de valores distintos. La función de probabilidad de una variable aleatoria discreta, denominada función de masa de probabilidad (fmp), asigna una probabilidad a cada valor posible de la variable.
+    \item \textbf{Variable Aleatoria Continua:} Toma un número infinito de posibles valores. La función de probabilidad de una variable aleatoria continua, conocida como función de densidad de probabilidad (fdp), asigna probabilidades a intervalos de valores.
+\end{itemize}
+
+La variable aleatoria es fundamental en el estudio de la probabilidad, ya que proporciona el enlace entre los eventos aleatorios y los análisis numéricos.
+
+\subsection{Distribucion de probabilidad}
+
+La función de probabilidad de una Variable Aleatoria (V.A) describe cómo se asignan las probabilidades a los diferentes valores que la V.A puede tomar. Esta función varía según si la V.A es discreta o continua:
+
+\begin{itemize}
+    \item \textbf{Para una V.A Discreta:} La función de probabilidad es la función de masa de probabilidad (fmp), que proporciona la probabilidad para cada valor posible que la variable aleatoria puede asumir. La fmp \( f(x) \) satisface dos propiedades:
+          \begin{enumerate}
+              \item \( f(x) \geq 0 \) para todo \( x \).
+              \item La suma de \( f(x) \) sobre todos los posibles valores de \( x \) es igual a 1.
+          \end{enumerate}
+    \item \textbf{Para una V.A Continua:} La función de probabilidad es la función de densidad de probabilidad (fdp), que asigna probabilidades a intervalos de valores de la V.A. La fdp \( f(x) \) cumple con:
+          \begin{enumerate}
+              \item \( f(x) \geq 0 \) para todo \( x \).
+              \item La integral de \( f(x) \) sobre todo el espacio es igual a 1.
+          \end{enumerate}
+\end{itemize}
+
+Estas funciones son fundamentales para comprender la naturaleza y el comportamiento de las variables aleatorias en el estudio de la probabilidad y estadística.
+
+\textbf{Resumen}
+
+\begin{itemize}
+    \item \textbf{Función de Probabilidad de v.a \( X \)}: \( p(x) = P(X=x) \). Esta función asigna la probabilidad de que la variable aleatoria \( X \) tome un valor específico \( x \).
+
+    \item \textbf{Función de Probabilidad de un Evento \( A \)}: \( P(A) \). Representa la probabilidad de que ocurra el evento \( A \).
+
+    \item \textbf{Distribución de Probabilidad de v.a \( X \)}: Describe cómo se distribuyen las probabilidades a través de los diferentes valores que puede tomar la variable aleatoria \( X \). Se diferencia en distribuciones discretas y continuas.
+
+    \item \textbf{Función de Distribución Acumulada}: Proporciona la probabilidad acumulativa de que la variable aleatoria \( X \) sea menor o igual a un valor específico. Se representa como \( F(x) = P(X \leq x) \) y varía para variables aleatorias discretas y continuas.
+\end{itemize}
+
+\section{02/02/2024}
+
+\subsection{Repaso de probabilidad}
+
+\subsection{Distribuciones discretas}
+
+\begin{itemize}
+    \item \textbf{Uniforme Discreta}: Esta distribución asigna la misma probabilidad a cada uno de los $n$ resultados diferentes en un espacio de muestra finito. La función de masa de probabilidad (PMF) es $P(X = x) = \frac{1}{n}$ para $x = 1, 2, \ldots, n$.
+
+    \item \textbf{Bernoulli}: Modela experimentos que tienen exactamente dos resultados posibles, "éxito" (con probabilidad $p$) y "fracaso" (con probabilidad $1-p$). La PMF es $P(X = x) = p^x(1-p)^{1-x}$ para $x = 0, 1$.
+
+    \item \textbf{Binomial}: Extiende la distribución de Bernoulli a $n$ ensayos independientes, con $p$ siendo la probabilidad de éxito en cada ensayo. La PMF es $P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}$ para $k = 0, 1, \ldots, n$.
+
+    \item \textbf{Geométrica}: Mide el número de ensayos necesarios para obtener el primer éxito. La PMF es $P(X = k) = (1-p)^{k-1}p$ para $k = 1, 2, \ldots$.
+
+    \item \textbf{Binomial Negativa o de Pascal}: Cuenta el número de ensayos requeridos para obtener un número fijo $r$ de éxitos. La PMF es $P(X = k) = \binom{k-1}{r-1}p^r(1-p)^{k-r}$ para $k = r, r+1, \ldots$.
+
+    \item \textbf{Hipergeométrica}: Modela el número de éxitos en una muestra sin reemplazo. La PMF es $P(X = k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}$, donde $N$ es el tamaño de la población, $K$ es el número total de éxitos en la población, y $n$ es el tamaño de la muestra.
+
+    \item \textbf{Poisson}: Modela el número de eventos en un intervalo fijo de tiempo o espacio. La PMF es $P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$ para $k = 0, 1, 2, \ldots$, donde $\lambda$ es el número promedio de eventos en el intervalo.
+\end{itemize}
+
+\subsection{Esperanza matematica de distribuciones discretas}
+
+Sea x una variable aleatrois discreta con funcion de probabilidad $(p(x))$ entonces el valor esperado de $x$, $E(x)$ está definido por
+
+\[E(X) = \sum xp(x)\]
+
+Regularmente asociamos la esperanza con la media poblacional $\mu$
+
+\subsection{Variana de una variable aleatoria discreta}
+
+Se define como el valor esperado de $(X - \mu)^2$ es decir
+\[V(X) = E((X-\mu)^2)\]
+
+\subsection{Distribuciones continuas}
+
+\begin{itemize}
+    \item \textbf{Uniforme}: La distribución uniforme continua describe un experimento donde todos los resultados en un intervalo \([a, b]\) son igualmente probables. Su función de densidad es $f(x) = \frac{1}{b-a}$ para $x \in [a, b]$. La media es $\mu = \frac{a+b}{2}$ y la varianza es $\sigma^2 = \frac{(b-a)^2}{12}$.
+
+    \item \textbf{Normal}: También conocida como la distribución Gaussiana, caracterizada por su función de densidad en forma de campana $f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}$, donde $\mu$ es la media y $\sigma$ es la desviación estándar. Es fundamental en teoría de probabilidad y estadística debido a su propiedad de regresión al promedio y el Teorema del Límite Central.
+
+    \item \textbf{Exponencial}: Modela el tiempo entre eventos en un proceso de Poisson, con tasa de ocurrencia $\lambda$. Su función de densidad es $f(x) = \lambda e^{-\lambda x}$ para $x \geq 0$. La media y la varianza son $\frac{1}{\lambda}$.
+
+    \item \textbf{Gamma}: Generaliza las distribuciones exponencial y $\chi^2$, útil para modelar tiempos de espera para múltiples eventos. Su función de densidad es $f(x) = \frac{x^{k-1}e^{-x/\theta}}{\theta^k \Gamma(k)}$ para $x > 0$, donde $k$ es el parámetro de forma y $\theta$ el parámetro de escala.
+
+    \item \textbf{Beta}: Modela variables aleatorias que toman valores entre 0 y 1, útil para modelar proporciones. Su función de densidad es $f(x) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha, \beta)}$ para $0 < x < 1$, donde $\alpha$ y $\beta$ son parámetros de forma.
+
+    \item \textbf{Triangular}: Una distribución simple definida por un mínimo, un máximo, y un valor modal. Su función de densidad cambia linealmente entre estos puntos. Es útil para simulaciones y modelado de fenómenos con un conocimiento limitado.
+
+    \item \textbf{Weibull}: Extiende la distribución exponencial para permitir una tasa de fallo variable. Su función de densidad es $f(x) = \frac{k}{\lambda} \left( \frac{x}{\lambda} \right)^{k-1} e^{-(x/\lambda)^k}$ para $x \geq 0$, donde $k$ es el parámetro de forma y $\lambda$ el de escala. Es muy utilizada en análisis de confiabilidad y duración de vida.
+\end{itemize}
+
+\subsection{Esperanza matematica de distribuciones continuas}
+
+Sea x una variable aleatoria continua
+
+\section*{Resumen Probabilidad}
+
+En teoría de probabilidad, las variables aleatorias se clasifican en continuas o discretas, y cada una tiene asociada una función de densidad o una función de distribución acumulativa, respectivamente.
+
+\subsection*{Variables Aleatorias Discretas}
+
+Para una variable aleatoria discreta \(X\), la función de probabilidad, también conocida como función de masa de probabilidad (PMF), se denota por \(p(x)\) y se define como:
+
+\[ p(x) = P(X = x) \]
+
+donde \(P(X = x)\) es la probabilidad de que \(X\) tome el valor \(x\).
+
+La función de distribución acumulativa (CDF), \(F(x)\), para una variable aleatoria discreta se define como la probabilidad de que \(X\) tome un valor menor o igual a \(x\):
+
+\[ F(x) = P(X \leq x) = \sum_{x_i \leq x} p(x_i) \]
+
+\subsection*{Variables Aleatorias Continuas}
+
+Para una variable aleatoria continua \(X\), la función de densidad de probabilidad (PDF) se denota por \(f(x)\) y satisface:
+
+\[ f(x) \geq 0 \]
+
+\[ \int_{-\infty}^{\infty} f(x) \, dx = 1 \]
+
+La PDF describe la densidad de probabilidad en cada punto de la línea real.
+
+La función de distribución acumulativa (CDF), \(F(x)\), para una variable aleatoria continua se define como la probabilidad de que \(X\) sea menor o igual a \(x\):
+
+\[ F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt \]
+
+La CDF es una función no decreciente que se aproxima a 0 a medida que \(x\) se aproxima a \(-\infty\) y se aproxima a 1 a medida que \(x\) se aproxima a \(\infty\).
+
+\section{07/02/2024}
+
+
+\subsection{Unidad 1. Elementos de procesos estocásticos}
+
+\textbf{Definición de procesos estocásticos}
+
+La primera idea basica es identificar a un proceso estocastico como una sucesion de variables aleatorias ${X_n; n \in \mathbb{N}}$ donde el subindice indica el instante de tiempo o espacio correspondiente. la idea puede generalizarse de manera que los instantes de tiempo desan continuos donde  ${X_t;t \in \mathbb{R}} $
+
+\textbf{Conjunto de estados}
+
+Se denomina conjunto de estados $S$, al conjunto de los posibles valores que pueden tomar las variables aleatorias
+
+
+\textbf{Conjunto parametrico}
+
+Se denomina conjunto parametrico $T$, al conjunto de subindices que puede tomar $t$\\
+Al igual que en las variables aleatorias, este conjunto puede ser discreto o continuo
+
+\textbf{Ejemplo}
+
+Se lanza una moneda varias veces, supongase que cada vez que sale cara un jugador gana 1 dolar y cada vez que sale ruz pierde un dolar. Defina lo anterior como un proceso estocastico planteando el conjunto de estados, el conjunto parametico y la forma en que se definirian las probabilidades
+
+$X_t$: Ganancia o perdida en el t-esimo lanzamiento de la moneda
+
+$S = \{\dots, -3,-2,-1, 0, 1, 2, 3, \dots\}$
+
+$T = \{1,2,3,\dots\}$
+
+Si fijo el parametro, $t = 3$
+
+Podemos hacer realizaciones: $(t,t,c)$
+
+Ver como se modifica el conjunto de estados
+
+\section{09/02/2024}
+
+\subsection{Clasificacion de los prcesos estocasticos}
+
+Se subdividen dependiendo de acuerdo a la estructurra de los conjuntos $S$ y $T$.
+
+De a cuerdo a las caracteristicas probabilisticas de la variable aleatoria $X_t$
+
+\newpage
+
+\section{Proceso de Bernoulli}
+
+Un proceso estocástico $\{X_n; n \in \mathbb{N}\}$ se denomina proceso de Bernoulli si cumple con las siguientes condiciones:
+
+\begin{itemize}
+    \item Las variables aleatorias $X_1, X_2, \ldots$ son mutuamente independientes.
+    \item Cada variable aleatoria $X_n$ sigue una distribución de Bernoulli, donde la probabilidad de éxito (denotado por $X_n = 1$) es $p$, y la probabilidad de fracaso (denotado por $X_n = 0$) es $1-p$, que también podemos denotar por $q$. Es decir:
+          \begin{align*}
+              \mathbb{P}(X_n = 1) & = p,       \\
+              \mathbb{P}(X_n = 0) & = 1-p = q.
+          \end{align*}
+\end{itemize}
+
+En este contexto, al evento $X_n = 1$ lo llamamos \textit{éxito} y al evento $X_n = 0$, \textit{fracaso}.
+
+Sea $\{X_n; n \in \mathbb{N}\}$ un proceso de Bernoulli con probabilidad de éxito $p$. Definimos $S_n$ como el número total de éxitos en los primeros $n$ ensayos. Es decir, $S_n$ se define como:
+
+\[
+    S_n = \sum_{i=1}^{n} X_i,
+\]
+
+Tambien lo encontramos como:
+
+\[
+    N_t =
+    \begin{cases}
+        0                       & \text{si } n=0           \\
+        X_1 + X_2 + \dots + X_n & \text{si } n=1,2,3,\dots
+    \end{cases}
+\]
+
+
+donde cada $X_i$ es una variable aleatoria que indica el éxito ($X_i = 1$) o fracaso ($X_i = 0$) en el $i$-ésimo ensayo. Por lo tanto, $S_n$ sigue una distribución binomial con parámetros $n$ y $p$, lo cual se puede expresar como:
+
+\[
+    S_n \sim \text{Bin}(n, p),
+\]
+
+donde la probabilidad de obtener exactamente $k$ éxitos en $n$ ensayos está dada por la función de probabilidad:
+
+\[
+    P(S_n = k) = \binom{n}{k} p^k q^{n-k},
+\]
+
+para $k = 0, 1, 2, \ldots, n$.
+
+La esperanza (valor esperado) y la varianza de $S_n$, donde $S_n \sim \text{Bin}(n, p)$, se pueden calcular de la siguiente manera:
+
+\begin{itemize}
+    \item \textbf{Esperanza:} La esperanza de $S_n$ indica el número promedio de éxitos en $n$ ensayos y se calcula como
+          \[
+              \mathbb{E}[S_n] = np.
+          \]
+
+    \item \textbf{Varianza:} La varianza de $S_n$ mide la dispersión de los éxitos alrededor de la esperanza y se calcula como
+          \[
+              \text{Var}(S_n) = np(1-p) = npq.
+          \]
+\end{itemize}
+
+Estas fórmulas nos permiten entender las propiedades estadísticas del número de éxitos en un proceso de Bernoulli.
+
+\section{Caminata Aleatoria Simple}
+
+Una \textit{caminata aleatoria simple} sobre el conjunto de los enteros es un proceso estocástico a tiempo discreto $\{X_n: n \in \mathbb{Z}^{+}\}$, donde $\mathbb{Z}^{+}$ representa los enteros positivos incluyendo el cero. Iniciando en el estado 0, el proceso se define de tal manera que, en cada paso $n$, el proceso puede moverse al estado $i+1$ con una probabilidad $p$ o al estado $i-1$ con una probabilidad $q$, donde $i$ es el estado actual y $p + q = 1$.
+
+El valor de $X_n$ representa la posición del proceso en el tiempo $n$. La regla de transición se aplica de manera idéntica en cada paso, independientemente de la posición actual, lo que implica que la caminata tiene la propiedad de incrementos independientes e idénticamente distribuidos (i.i.d.).
+
+Las probabilidades de transición válidas para cualquier $n \geq 0$, y para cualquier par de enteros $i$ y $j$, se expresan como:
+
+\[
+    P(X_{n+1} = j | X_n = i) =
+    \begin{cases}
+        p, & \text{si } j = i + 1,   \\
+        q, & \text{si } j = i - 1,   \\
+        0, & \text{de lo contrario}.
+    \end{cases}
+\]
+
+Esto significa que la probabilidad de moverse de un estado $i$ a un estado $j$ en el siguiente paso depende únicamente de si $j$ es inmediatamente adyacente a $i$ y se ajusta a la regla de que $p + q = 1$.
+
+\vspace*{.2cm}
+
+Dado que estas probabilidades no dependen de $n$, se dice que son homogéneas en el tiempo, es decir, son las mismas para cualquier valor de $n$. A partir de estas consideraciones, se dice que este proceso cumple con la propiedad de Markov; es decir, el estado futuro del proceso depende únicamente del estado presente y no de los estados previos.
+
+\subsection*{Definición Formal de una Caminata Aleatoria}
+
+Sean $\{\epsilon_i\}_{i=1}^{\infty}$ una sucesión de variables aleatorias independientes e idénticamente distribuidas tales que $\mathbb{P}(\epsilon_i = 1) = p$ y $\mathbb{P}(\epsilon_i = -1) = q$, donde $p + q = 1$. Entonces, para $n \geq 1$, se define $X_n = X_0 + \epsilon_1 + \epsilon_2 + \dots + \epsilon_n$. Sin pérdida de generalidad, supondremos que $X_0 = 0$, lo que implica que el proceso inicia en el origen. Por lo tanto, la posición en el tiempo $n$ está dada por la suma de los incrementos individuales representados por las variables $\epsilon_i$.
+
+De esta manera, la caminata aleatoria se puede representar como:
+
+\[
+    X_n = \sum_{i=1}^{n} \epsilon_i.
+\]
+
+Cada $\epsilon_i$ toma el valor de 1 o -1, correspondiendo a un paso hacia la derecha o hacia la izquierda, respectivamente, en la línea de los enteros.
+
+\subsection*{Esperanza de $X_n$}
+
+La esperanza de $X_n$ se calcula como sigue:
+
+\[
+    \mathbb{E}[X_n] = \mathbb{E}\left[\sum_{i=1}^{n} \epsilon_i\right] = \sum_{i=1}^{n} \mathbb{E}[\epsilon_i].
+\]
+
+Dado que cada $\epsilon_i$ tiene una distribución con $\mathbb{P}(\epsilon_i = 1) = p$ y $\mathbb{P}(\epsilon_i = -1) = q$, la esperanza de $\epsilon_i$ es:
+
+\[
+    \mathbb{E}[\epsilon_i] = 1\cdot p + (-1)\cdot q = p - q.
+\]
+
+Por lo tanto, la esperanza de $X_n$ es:
+
+\[
+    \mathbb{E}[X_n] = n(p - q).
+\]
+
+\subsection*{Varianza de $X_n$}
+
+La varianza de $X_n$ se puede calcular utilizando la propiedad de la varianza de sumas de variables aleatorias independientes:
+
+\[
+    \text{Var}(X_n) = \text{Var}\left(\sum_{i=1}^{n} \epsilon_i\right) = \sum_{i=1}^{n} \text{Var}(\epsilon_i).
+\]
+
+La varianza de cada $\epsilon_i$ es:
+
+\[
+    \text{Var}(\epsilon_i) = \mathbb{E}[\epsilon_i^2] - (\mathbb{E}[\epsilon_i])^2.
+\]
+
+Ya que $\epsilon_i^2 = 1$ para $\epsilon_i = 1$ o $\epsilon_i = -1$, tenemos $\mathbb{E}[\epsilon_i^2] = 1$. Por lo tanto:
+
+\[
+    \text{Var}(\epsilon_i) = 1 - (p - q)^2 = 1 - (p^2 + q^2 - 2pq) = 1 - (p^2 + (1-p)^2 - 2p(1-p)).
+\]
+
+Simplificando, obtenemos:
+
+\[
+    \text{Var}(\epsilon_i) = 4pq.
+\]
+
+Finalmente, la varianza de $X_n$ es:
+
+\[
+    \text{Var}(X_n) = n \cdot 4pq.
+\]
+
+\subsection*{Probabilidades de Transición}
+
+Suponiendo que la caminata aleatoria inicia en 0, es fácil deducir que después de efectuar un número par de pasos, la cadena solo puede terminar en posiciones pares, y si se efectúa un número impar de pasos, la posición final debe ser impar. Además, sabemos que después de efectuar $n$ pasos, la caminata solo puede llegar a una distancia máxima de $n$ unidades a la izquierda o a la derecha del origen.
+
+Teniendo esto como base, definiremos las probabilidades de transición para cualesquiera números enteros $x$ y $y$, tales que $-n \leq x \leq n$ y para el caso cuando $x$ y $n$ son ambos pares o ambos impares, la probabilidad de transición de la posición $x$ a la posición $y$ en $n$ pasos, denotada por $P\{X_n = x | X_0 = X_0\}$, es dada por:
+
+\[
+    P\{X_n = x | X_0 = X_0\} = \binom{n}{\frac{n + x}{2}} p^{\frac{n + x}{2}} q^{\frac{n - x}{2}},
+\]
+
+\[
+    P\{X_n = x | X_0 = y\} = \binom{n}{\frac{n + x - y}{2}} p^{\frac{n + x - y}{2}} q^{\frac{n - x + y}{2}},
+\]
+
+donde $\binom{n}{k}$ es el coeficiente binomial que representa el número de formas de elegir $k$ elementos de un total de $n$ elementos, y se asume que $p + q = 1$. Esta fórmula es válida bajo la condición de que tanto $(n + y - x)$ como $(n - y + x)$ sean no negativos y pares, lo cual asegura que los exponentes de $p$ y $q$ sean enteros no negativos. En cualquier otro caso, $P_{x,y}^{(n)} = 0$, reflejando la imposibilidad de moverse una cantidad impar de posiciones en un número par de pasos, y viceversa.
+
+\subsection*{Ejemplo}
+
+Considere una partícula que realiza una caminata aleatoria simétrica.
+
+\begin{itemize}
+    \item \textbf{Encuentre todas las posibles secuencias de movimiento de la partícula en una
+              caminata de 4 pasos, indicando la posición final en la que se encuentra la
+              partícula al realizar cada una de las secuencias posibles.}
+
+          Para una caminata de 4 pasos, cada paso puede ser hacia la derecha (+1) o hacia la izquierda (-1). Las posibles secuencias de 4 pasos y sus posiciones finales son:
+
+          \begin{tabular}{c|c}
+              Secuencia & Posición Final \\
+              \hline
+              ++++      & 4              \\
+              +++-      & 2              \\
+              ++-+      & 2              \\
+              ++--      & 0              \\
+              +-++      & 2              \\
+              +-+-      & 0              \\
+              +--+      & 0              \\
+              +---      & -2             \\
+              -+++      & 2              \\
+              -++-      & 0              \\
+              -+-+      & 0              \\
+              -+--      & -2             \\
+              --++      & 0              \\
+              --+-      & -2             \\
+              ---+      & -2             \\
+              ----      & -4             \\
+          \end{tabular}
+
+    \item \textbf{¿Con qué probabilidad ocurre cada una de estas secuencias?}
+
+          Dado que la caminata es simétrica, cada paso tiene una probabilidad de $1/2$. La probabilidad de cualquier secuencia específica de 4 pasos es entonces $(1/2)^4 = 1/16$.
+
+    \item \textbf{¿Con qué probabilidad termina la partícula en cada posición?}
+
+          \begin{itemize}
+              \item $\mathbb{P}(X_4 = 4) = \frac{1}{16}$
+              \item $\mathbb{P}(X_4 = 2) = \frac{4}{16}$
+              \item $\mathbb{P}(X_4 = 0) = \frac{6}{16}$
+              \item $\mathbb{P}(X_4 = -2) = \frac{4}{16}$
+              \item $\mathbb{P}(X_4 = -4) = \frac{1}{16}$
+          \end{itemize}
+
+    \item \textbf{¿Cuál es el valor medio de la posición final \( X \)?}
+
+          El valor medio de la posición final, o el valor esperado \( \mathbb{E}[X] \), para una caminata aleatoria simétrica de 4 pasos se calcula como la suma de las posiciones finales multiplicadas por sus respectivas probabilidades. En este caso, \( \mathbb{E}[X] = 0 \), ya que la caminata es simétrica y las posiciones finales positivas y negativas se equilibran entre sí.
+\end{itemize}
+
+\subsection*{Ejemplo}
+
+Una partícula realiza una caminata aleatoria sobre los enteros comenzando en la posición 4. Se desea encontrar la probabilidad de que la partícula se encuentre en la posición 5 después de 7 pasos, con una probabilidad de moverse hacia la derecha del 75\%.
+
+\[
+    P\{X_7 = 5 | X_0 = 4\} = \binom{7}{\frac{7 + 5 - 4}{2}} p^{\frac{7 + 5 - 4}{2}} q^{\frac{7 - 5 + 4}{2}},
+\]
+
+\[
+    P\{X_7 = 5 | X_0 = 4\} = \binom{7}{4} (0.75)^{4} (0.25)^{3} = 0.173
+\]
+
+\end{document}

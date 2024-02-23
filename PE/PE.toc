@@ -1,0 +1,27 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}29/01/2024}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Contacto}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Evaluacion}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}31/01/2024}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Repaso de probabilidad}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Espacio Muestral}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Evento}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Eventos mutuamente excluyentes}{2}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Función de Probabilidad}{2}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Probabilidad condicional}{3}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Ley multiplicativa de la probabilidad}{3}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Variable aleatoria}{4}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Distribucion de probabilidad}{4}{subsection.2.9}%
+\contentsline {section}{\numberline {3}02/02/2024}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Repaso de probabilidad}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Distribuciones discretas}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Esperanza matematica de distribuciones discretas}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Variana de una variable aleatoria discreta}{5}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Distribuciones continuas}{5}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Esperanza matematica de distribuciones continuas}{6}{subsection.3.6}%
+\contentsline {section}{\numberline {4}07/02/2024}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Unidad 1. Elementos de procesos estocásticos}{7}{subsection.4.1}%
+\contentsline {section}{\numberline {5}09/02/2024}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Clasificacion de los prcesos estocasticos}{7}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Proceso de Bernoulli}{8}{section.6}%
+\contentsline {section}{\numberline {7}Caminata Aleatoria Simple}{9}{section.7}%

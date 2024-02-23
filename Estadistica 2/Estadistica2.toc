@@ -1,0 +1,31 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}29/01/2024}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Objetivo general}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Temario}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Bibliografía}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Evaluación}{2}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Contacto}{2}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Examen diagnostico}{2}{subsection.1.6}%
+\contentsline {section}{\numberline {2}02/02/2024}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Solución del examen diagnóstico}{3}{subsection.2.1}%
+\contentsline {section}{\numberline {3}07/02/2024}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Unidad 1: Pruebas no parametricas}{5}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Introducción}{5}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Pruebas de bondad de ajuste}{5}{subsubsection.3.1.2}%
+\contentsline {section}{\numberline {4}12/02/2024}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Función de Distribución Empírica}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Estadístico de la Prueba en la Prueba de Kolmogorov-Smirnov}{6}{subsection.4.2}%
+\contentsline {section}{\numberline {5}14/02/2024}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Pruebas de Bondad de Ajuste}{9}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Para Variables Continuas}{9}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Para Variables Discretas}{9}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Pruebas Basadas en Rangos}{9}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Para 2 Poblaciones}{9}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Para Más de 2 Poblaciones}{10}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Prueba de Mann-Whitney}{10}{subsection.5.3}%
+\contentsline {section}{\numberline {6}16/02/2024}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}1.3.2 Prueba de Wilcoxon}{13}{subsection.6.1}%
+\contentsline {section}{\numberline {7}19/02/2024}{15}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Prueba de Kruskal-Wallis}{15}{subsection.7.1}%
+\contentsline {section}{\numberline {8}21/02/2024}{18}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Pruebas basadas en corridas}{18}{subsection.8.1}%
