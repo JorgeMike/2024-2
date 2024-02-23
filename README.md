@@ -16,11 +16,3 @@ Cada materia cuenta con su propia carpeta, donde se han organizado los apuntes p
 ## Uso
 
 Los invito a navegar por las carpetas y archivos de este repositorio. Siéntanse libres de utilizar estos apuntes como guía de estudio, referencia rápida o incluso para complementar sus propios apuntes. Si encuentran errores o tienen sugerencias de cómo mejorarlos, por favor, no duden en abrir un issue o enviar un pull request.
-
-## Licencia
-
-Este proyecto está bajo la Licencia [especificar licencia], lo que significa que puedes usar, modificar, y distribuir este material siempre y cuando des crédito adecuado y mantengas la misma licencia en trabajos derivados.
-
-## Agradecimientos
-
-Quiero agradecer a todos mis profesores y compañeros de curso, cuya enseñanza y colaboración han sido fundamentales para mi aprendizaje durante este semestre. Este proyecto no sería posible sin su apoyo y dedicación.
