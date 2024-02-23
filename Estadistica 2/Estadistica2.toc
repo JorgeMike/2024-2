@@ -29,3 +29,6 @@
 \contentsline {subsection}{\numberline {7.1}Prueba de Kruskal-Wallis}{15}{subsection.7.1}%
 \contentsline {section}{\numberline {8}21/02/2024}{18}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Pruebas basadas en corridas}{18}{subsection.8.1}%
+\contentsline {section}{\numberline {9}23/02/2024}{20}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Pruebas de Independencia}{20}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Coeficiente de Correlación de Spearman}{20}{subsection.9.2}%

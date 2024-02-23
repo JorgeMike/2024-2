@@ -975,5 +975,95 @@ El total de observaciones (\(n\)) es la suma de \(n_1\) y \(n_2\):
 
 Con \(n_1\), \(n_2\), y \(n\) definidos, podemos proceder a calcular \(E(R_t)\) y \(Var(R_t)\) utilizando las fórmulas para la aproximación normal de la prueba de corridas, y luego determinar si la secuencia es aleatoria comparando el valor observado de \(R_t\) con el valor esperado bajo la hipótesis nula de aleatoriedad.
 
+\newpage
+
+\section{23/02/2024}
+
+\subsection{Pruebas de Independencia}
+
+\subsubsection*{Definición}
+
+Una medida numérica de asociación para las variables aleatorias continuas $X$ y $Y$, denotada por $\mu_{x,y}$, es considerada una medida de dependencia si cumple con las siguientes propiedades:
+
+\begin{enumerate}
+    \item $0 \leq \mu_{x,y} \leq 1$, donde los límites inferior y superior representan la independencia total y la dependencia funcional perfecta, respectivamente.
+    \item $\mu_{x,y} = \mu_{y,x}$, lo que indica que la medida de dependencia es simétrica respecto a $X$ y $Y$.
+    \item $X$ y $Y$ son independientes si y solo si $\mu_{x,y} = 0$. Esto establece un criterio numérico para la independencia de $X$ y $Y$.
+    \item $\mu_{x,y} = 1$ si y solo si $X$ y $Y$ son casi seguramente funciones estrictamente monótonas una de la otra. Esto describe una relación de dependencia funcional completa.
+    \item Si $\alpha$ y $\beta$ son funciones estrictamente monótonas con probabilidad 1, entonces $\mu_{\alpha(x), \beta(y)} = \mu_{x,y}$. Esta propiedad asegura que la medida de dependencia es invariante bajo transformaciones monótonas.
+    \item Si $\{X_n,Y_n\}$ es una secuencia de variables aleatorias continuas con cópulas subyacentes $C_n$ y si $\{C_n\}$ converge a una cópula $C$, entonces
+          \[\lim_{n \to \infty} \mu_{C_n} = \mu_C.\]
+          Esto establece la continuidad de la medida de dependencia en términos de convergencia de cópulas.
+\end{enumerate}
+
+Estas propiedades definen formalmente cómo se debe medir la dependencia entre dos variables aleatorias continuas y establecen criterios claros para su evaluación.
+
+\subsection{Coeficiente de Correlación de Spearman}
+
+El coeficiente de correlación de Spearman, denotado como $r_s$, es una medida no paramétrica de la correlación de rango, que evalúa la dependencia entre dos variables cuantificando la dirección y la intensidad de su asociación monótona.
+
+La fórmula para calcular el coeficiente de Spearman es:
+
+\[r_s = 1 - \frac{6 \sum_{i=1}^{n}d_i^2}{n(n^2 - 1)},\]
+
+donde $d_i$ es la diferencia entre los rangos correspondientes de las dos variables, y $n$ es el número de observaciones.
+
+\subsubsection*{Prueba del Coeficiente de Spearman}
+
+Para evaluar la significancia estadística de la correlación de Spearman entre dos variables, se utiliza la siguiente prueba de hipótesis:
+
+\begin{itemize}
+    \item Hipótesis nula ($H_0$): No existe dependencia monótona entre las dos variables. Esto se formaliza como $F(x,y) = F(x)F(y)$, donde $F(x,y)$ es la distribución conjunta de las variables y $F(x)$, $F(y)$ son sus distribuciones marginales.
+    \item Hipótesis alternativa ($H_1$): Existe una dependencia monótona entre las dos variables, lo que implica que $F(x,y) \neq F(x)F(y)$.
+\end{itemize}
+
+Para realizar el contraste se sigue el procedimiento:
+
+\begin{enumerate}
+    \item Ordenar los datos de cada variable y asignar rangos.
+    \item Calcular las diferencias de rango $d_i$ para cada par de observaciones.
+    \item Insertar los valores de $d_i$ en la fórmula de $r_s$ para obtener el coeficiente de Spearman.
+    \item Utilizar el valor calculado de $r_s$ y el número de observaciones $n$ para determinar el valor $p$ asociado a través de tablas o software estadístico.
+    \item Comparar el valor $p$ con un nivel de significancia preestablecido (usualmente 0.05 o 0.01) para decidir si se rechaza $H_0$.
+\end{enumerate}
+
+Este procedimiento permite evaluar si la correlación observada entre las variables es estadísticamente significativa, indicando la presencia de una relación monótona entre ellas.
+
+\subsection*{Ejemplo 7}
+
+
+Ocho profesores de ciencias han sido clasificados por un juez de acuerdo a su capacidad de enseñanza y todos han tomado la prueba. ¿Cuál es la correlación entre la calificación del juez y la calificación de la prueba?
+
+\begin{table}[ht]
+    \centering
+    \caption{\textbf{Calificaciones y rangos de los profesores}}
+    \begin{tabular}{cccccc}
+        \toprule
+        Profesor & Calf. Juez & Calf. Prueba & $R(x_i)$ & $R(y_i)$ & $d_i^2$ \\
+        \midrule
+        1        & 7          & 44           & 7        & 1        & 36      \\
+        2        & 4          & 72           & 4        & 5        & 1       \\
+        3        & 2          & 69           & 2        & 3        & 1       \\
+        4        & 6          & 70           & 6        & 4        & 4       \\
+        5        & 1          & 93           & 1        & 8        & 49      \\
+        6        & 3          & 82           & 3        & 7        & 16      \\
+        7        & 8          & 67           & 8        & 2        & 36      \\
+        8        & 5          & 80           & 5        & 6        & 1       \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+La diferencia de rangos (\(d_i\)) se calcula restando el rango de la calificación de la prueba (\(R(y_i)\)) del rango de la calificación del juez (\(R(x_i)\)) para cada profesor. Luego, elevamos al cuadrado esta diferencia para obtener \(d_i^2\), lo que nos ayuda a medir la discrepancia entre los rangos de las dos variables sin importar la dirección de la diferencia.
+
+\[d_i^2 = (R(X_i) - R(Y_i))^2\]
+
+Con la suma de $d_i^2$ igual a 144, calculamos la correlación de Spearman entre las calificaciones del juez y las calificaciones de la prueba utilizando la fórmula:
+
+
+\[r_s = 1 - \frac{6 \sum_{i=1}^{n}d_i^2}{n(n^2 - 1)}\]
+
+\[r_s = 1 - \frac{6 * 144}{8(8^2 - 1)}\]
+
+donde $n$ es el número de observaciones (profesores), que en este caso es 8. La correlación de Spearman calculada es $-0.714$, lo que indica una fuerte correlación negativa entre las dos variables. Esto significa que a medida que una variable aumenta, la otra tiende a disminuir.
 
 \end{document}

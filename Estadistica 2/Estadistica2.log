@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.11.24)  21 FEB 2024 08:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.11.24)  23 FEB 2024 08:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -616,7 +616,7 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<../unam.png, id=127, 1027.84pt x 1155.31625pt>
+<../unam.png, id=139, 1027.84pt x 1155.31625pt>
 File: ../unam.png Graphic file (type png)
 <use ../unam.png>
 Package pdftex.def Info: ../unam.png  used on input line 36.
@@ -652,7 +652,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
-[7] [8] [9{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] (./Estadistica2.aux
+[7] [8] [9{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] (./Estadistica2.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -661,21 +661,21 @@ LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
 Package rerunfilecheck Info: File `Estadistica2.out' has not changed.
-(rerunfilecheck)             Checksum: 1B63C61436349D7D621C6D7BFB7875A6;4787.
+(rerunfilecheck)             Checksum: 518459B64D987792D299D91503D892A5;5328.
  ) 
 Here is how much of TeX's memory you used:
- 32086 strings out of 475735
- 741584 string characters out of 5784785
+ 32109 strings out of 475735
+ 741793 string characters out of 5784785
  1870759 words of memory out of 5000000
- 52258 multiletter control sequences out of 15000+600000
+ 52261 multiletter control sequences out of 15000+600000
  518059 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,103p,774b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Estadistica2.pdf (20 pages, 421836 bytes).
+Output written on Estadistica2.pdf (22 pages, 431481 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 332 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
- 258 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 435 PDF objects out of 1000 (max. 8388607)
+ 371 compressed objects within 4 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 282 words of extra memory for PDF output out of 10000 (max. 10000000)
 
