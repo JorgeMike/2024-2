@@ -135,7 +135,7 @@ La hipótesis nula ($H_0$) plantea que la muestra proviene de una población nor
 
 Aunque la prueba de Shapiro-Wilk es altamente eficaz, tiene limitaciones, especialmente en muestras muy grandes, donde puede ser demasiado sensible a desviaciones insignificantes de la normalidad. Por esta razón, es importante considerar el contexto y el tamaño de la muestra al interpretar los resultados.
 
-En R se puede realizar la prueba con la función shapiro.test.
+En R se puede realizar la prueba con la función \texttt{shapiro.test}.
 
 \section{Prueba de Anderson-Darling}
 
@@ -151,9 +151,16 @@ El núcleo de esta prueba radica en dos hipótesis fundamentales:
 El estadístico de prueba se calcula de la siguiente manera, donde la fórmula ajusta el enfoque según la distribución de interés.
 \[A^2 = -n - \frac{1}{n} \sum_{i=1}^{n} (2i-1) \left[ \ln(F(x_i)) + \ln(1-F(x_{n+1-i})) \right]\]
 
-Donde \(n\) es el tamaño de la muestra, \(x_i\) son los datos ordenados y \(F\) es la función de distribución acumulada teórica.
+Donde:
+\begin{itemize}
+    \item \(A^2\): Es el estadístico de prueba Anderson-Darling, que se utiliza para evaluar si una muestra de datos proviene de una población con una distribución específica.
+    \item \(n\): Es el tamaño de la muestra, es decir, el número total de observaciones en la muestra.
+    \item \(x_i\): Son los datos ordenados de menor a mayor. \(x_1\) sería el dato más pequeño, y \(x_n\) el dato más grande.
+    \item \(F(x_i)\): Es la función de distribución acumulada teórica evaluada en \(x_i\). Esta función representa la probabilidad de que una variable aleatoria sea menor o igual que \(x_i\).
+    \item \(2i-1\): Es un factor que se multiplica por el logaritmo de las funciones de distribución, ajustando la ponderación de cada término en la suma.
+\end{itemize}
 
-La interpretación de los resultados de la prueba de Anderson-Darling se basa en el valor \(p\) obtenido: un valor \(p\) bajo (por lo general, menor que 0.05) sugiere el rechazo de la hipótesis nula, indicando que los datos no se ajustan a la distribución especificada.
+La interpretación de los resultados de la prueba de Anderson-Darling se basa en el valor \(p\) obtenido: un valor \(p\) bajo sugiere el rechazo de la hipótesis nula, indicando que los datos no se ajustan a la distribución especificada.
 
 \section{Prueba de Jarque-Bera}
 
@@ -163,21 +170,22 @@ La prueba de Jarque-Bera se basa en la comparación de la asimetría y curtosis 
 
 \[JB = \frac{n}{6} \left(S^2 + \frac{1}{4}(K - 3)^2\right)\]
 
-donde \(n\) es el número de observaciones, \(S\) es la asimetría de la muestra, y \(K\) es la curtosis de la muestra. Bajo la hipótesis nula (H0), se asume que los datos siguen una distribución normal. La hipótesis alternativa (H1) es que los datos no siguen una distribución normal. Un valor alto en la estadística JB indica una desviación significativa de la normalidad, sugiriendo el rechazo de la hipótesis nula.
+Donde:
+\begin{itemize}
+    \item \(JB\): Es la estadística de prueba Jarque-Bera, utilizada para evaluar la normalidad de los datos basándose en asimetría y curtosis.
+    \item \(n\): Es el número de observaciones en la muestra.
+    \item \(S\): Es la asimetría de la muestra. La asimetría mide la falta de simetría en la distribución de los datos, con un valor de cero indicando simetría perfecta.
+    \item \(K\): Es la curtosis de la muestra. La curtosis mide la "colinealidad" de los datos, con un valor de tres indicando una curtosis normal (distribución mesocúrtica).
+    \item La hipótesis nula (H0): Se asume que los datos siguen una distribución normal, es decir, que la asimetría es cero y la curtosis es tres.
+    \item La hipótesis alternativa (H1): Se asume que los datos no siguen una distribución normal, indicado por una asimetría y/o curtosis que difiere significativamente de los valores esperados en una distribución normal.
+\end{itemize}
 
-Para llevar a cabo la prueba de Jarque-Bera en R, se pueden utilizar paquetes como \texttt{tseries} con la función \texttt{jarque.bera.test}, o el paquete \texttt{moments} con la función \texttt{jarque.test}. Estas herramientas facilitan la aplicación de la prueba en análisis estadísticos, permitiendo a los investigadores evaluar la adecuación de la normalidad en sus conjuntos de datos, especialmente útil en campos como la econometría y la investigación financiera, donde la normalidad de los retornos es una suposición común.
+
+Para llevar a cabo la prueba de Jarque-Bera en R, se pueden utilizar paquetes como \texttt{tseries} con la función \texttt{jarque.bera.test}, o el paquete \texttt{moments} con la función \texttt{jarque.test}.
 
 \section{Conclusiones}
 
-Este documento ha explorado diversas pruebas de normalidad, destacando su importancia en el análisis estadístico. La normalidad de los datos es una suposición clave en muchos métodos estadísticos, incluyendo pruebas paramétricas y modelos de regresión. Las pruebas de Shapiro-Wilk, Lilliefors, Cramér-van Mises, Anderson-Darling, y Jarque-Bera ofrecen diferentes enfoques para evaluar esta suposición, cada una con sus propias ventajas y limitaciones.
-
-Una lección clave es la necesidad de seleccionar la prueba de normalidad más adecuada basada en el tamaño de la muestra y las características específicas de los datos. Por ejemplo, la prueba de Shapiro-Wilk es preferida para muestras pequeñas, mientras que la prueba de Jarque-Bera es más adecuada para muestras grandes. La Prueba de Lilliefors y la Prueba de Anderson-Darling son útiles cuando los parámetros de la distribución normal no son conocidos, y la Prueba de Cramér-van Mises ofrece una alternativa robusta que evalúa la bondad de ajuste para cualquier distribución teórica.
-
-El correcto uso de estas pruebas permite a los investigadores y analistas tomar decisiones informadas sobre la aplicabilidad de métodos estadísticos que asumen normalidad. Cuando los datos no se ajustan a una distribución normal, pueden considerarse transformaciones de los datos o métodos no paramétricos como alternativas válidas.
-
-Finalmente, este documento subraya la importancia de la comprensión profunda de las pruebas de normalidad dentro del contexto de investigación específico. Una interpretación adecuada de sus resultados es crucial para la validez de las conclusiones estadísticas y, en última instancia, para el avance del conocimiento en diversas áreas de aplicación.
-
-En resumen, las pruebas de normalidad son herramientas esenciales en el arsenal estadístico, facilitando la correcta aplicación y interpretación de técnicas analíticas avanzadas. Su elección y aplicación cuidadosa asegura la fiabilidad y validez de los resultados estadísticos en investigación.
+Las pruebas de normalidad como la Prueba de Lilliefors, Prueba de Cramér-van Mises, Prueba de Shapiro-Wilk, Prueba de Anderson-Darling, y Prueba de Jarque-Bera, ofrecen herramientas valiosas para evaluar la adecuación de los datos a la distribución normal. Cada prueba tiene sus propias fortalezas y limitaciones, y la elección de la prueba adecuada puede depender del tamaño de la muestra y los objetivos específicos del análisis. Utilizar múltiples pruebas de normalidad puede proporcionar una visión más completa de la distribución de los datos y ayudar a la toma de desiciones.
 
 \section{Referencias}
 
