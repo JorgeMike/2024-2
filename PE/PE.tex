@@ -558,4 +558,125 @@ Una partícula realiza una caminata aleatoria sobre los enteros comenzando en la
     P\{X_7 = 5 | X_0 = 4\} = \binom{7}{4} (0.75)^{4} (0.25)^{3} = 0.173
 \]
 
+\newpage
+
+\section{El Problema del Jugador}
+
+Consideramos un caso particular de una caminata aleatoria, donde un jugador \(A\) apuesta sucesivamente una unidad monetaria contra otro jugador \(B\). El capital inicial para cada jugador es \(k\) y \(n-k\) respectivamente, lo que implica que hay un capital total igual a \(N\). En cada apuesta, \(A\) tiene una probabilidad \(p\) de ganar y una probabilidad \(q\) de perder, asumiendo que \(p + q = 1\) y que no hay empates. Denotemos por \(X_n\) la fortuna del jugador \(A\) al tiempo \(n\), de manera que se modela como una caminata aleatoria que inicia en el estado \(k\) y eventualmente puede terminar en uno de los estados absorbentes \(0\) o \(N\).
+
+\vspace{.25cm}
+
+Estos dos estados, \(0\) y \(N\), son denominados estados absorbentes ya que, una vez alcanzados, el juego termina. La caminata aleatoria representada por \(X_n\) ofrece un marco para analizar la evolución del capital de \(A\) a través del tiempo hasta que se alcance uno de estos estados absorbentes.
+
+\vspace{.25cm}
+
+Regularmente, en este escenario la pregunta típica es: ¿Cuál es la probabilidad de que eventualmente el jugador \( A \) se arruine? Por tal motivo a este problema se le llama \textbf{Problema de la Ruina del Jugador}.
+
+\vspace{.25cm}
+
+Sea \( \gamma \) el primer momento en el que la caminata aleatoria visita alguno de los 2 estados absorbentes, es decir, \( \gamma = \min\{n \geq 0 \mid X_n = 0 \text{ o } X_n = N\} \). La probabilidad de ruina a partir de tener \( k \) unidades monetarias es una probabilidad condicional que se plantea como:
+
+\[ U_k = P(X_\gamma = 0 \mid X_0 = k) \]
+
+\subsection*{Definición}
+
+
+La probabilidad de ruina del jugador \( A \), a partir de tener \( k \) unidades monetarias es:
+
+\[
+    U_k =
+    \begin{cases}
+        \frac{N - k}{N}                                                                                & \text{si } p = q = \frac{1}{2},                       \\[10pt]
+        \frac{\left(\frac{q}{p}\right)^k - \left(\frac{q}{p}\right)^N}{1 - \left(\frac{q}{p}\right)^N} & \text{si } p \neq q \text{ y } p, q \neq \frac{1}{2}.
+    \end{cases}
+\]
+
+\subsection*{Número Esperado de Apuestas}
+
+Sea \( m_k \) el número esperado de apuestas antes de que termine el juego, en donde el jugador A tiene un capital inicial de \( k \) unidades y B tiene \( N-k \). Así:
+
+\[
+    m_k =
+    \begin{cases}
+        K(N-K)                                                                                                          & \text{si } p = q = \frac{1}{2},                       \\[10pt]
+        \frac{1}{q-p}\left( K - N\left(\frac{1-\left(\frac{q}{p}\right)^K}{1-\left(\frac{q}{p}\right)^N}\right) \right) & \text{si } p \neq q \text{ y } p, q \neq \frac{1}{2}.
+    \end{cases}
+\]
+
+\newpage
+
+\subsection*{Ejemplos}
+
+\subsubsection*{¿Cuál es la probabilidad de que un jugador se arruine si comenzó jugando con 5 pesos y el jugador contrario con 12, lanzando para tales efectos una moneda, donde si sale cruz el jugador gana 1 peso y si sale cara el jugador pierde 1 peso?}
+
+\subsubsection*{Datos Disponibles}
+\begin{itemize}
+    \item Capital inicial del jugador A (\(k\)): 5 pesos.
+    \item Capital total (\(N\)): \(k\) (del jugador A) + capital del jugador B = \(5 + 12 = 17\) pesos.
+    \item Probabilidades de ganar (\(p\)) y perder (\(q\)): \(0.5\), ya que es una moneda justa.
+\end{itemize}
+
+\subsubsection*{Fórmulas a Utilizar}
+Para calcular la probabilidad de ruina del jugador A (\(U_k\)), usamos la fórmula:
+\[ U_k = \frac{N - k}{N} \]
+
+\subsubsection*{Sustitución y Cálculo}
+Sustituyendo \(k = 5\) y \(N = 17\) en la fórmula, obtenemos:
+\[ U_5 = \frac{17 - 5}{17} = \frac{12}{17} \]
+
+Realizando el cálculo, encontramos que:
+\[ U_5 = 0.7058823529411765 \]
+
+Por lo tanto, la probabilidad de que el jugador se arruine es aproximadamente \(70.6\%\).
+
+\vspace{0.25cm}
+
+\textbf{¿Qué sucede si la moneda está cargada a favor del jugador A con un 63\%?}
+
+\subsubsection*{Datos Disponibles}
+\begin{itemize}
+    \item Capital inicial del jugador A (\(k\)): 5 pesos.
+    \item Capital total (\(N\)): 17 pesos.
+    \item Probabilidad de ganar (\(p\)): \(0.63\) (moneda cargada a favor del jugador A).
+    \item Probabilidad de perder (\(q\)): \(0.37\) (resultado de \(1 - p\)).
+\end{itemize}
+
+\subsubsection*{Fórmula a Utilizar}
+Para calcular la probabilidad de ruina del jugador A (\(U_k\)) con una moneda cargada, usamos la fórmula:
+\[ U_k = \frac{\left(\frac{q}{p}\right)^k - \left(\frac{q}{p}\right)^N}{1 - \left(\frac{q}{p}\right)^N} \]
+
+\subsubsection*{Sustitución y Cálculo}
+Sustituyendo los valores de \(p = 0.63\), \(q = 0.37\), \(k = 5\) y \(N = 17\) en la fórmula, obtenemos:
+\[ U_5 = \frac{\left(\frac{0.37}{0.63}\right)^5 - \left(\frac{0.37}{0.63}\right)^{17}}{1 - \left(\frac{0.37}{0.63}\right)^{17}} \]
+
+Realizando el cálculo, encontramos que la probabilidad de ruina del jugador A es aproximadamente \(0.070\) o \(7.0\%\).
+
+Por lo tanto, con la moneda cargada a favor, la probabilidad de que el jugador A se arruine disminuye significativamente.
+
+\vspace{0.25cm}
+
+\textbf{¿Cuál es el número esperado de apuestas antes de la ruina para ambos casos?}
+
+\subsubsection*{Caso de Moneda Justa (\(p = q = 0.5\))}
+Para el caso de una moneda justa, el número esperado de apuestas antes de la ruina, \(m_k\), se calcula como:
+\[ m_k = k(N-k) \]
+donde \(k = 5\) y \(N = 17\).
+
+Sustituyendo los valores, obtenemos:
+\[ m_k = 5(17-5) = 60 \]
+Por lo tanto, el número esperado de apuestas antes de la ruina del jugador A con una moneda justa es de \textbf{60} apuestas.
+
+\subsubsection*{Caso de Moneda Cargada (\(p = 0.63\), \(q = 0.37\))}
+Para el caso de una moneda cargada a favor del jugador A, el número esperado de apuestas antes de la ruina, \(m_k\), se calcula como:
+\[ m_k = \frac{1}{q-p}\left( k - N\left(\frac{1-\left(\frac{q}{p}\right)^k}{1-\left(\frac{q}{p}\right)^N}\right) \right) \]
+donde \(k = 5\), \(N = 17\), \(p = 0.63\) y \(q = 0.37\).
+
+Sustituyendo los valores, obtenemos:
+\[ m_k = \frac{1}{0.37-0.63}\left( 5 - 17\left(\frac{1-\left(\frac{0.37}{0.63}\right)^5}{1-\left(\frac{0.37}{0.63}\right)^{17}}\right) \right) \]
+\[ m_k \approx 41.59 \]
+Por lo tanto, el número esperado de apuestas antes de la ruina del jugador A con una moneda cargada es aproximadamente \textbf{41.59} apuestas.
+
+
+\vspace{0.25cm}
+
 \end{document}

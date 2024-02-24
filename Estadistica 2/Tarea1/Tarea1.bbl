@@ -1,0 +1,27 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Autor%
+}{%
+Autor%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+cite}
+\APACinsertmetastar {%
+cite}%
+\begin{APACrefauthors}%
+Autor, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {Título de la página.} {Título de la página.}
+\newblock
+\begin{APACrefURL} \url{https://example.com} \end{APACrefURL}
+\newblock
+\APACrefnote{Último acceso: 2024-02-24}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
