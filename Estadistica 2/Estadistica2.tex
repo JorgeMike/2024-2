@@ -628,7 +628,7 @@ Se rechaza $H_0$ si
 p-valor $ < \alpha$ \\
 $0.0784 < 0.05$
 
-\subsection{1.3.2 Prueba de Wilcoxon}
+\subsection{Prueba de Wilcoxon}
 
 La prueba de Wilcoxon para muestras relacionadas es un test no paramétrico utilizado para comparar dos muestras relacionadas, emparejadas o medidas repetidas en un solo sujeto, con el objetivo de evaluar si sus distribuciones de población difieren.
 
@@ -1031,7 +1031,6 @@ Este procedimiento permite evaluar si la correlación observada entre las variab
 
 \subsection*{Ejemplo 7}
 
-
 Ocho profesores de ciencias han sido clasificados por un juez de acuerdo a su capacidad de enseñanza y todos han tomado la prueba. ¿Cuál es la correlación entre la calificación del juez y la calificación de la prueba?
 
 \begin{table}[ht]
@@ -1065,5 +1064,89 @@ Con la suma de $d_i^2$ igual a 144, calculamos la correlación de Spearman entre
 \[r_s = 1 - \frac{6 * 144}{8(8^2 - 1)}\]
 
 donde $n$ es el número de observaciones (profesores), que en este caso es 8. La correlación de Spearman calculada es $-0.714$, lo que indica una fuerte correlación negativa entre las dos variables. Esto significa que a medida que una variable aumenta, la otra tiende a disminuir.
+
+\section{26/02/2024}
+\subsection*{Análisis de la Correlación de Spearman y Prueba de Hipótesis}
+
+Una vez calculada la correlación de Spearman, es crucial determinar si esta correlación es estadísticamente significativa. Bajo la hipótesis nula \(H_0: \rho = 0\), no esperamos encontrar correlación entre las calificaciones del juez y las de la prueba. La correlación de Spearman, \(r_s\), debería ser 0 si \(H_0\) es cierta. Utilizamos la siguiente estadística de prueba que se distribuye aproximadamente como una normal estándar \(N(0,1)\) para muestras de tamaño considerable:
+
+\[
+    \frac{r_s - E(r_s)}{\sqrt{var(r_s)}}
+\]
+
+Donde \(E(r_s) = 0\) bajo \(H_0\), y \(var(r_s) = \frac{1}{n-1}\), siendo \(n\) el número de observaciones. Para nuestro caso, con \(n = 8\) y \(r_s = -0.714\), la estadística de prueba se calcula como:
+
+\[
+    \frac{-0.714 - 0}{\sqrt{\frac{1}{8-1}}} = -1.889
+\]
+
+Este resultado se compara con los valores críticos de la distribución \(N(0,1)\). Para un nivel de significancia \(\alpha = 0.05\) en una prueba de dos colas, los valores críticos son \(\pm 1.96\). Al no ser -1.889 menor que -1.96 ni mayor que 1.96, no rechazamos la hipótesis nula al nivel de significancia del 5\%. Esto indica que no hay evidencia suficiente para afirmar que existe una correlación significativa entre las dos variables evaluadas.
+
+Para formalizar el proceso de toma de decisiones, se rechaza \(H_0\) si:
+
+\[
+    |z| > q_z(1-\frac{\alpha}{2})
+\]
+
+Utilizando el valor absoluto de \(z\), calculamos:
+
+\[
+    |z| = |\frac{r_s}{\sqrt{\frac{1}{n-1}}}| = |\sqrt{n-1}r_s|
+\]
+
+Sustituyendo los valores conocidos:
+
+\[
+    |z| = |\sqrt{8-1}-0.714| = |-1.889| \approx 1.889
+\]
+
+Comparando este valor con \(q_z(1-\frac{\alpha}{2}) = q_z(0.975)\), ($q_z(0.975)$ se calcula en phyton con \texttt{norm.ppf(1 - alpha / 2)}) aproximadamente 1.96, concluimos:
+
+Dado que \(|z| = 1.889 > 1.96\) no se cumple, entonces no rechazamos la hipótesis nula \(H_0\) al nivel de significancia de \(0.05\). Por lo tanto, la calificación del juez y la calificación de la prueba son independientes
+
+\subsection{Tau de Kendall}
+
+La Tau de Kendall es una medida de correlación basada en el orden de los rangos de los datos, que evalúa la similitud entre las ordenaciones de los datos en dos variables. A diferencia de la correlación de Pearson, que evalúa la relación lineal entre variables cuantitativas, la Tau de Kendall se centra en la relación ordinal, lo que la hace útil en situaciones donde la relación no es necesariamente lineal.
+
+\subsubsection*{Definición}
+
+Consideremos un conjunto de observaciones de un vector aleatorio \((X, Y)\), donde \(X\) e \(Y\) son variables aleatorias continuas. Sea \((X_i, Y_i)\) y \((X_j, Y_j)\) dos observaciones distintas de este vector, con \(i \neq j\).
+
+Definimos estas observaciones como \textbf{concordantes} si los pares se mueven en la misma dirección, es decir, si:
+\[
+    (x_i < x_j \text{ y } y_i < y_j) \quad \text{o} \quad (x_i > x_j \text{ y } y_i > y_j),
+\]
+lo que indica que tanto \(X\) como \(Y\) aumentan o disminuyen juntos.
+
+Por otro lado, los pares se consideran \textbf{discordantes} si se mueven en direcciones opuestas, es decir, si:
+\[
+    (x_i < x_j \text{ y } y_i > y_j) \quad \text{o} \quad (x_i > x_j \text{ y } y_i < y_j),
+\]
+indicando que uno aumenta mientras el otro disminuye.
+
+La Tau de Kendall, \(\tau\), se calcula como la diferencia entre la proporción de pares concordantes y la proporción de pares discordantes, sobre el total de pares. Esto proporciona una medida de la correlación entre las variables, donde un valor de \(\tau = 1\) indica una correlación perfecta, \(\tau = -1\) indica una correlación inversa perfecta, y \(\tau = 0\) sugiere que no hay correlación.
+
+Si $(x_i - x_j)(y_i - y_j)$ son concordantes
+\[(x_i - x_j)(y_i - y_j) \geq 0\]
+
+Si $(x_i - x_j)(y_i - y_j)$ son discordantes
+\[(x_i - x_j)(y_i - y_j) \leq 0\]
+
+\subsubsection*{Cálculo de la Tau de Kendall}
+
+Para calcular la Tau de Kendall, se siguen los siguientes pasos:
+
+\begin{enumerate}
+    \item Ordenar las observaciones de acuerdo con los valores de \(X\), manteniendo el emparejamiento con sus correspondientes valores de \(Y\).
+    \item Para cada observación \((X_i, Y_i)\), contar el número de pares concordantes y discordantes comparándola con las demás observaciones \((X_j, Y_j)\) donde \(j > i\).
+    \item Calcular \(\tau\) utilizando la fórmula:
+          \[
+              \tau = \frac{\text{Número de pares concordantes} - \text{Número de pares discordantes}}{\binom{n}{2}},
+          \]
+          donde \(\binom{n}{2}\) es el número total de combinaciones de pares únicas posibles entre las observaciones.
+\end{enumerate}
+
+La Tau de Kendall ofrece una medida robusta y fiable de la correlación ordinal, útil en análisis estadísticos donde las suposiciones de linealidad y normalidad no se cumplen, o cuando se trabaja con datos ordinales.
+
 
 \end{document}

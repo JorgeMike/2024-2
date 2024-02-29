@@ -268,7 +268,7 @@ Aplicamos la técnica de integración por partes, donde elegimos:
 \section{Tarea 4}
 
 \begin{enumerate}
-    \item $y' + 4y = e^{-4t}, \hspace{.5cm} y(0) = 2$
+    \item $y' + 4y = e^{-4t}, \hspace{.5cm} y(0) = 2 \hspace{.5cm} y'(0)=0$
     \item $y' - y = 1 - te^{t}, \hspace{.5cm} y(0) = 0$
     \item $y'' + 2y' + y = 0, \hspace{.5cm} y(0) = y'(0) = 1$
     \item $y'' - 4y' + 4y = t^{3}e^{2t}, \hspace{.5cm} y(0) = y'(0) = 0 $
@@ -284,97 +284,522 @@ Aplicamos la técnica de integración por partes, donde elegimos:
 
 \subsection{Solución}
 
-\subsection*{Problema 1}
-$y' + 4y = e^{-4t}, \hspace{.5cm} y(0) = 2$
+\subsubsection{Problema 1}
+\[y' + 4y = e^{-4t}, \hspace{.5cm} y(0) = 2\]
 
-La Transformada de Laplace de la ecuación es:
-\begin{equation}
+Aplicar la Transformada de Laplace en la ecuación es:
+\begin{equation*}
     \mathcal{L}\{y'\} + 4\mathcal{L}\{y\} = \mathcal{L}\{e^{-4t}\}.
-\end{equation}
-\[
-    \mathcal{L}\{e^{-4t}\} = \frac{1}{s + 4}.
-\]
-\[
-    \mathcal{L}\{e^{-4t}\} = \int_0^\infty e^{-st}e^{-4t}\,dt.
-\]
-\[
-    \mathcal{L}\{e^{-4t}\} = \int_0^\infty e^{-(s+4)t}\,dt.
-\]
-\[
-    \mathcal{L}\{e^{-4t}\} = \left[ -\frac{1}{s+4}e^{-(s+4)t} \right]_0^\infty.
-\]
-Usando las propiedades de la Transformada de Laplace, tenemos:
+\end{equation*}
+
+Resolviendo $\mathcal{L}\{e^{-4t}\}$:
+
+\begin{align*}
+    \mathcal{L}\{e^{-4t}\} & = \int_0^\infty e^{-st}e^{-4t}\,dt                  \\
+                           & = \int_0^\infty e^{-(s+4)t}\,dt                     \\
+                           & = \left[ -\frac{1}{s+4}e^{-(s+4)t} \right]_0^\infty \\
+                           & = \frac{1}{s + 4}
+\end{align*}
+
+Resolviendo $\mathcal{L}\{y'\}$ y $\mathcal{L}\{y\}$
 \begin{align*}
     \mathcal{L}\{y'\} & = sY(s) - y(0), \\
     \mathcal{L}\{y\}  & = Y(s),
 \end{align*}
 
 Sustituyendo con la condicion inicial \(y(0) = 2\) en la ecuación:
-\begin{equation}
-    sY(s) - 2 + 4Y(s) = \frac{1}{s + 4}.
-\end{equation}
+\begin{equation*}
+    sY(s) - 2 + 4Y(s) = \frac{1}{s + 4}
+\end{equation*}
 
 Esto simplifica a:
-\begin{equation}
-    (s + 4)Y(s) = 2 + \frac{1}{s + 4}.
-\end{equation}
+\begin{equation*}
+    Y(s)(s + 4) = 2 + \frac{1}{s + 4}
+\end{equation*}
 
 Despejamos \(Y(s)\):
-\begin{equation}
-    Y(s) = \frac{2}{s + 4} + \frac{1}{(s + 4)^2}.
-\end{equation}
+\begin{equation*}
+    Y(s) = \frac{2}{s + 4} + \frac{1}{(s + 4)^2}
+\end{equation*}
 
-Para encontrar \(y(t)\), aplicamos la Transformada de Laplace inversa a \(Y(s)\), usando las transformadas inversas conocidas:
-\begin{equation}
-    y(t) = 2e^{-4t} + te^{-4t}.
-\end{equation}
+\[
+    Y(s) = \frac{2s+9}{(s + 4)^2}
+\]
 
-Este es el resultado de aplicar la Transformada de Laplace y su inversa a la ecuación diferencial dada, con la condición inicial \(y(0) = 2\).
+\newpage
 
-\subsection*{Problema 4}
-$y'' - 4y' + 4y = t^{3}e^{2t}, \hspace{.5cm} y(0) = y'(0) = 0 $
+\subsubsection{Problema 2}
+\[y' - y = 1 - te^{t}, \hspace{.5cm} y(0) = 0\]
+Aplicamos la Transformada de Laplace a ambos lados de la ecuación:
+\[\mathcal{L}\{y'\} - \mathcal{L}\{y\} = \mathcal{L}\{1 - te^{t}\}\]
+
+Utilizamos las siguientes propiedades de la Transformada de Laplace:
+\[
+    \mathcal{L}\{1\} = \frac{1}{s}, \quad \mathcal{L}\{te^{\alpha t}\} = \frac{1}{(s - \alpha)^2}
+\]
+
+Por lo tanto, para \(\mathcal{L}\{1 - te^{t}\}\) tenemos:
+\[
+    \mathcal{L}\{1\} - \mathcal{L}\{te^{t}\} = \frac{1}{s} - \frac{1}{(s-1)^2}
+\]
+
+Para \(\mathcal{L}\{y'\}\) y \(\mathcal{L}\{y\}\), considerando la condición inicial \(y(0) = 0\), obtenemos:
+\[
+    \mathcal{L}\{y'\} = sY(s) - y(0) = sY(s)
+\]
+\[
+    \mathcal{L}\{y\} = Y(s)
+\]
+
+Sustituyendo en la ecuación transformada:
+\[
+    sY(s) - Y(s) = \frac{1}{s} - \frac{1}{(s-1)^2}
+\]
+
+Resolviendo para \(Y(s)\):
+\[
+    Y(s)(s - 1) = \frac{1}{s} - \frac{1}{(s-1)^2}
+\]
+
+\[
+    Y(s) = \frac{1}{s(s - 1)} - \frac{1}{(s-1)^3}
+\]
+
+\newpage
+
+
+\subsubsection{Problema 3}
+\[y'' + 2y' + y = 0, \hspace{.5cm} y(0) = y'(0) = 1\]
 
 Aplicamos la Transformada de Laplace a ambos lados de la ecuación:
-\begin{equation}
+\[\mathcal{L}\{y''\} + 2\mathcal{L}\{y'\} + \mathcal{L}\{y\} = \mathcal{L}\{0\}\]
+
+Para \(\mathcal{L}\{y''\}\), \(\mathcal{L}\{y'\}\) y \(\mathcal{L}\{y\}\):
+
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - sy(0) - y'(0) \\
+    \mathcal{L}\{y'\}  & = sY(s) - y(0)            \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Considerando la condición inicial \(y(0) = y'(0) = 1\), tenemos:
+
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - s(1) - 1 \\
+    \mathcal{L}\{y'\}  & = sY(s) - 1          \\
+    \mathcal{L}\{y''\} & = Y(s)
+\end{align*}
+
+Sustituyendo:
+
+\[
+    s^2Y(s) - s - 1 + 2(sY(s) - 1) + Y(s) = 0
+\]
+
+\[
+    s^2Y(s) - s - 1 + 2sY(s) - 2 + Y(s) = 0
+\]
+
+\[
+    Y(s)(s^2 + 2s + 1) - s - 3 = 0
+\]
+
+\[
+    (s^2 + 2s + 1)Y(s) = s + 3
+\]
+
+Despejando $Y(s)$
+
+\[
+    Y(s) = \frac{s + 3}{(s + 1)^2}
+\]
+
+\newpage
+
+
+\subsubsection{Problema 4}
+\[
+    y'' - 4y' + 4y = t^{3}e^{2t}, \hspace{.5cm} y(0) = y'(0) = 0
+\]
+
+Aplicamos la Transformada de Laplace a ambos lados de la ecuación:
+\[
     \mathcal{L}\{y''\} - 4\mathcal{L}\{y'\} + 4\mathcal{L}\{y\} = \mathcal{L}\{t^3e^{2t}\}.
-\end{equation}
+\]
 
-Utilizamos las propiedades de la Transformada de Laplace para las derivadas y la condición inicial dada:
-\begin{align*}
-    \mathcal{L}\{y'\}  & = sY(s) - y(0),            \\
-    \mathcal{L}\{y''\} & = s^2Y(s) - sy(0) - y'(0).
-\end{align*}
+para \(\mathcal{L}\{t^3e^{2t}\}\) tenemos:
 
-Dado que \(y(0) = y'(0) = 0\), simplificamos a:
-\begin{align*}
-    \mathcal{L}\{y'\}  & = sY(s),   \\
-    \mathcal{L}\{y''\} & = s^2Y(s).
-\end{align*}
-
-Para calcular \(\mathcal{L}\{t^3e^{2t}\}\), aplicamos el teorema del desplazamiento en el eje \(s\) y obtenemos:
-\begin{equation}
+\begin{equation*}
     \mathcal{L}\{t^3e^{2t}\} = \frac{3!}{(s-2)^4} = \frac{6}{(s-2)^4}.
-\end{equation}
+\end{equation*}
 
-Sustituimos estos resultados en la ecuación transformada:
-\begin{equation}
+Para \(\mathcal{L}\{y''\}\), \(\mathcal{L}\{y'\}\) y \(\mathcal{L}\{y\}\):
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - sy(0) - y'(0) \\
+    \mathcal{L}\{y'\}  & = sY(s) - y(0)            \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Considerando la condición inicial \(y(0) = y'(0) = 0\), tenemos:
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - s(0) - 0 \\
+    \mathcal{L}\{y'\}  & = sY(s) - 0          \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Sustituyendo:
+\begin{equation*}
     s^2Y(s) - 4sY(s) + 4Y(s) = \frac{6}{(s-2)^4}.
-\end{equation}
+\end{equation*}
 
 Factorizamos el término en \(Y(s)\) y simplificamos:
-\begin{equation}
+\begin{equation*}
     Y(s)(s^2 - 4s + 4) = \frac{6}{(s-2)^4},
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
     Y(s)(s - 2)^2 = \frac{6}{(s-2)^4}.
-\end{equation}
+\end{equation*}
 
-Finalmente, despejamos \(Y(s)\):
-\begin{equation}
+Despejamos \(Y(s)\):
+\begin{equation*}
     Y(s) = \frac{6}{(s-2)^6}.
-\end{equation}
+\end{equation*}
 
-Este resultado representa la Transformada de Laplace de la solución \(y(t)\) de la ecuación diferencial original. Para encontrar \(y(t)\), aplicaríamos la Transformada de Laplace inversa a \(Y(s)\).
 
+\newpage
+
+
+\subsubsection{Problema 5}
+
+\[y'' - 6y' + 9y = t, \hspace{.5cm} y(0) = 0, y'(0) = 1\]
+
+Aplicamos la Transformada de Laplace a ambos lados de la ecuación:
+\[
+    \mathcal{L}\{y''\} - 6\mathcal{L}\{y'\} + 9\mathcal{L}\{y\} = \mathcal{L}\{t\}.
+\]
+
+para \(\mathcal{L}\{t\}\) tenemos:
+
+\[\mathcal{L}\{t\}=\frac{1}{s^2}\]
+
+Para \(\mathcal{L}\{y''\}\), \(\mathcal{L}\{y'\}\) y \(\mathcal{L}\{y\}\):
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - sy(0) - y'(0) \\
+    \mathcal{L}\{y'\}  & = sY(s) - y(0)            \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Considerando la condición inicial $y(0) = 0$ y $y'(0) = 1$, tenemos:
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - s(0) - 1 \\
+    \mathcal{L}\{y'\}  & = sY(s) - 0          \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Sustituyendo:
+
+\[
+    s^2Y(s) - 1 - 6sY(s) + 9Y(s) = \frac{1}{s^2}
+\]
+
+\[
+    Y(s)(s^2 -6s + 9) - 1 = \frac{1}{s^2}
+\]
+
+\[
+    Y(s)(s^2 -6s + 9) = \frac{1}{s^2} + 1
+\]
+
+\[
+    Y(s)(s-3)^2 = \frac{1}{s^2} + 1
+\]
+
+\[
+    Y(s) = \frac{1}{s^2(s-3)^2} + \frac{1}{(s-3)^2}
+\]
+
+
+\newpage
+
+
+\subsubsection{Problema 6}
+
+\[y'' - 4y' + 4y = t^3, \hspace{.5cm} y(0) = 1, y'(0) = 0\]
+
+Aplicamos la Transformada de Laplace a ambos lados de la ecuación:
+\[
+    \mathcal{L}\{y''\} - 4\mathcal{L}\{y'\} + 4\mathcal{L}\{y\} = \mathcal{L}\{t^3\}.
+\]
+
+para \(\mathcal{L}\{t^3\}\) tenemos:
+
+\[\mathcal{L}\{t^3\} = \frac{6}{s^4}\]
+
+Para \(\mathcal{L}\{y''\}\), \(\mathcal{L}\{y'\}\) y \(\mathcal{L}\{y\}\):
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - sy(0) - y'(0) \\
+    \mathcal{L}\{y'\}  & = sY(s) - y(0)            \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Considerando la condición inicial $y(0) = 1$ y $y'(0) = 0$, tenemos:
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - s(1) - 0 \\
+    \mathcal{L}\{y'\}  & = sY(s) - 1          \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Sustituyendo:
+
+\[
+    s^2Y(s) - s - 4(sY(s) - 1) + 4Y(s) = \frac{6}{s^4}
+\]
+
+\[
+    s^2Y(s) - s - 4sY(s) - 4 + 4Y(s) = \frac{6}{s^4}
+\]
+
+\[
+    Y(s)(s^2 - 4s + 4) - s = \frac{6}{s^4}
+\]
+
+\[
+    Y(s)(s-2)^2 = \frac{6}{s^4} + s
+\]
+
+\[
+    Y(s) = \frac{6}{s^4(s-2)^2} + \frac{1}{s(s-2)^2}
+\]
+
+
+\newpage
+
+
+\subsubsection{Problema 7}
+
+\[y'' - 6y' + 13y = 0, \hspace{.5cm} y(0) = 0, y'(0) = -3\]
+
+Aplicamos la Transformada de Laplace a ambos lados de la ecuación:
+\[
+    \mathcal{L}\{y''\} - 6\mathcal{L}\{y'\} + 13\mathcal{L}\{y\} = \mathcal{L}\{0\}
+\]
+
+Para \(\mathcal{L}\{y''\}\), \(\mathcal{L}\{y'\}\) y \(\mathcal{L}\{y\}\):
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - sy(0) - y'(0) \\
+    \mathcal{L}\{y'\}  & = sY(s) - y(0)            \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Considerando la condición inicial $y(0) = 0$ y $y'(0) = 3$, tenemos:
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - s(0) - 3 \\
+    \mathcal{L}\{y'\}  & = sY(s) - 0          \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Sustituyendo:
+
+\[
+    s^2Y(s) - 3 - 6sY(s) + 13Y(s) = 0
+\]
+
+\[
+    Y(s)(s^2 - 6s + 13) - 3 = 0
+\]
+
+\[
+    Y(s) = \frac{3}{(s^2 - 6s + 13)}
+\]
+
+\newpage
+
+\subsubsection{Problema 8}
+\[2y'' + 20y' + 51y = 0, \hspace{.5cm} y(0) = 2, y'(0) = 0\]
+
+Aplicamos la Transformada de Laplace a ambos lados de la ecuación:
+\[
+    2\mathcal{L}\{y''\} + 20\mathcal{L}\{y'\} + 51\mathcal{L}\{y\} = \mathcal{L}\{0\}.
+\]
+
+Para \(\mathcal{L}\{y''\}\), \(\mathcal{L}\{y'\}\) y \(\mathcal{L}\{y\}\):
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - sy(0) - y'(0) \\
+    \mathcal{L}\{y'\}  & = sY(s) - y(0)            \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Considerando la condición inicial $y(0) = 2$ y $y'(0) = 0$, tenemos:
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - s(2) - 0 \\
+    \mathcal{L}\{y'\}  & = sY(s) - 2          \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Sustituyendo:
+\[
+    2(s^2Y(s) - 2s) + 20(sY(s) - 2) + 51Y(s) = 0
+\]
+
+\[
+    2s^2Y(s) - 4s + 20sY(s) - 40 + 51Y(s) = 0
+\]
+
+\[
+    Y(s)(2s^2 + 20s + 51) - 4s - 40 = 0
+\]
+
+\[
+    Y(s)(2s^2 + 20s + 51) = 4s + 40
+\]
+
+\[
+    Y(s) = \frac{4s + 40}{2s^2 + 20s + 51}
+\]
+
+
+\newpage
+
+
+\subsubsection{Problema 9}
+
+\[y'' - y' = e^{t}cos(t), \hspace{.5cm} y(0) = 0, y'(0) = 0 \]
+
+Aplicamos la Transformada de Laplace a ambos lados de la ecuación:
+\[
+    \mathcal{L}\{y''\} - \mathcal{L}\{y'\} = \mathcal{L}\{e^t\cos(t)\}.
+\]
+
+Resolviendo $\mathcal{L}\{e^t\cos(t)\}$:
+
+Sabemos:
+
+\[
+    \mathcal{L}\{e^{at}\cos(bt)\} = \frac{s-a}{(s-a)^2 + b^2}
+\]
+
+\[
+    \mathcal{L}\{e^t\cos(t)\} = \frac{s-1}{(s-1)^2 + 1^2}
+\]
+
+Para \(\mathcal{L}\{y''\}\), \(\mathcal{L}\{y'\}\) y \(\mathcal{L}\{y\}\):
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - sy(0) - y'(0) \\
+    \mathcal{L}\{y'\}  & = sY(s) - y(0)
+\end{align*}
+
+Considerando la condición inicial $y(0) = 0$ y $y'(0) = 0$, tenemos:
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) \\
+    \mathcal{L}\{y'\}  & = sY(s)
+\end{align*}
+
+Sustituyendo:
+\[
+    s^2Y(s) - sY(s) = \frac{s-1}{(s-1)^2 + 1^2}
+\]
+
+\[
+    Y(s)(s^2 - s) = \frac{s-1}{(s-1)^2 + 1}
+\]
+
+\[
+    Y(s) = \frac{s-1}{(s^2 - s)((s-1)^2 + 1)}
+\]
+
+\[
+    Y(s) = \frac{s-1}{s(s - 1)((s-1)^2 + 1)}
+\]
+
+\[
+    Y(s) = \frac{1}{s((s-1)^2 + 1)}
+\]
+
+\[
+    Y(s) = \frac{1}{s^3 - 2s^2 + 2s}
+\]
+
+\[
+    Y(s) = \frac{1}{s(s^2 - 2s^1 + 2)}
+\]
+
+\[
+    Y(s) = \frac{1}{s((s-1)^2 + 1)}
+\]
+
+\[
+    \frac{1}{s((s-1)^2 + 1)} = \frac{A(s-1) + B}{(s-1)^2 + 1} + \frac{C}{s}
+\]
+
+donde $r = s-1$
+
+\[
+    \frac{Ar + B}{r^2 + 1} |^{r=s-1}
+\]
+
+\[
+    \frac{Ar(r+1) + B(r+1) + C(r^2 + 1)}{(r^2 + 1)(r + 1)}
+\]
+
+\[
+    \frac{Ar^2 + Ar + Br + B + Cr^2 + C}{(r^2 + 1)(r + 1)}
+\]
+
+\newpage
+
+
+\subsubsection{Problema 10}
+\[y'' - 2y' + 5y = 1 + t, \hspace{.5cm} y(0) = 0, y'(0) = 4\]
+
+Aplicamos la Transformada de Laplace a ambos lados de la ecuación:
+\[
+    \mathcal{L}\{y''\} - 2\mathcal{L}\{y'\} + 5\mathcal{L}\{y\} = \mathcal{L}\{1 + t\}
+\]
+
+\[
+    \mathcal{L}\{y''\} - 2\mathcal{L}\{y'\} + 5\mathcal{L}\{y\} = \frac{1}{s} + \frac{1}{s^2}
+\]
+
+Para \(\mathcal{L}\{y''\}\), \(\mathcal{L}\{y'\}\) y \(\mathcal{L}\{y\}\):
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - sy(0) - y'(0) \\
+    \mathcal{L}\{y'\}  & = sY(s) - y(0)            \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Considerando la condición inicial $y(0) = 0$ y $y'(0) = 4$, tenemos:
+
+\begin{align*}
+    \mathcal{L}\{y''\} & = s^2Y(s) - s(0) - 4 \\
+    \mathcal{L}\{y'\}  & = sY(s) - (0)        \\
+    \mathcal{L}\{y\}   & = Y(s)
+\end{align*}
+
+Sustituyendo:
+\[
+    s^2Y(s) - 4 - 2sY(s) + 5Y(s) = \frac{1}{s} + \frac{1}{s^2}
+\]
+
+\[
+    Y(s)(s^2 - 2s + 5) - 4 = \frac{1}{s} + \frac{1}{s^2}
+\]
+
+
+\[
+    Y(s) = \frac{1}{s(s^2 - 2s + 5)} + \frac{1}{s^2(s^2 - 2s + 5)} + \frac{4}{(s^2 - 2s + 5)}
+\]
+
+\newpage
+
+
+\section{Funcion de impulso}
+
+\[
+    \mathcal{L}\{f(t) S(t-c)\} =
+\]
+
+\[
+    S(t-c) =
+\]
 
 \end{document}
