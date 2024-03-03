@@ -1146,6 +1146,250 @@ Para calcular la Tau de Kendall, se siguen los siguientes pasos:
 \end{enumerate}
 
 La Tau de Kendall ofrece una medida robusta y fiable de la correlación ordinal, útil en análisis estadísticos donde las suposiciones de linealidad y normalidad no se cumplen, o cuando se trabaja con datos ordinales.
+\newpage
+\section{01/03/3034}
+
+\subsection{Tablas de contingencia}
+
+\textbf{1.5.3}
+
+\subsubsection*{Version 1}
+Dados los siguientes datos:
+
+\begin{itemize}
+    \item $r$: número de renglones
+    \item $c$: número de columnas
+\end{itemize}
+
+Las hipótesis son:
+
+\begin{itemize}
+    \item $H_0$: $F(x,y) = F(x)F(y)$
+    \item $H_1$: $F(x,y) \neq F(x)F(y)$
+\end{itemize}
+
+El estadístico de la prueba es:
+
+\[ \chi^2 = \sum \left( \frac{(Fo - Fe)^2}{Fe} \right) \sim \chi^2_{(r-1)(c-1)} \]
+
+Donde:
+
+\begin{itemize}
+    \item $Fo$: frecuencia observada
+    \item $Fe$: frecuencia esperada
+\end{itemize}
+
+Se rechaza $H_0$ si:
+
+\[ \chi^2 > \chi^2_{\alpha, (r-1)(c-1)} \]
+
+Se rechaza $H_0$ si el p-valor \( \alpha \):
+
+\[ p\text{-valor} = P(\chi^2_{(r-1)(c-1)} > \chi^2_{\text{estadístico}}) \]
+
+\subsubsection*{Version 2}
+
+ados dos eventos $X$ e $Y$, las hipótesis son:
+\begin{itemize}
+    \item $H_0$: $F(x,y) = F(x)F(y)$
+    \item $H_1$: $F(x,y) \neq F(x)F(y)$
+\end{itemize}
+
+El estadístico de la prueba es:
+\[ X^2 = \sum \frac{(Fo-FE)^2}{FE} \sim \chi^2_{(r-1)(c-1)} \]
+donde:
+\begin{itemize}
+    \item $r$ es el número de renglones
+    \item $c$ es el número de columnas
+\end{itemize}
+
+Se rechaza $H_0$ si:
+\[ X^2 > \chi^2_{\alpha, (r-1)(c-1)} \]
+
+Se rechaza $H_0$ si p-valor \( < \alpha \)
+\[ \text{p-valor} = P(X^2_{(r-1)(c-1)} > \text{estadístico}) \]
+
+\subsubsection{Ejemplo 9}
+
+Un total de \( n=309 \) defectos en muebles fueron registrados y los defectos fueron clasificados en 4 tipos: A, B, C y D. Al mismo tiempo, cada pieza de mueble fue identificada por la línea de producción en la que se elaboró. Verifica que los defectos son independientes de la línea de producción.
+
+\subsubsection*{Version Mike}
+Frecuencias observadas: $F_0$
+\begin{center}
+    \begin{tabular}{c c c c | c}
+        Tipos & 1  & 2  & 3   & suma \\
+        \hline
+        A     & 15 & 26 & 33  & 74   \\
+        B     & 21 & 31 & 17  & 69   \\
+        C     & 45 & 34 & 49  & 128  \\
+        D     & 13 & 5  & 20  & 38   \\
+        \hline
+        Suma  & 94 & 96 & 119 & 309
+    \end{tabular}
+\end{center}
+
+Frecuencias esperadas: $F_E$
+\begin{center}
+    \begin{tabular}{c c c c | c}
+        Tipos & 1                     & 2                     & 3   & suma \\
+        \hline
+        A     & $\frac{94(74)}{309}$  & $\frac{96(74)}{309}$  & ... & 74   \\
+        B     & $\frac{94(69)}{309}$  & $\frac{96(69)}{309}$  & ... & 69   \\
+        C     & $\frac{94(128)}{309}$ & $\frac{96(128)}{309}$ & ... & 128  \\
+        D     & $\frac{94(38)}{309}$  & $\frac{96(38)}{309}$  & ... & 38   \\
+        \hline
+        Suma  & 94                    & 96                    & 119
+    \end{tabular}
+\end{center}
+
+Frecuencias esperadas: $F_E$
+\begin{center}
+    \begin{tabular}{c c c c }
+        Tipos & 1     & 2     & 3     \\
+        \hline
+        A     & 22.51 & 22.99 & 28.49 \\
+        B     & 20.99 & 21.43 & 26.57 \\
+        C     & 38.94 & 39.76 & 49.29 \\
+        D     & 11.56 & 11.80 & 14.63 \\
+    \end{tabular}
+\end{center}
+
+\begin{equation}
+    X^2 = \frac{(15-22.51)^2}{22.51} + \frac{(26-22.99)^2}{22.99} + \dots + \frac{(20-14.63)^2}{14.63}
+\end{equation}
+
+\begin{equation}
+    X^2 = 2.50 + 0.39 + 0.71 + ... = 19.19
+\end{equation}
 
 
+\[
+    q_{(X^2)_{(r-1)(c-1)}^{1-\alpha}} = q_{(X^2_6)^(0.95)} = 12.59
+\]
+
+Se rechaza $H_0$ si
+
+\[X^2 > q_{(X^2_6)^0.95}\]
+
+\[19.19 > 12.59\]
+
+Se rechaza $H_0$, Por lo tanto, los tipos de defectos dependen de las líneas de producción.
+
+El p-valor se calcula como sigue:
+
+\begin{align*}
+    \text{p-valor} & = P\left(\chi^2 > 19.19\right)                                                                                             \\
+                   & = P\left(\frac{\chi^2 - E(\chi^2)}{\sqrt{\text{Var}(\chi^2)}} > \frac{19.19 - E(\chi^2)}{\sqrt{\text{Var}(\chi^2)}}\right) \\
+                   & = P\left(Z > \frac{19.19 - 6}{\sqrt{12}}\right)                                                                            \\
+                   & = P\left(Z > 3.81\right)                                                                                                   \\
+                   & = 1 - P\left(Z \leq 3.81\right)                                                                                            \\
+                   & = 1 - 0.9999 \approx 0
+\end{align*}
+
+Dado que el p-valor \( \leq \alpha = 0.05 \), entonces se acepta \( H_1 \).
+
+\subsubsection*{Version ChatGPT}
+
+\textbf{Enunciado}
+Para ello, se observaron las siguientes frecuencias de defectos:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l c c c c}
+        \hline
+        Tipo de Defecto & Línea 1 & Línea 2 & Línea 3 & Total \\
+        \hline
+        A               & 15      & 26      & 33      & 74    \\
+        B               & 21      & 31      & 17      & 69    \\
+        C               & 45      & 34      & 49      & 128   \\
+        D               & 13      & 5       & 20      & 38    \\
+        \hline
+        Total           & 94      & 96      & 119     & 309   \\
+        \hline
+    \end{tabular}
+    \caption{Frecuencias observadas (\( F_O \))}
+\end{table}
+
+Y se calcularon las frecuencias esperadas (\( F_E \)) bajo la hipótesis nula de independencia:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l c c c c}
+        \hline
+        Tipo de Defecto & Línea 1                         & Línea 2                         & Línea 3      \\
+        \hline
+        A               & \( \frac{94 \times 74}{309} \)  & \( \frac{96 \times 74}{309} \)  & \( \ldots \) \\
+        B               & \( \frac{94 \times 69}{309} \)  & \( \frac{96 \times 69}{309} \)  & \( \ldots \) \\
+        C               & \( \frac{94 \times 128}{309} \) & \( \frac{96 \times 128}{309} \) & \( \ldots \) \\
+        D               & \( \frac{94 \times 38}{309} \)  & \( \frac{96 \times 38}{309} \)  & \( \ldots \) \\
+        \hline
+    \end{tabular}
+    \caption{Frecuencias esperadas (\( F_E \))}
+\end{table}
+
+Luego, se procedió a calcular el estadístico de prueba \( X^2 \):
+
+\begin{equation}
+    X^2 = \sum \frac{(F_0 - F_E)^2}{F_E} = \frac{(15-22.51)^2}{22.51} + \frac{(26-22.99)^2}{22.99} + \ldots + \frac{(20-14.63)^2}{14.63} = 19.19
+\end{equation}
+
+Se compara el valor calculado con el valor crítico del estadístico \( \chi^2 \) para el nivel de significancia deseado y los grados de libertad correspondientes (\( (r-1)(c-1) \)):
+
+\[
+    \chi^2_{\text{crítico}, 0.95, 6} = 12.59
+\]
+
+La hipótesis nula \( H_0 \), que postula la independencia, se rechazará si el estadístico de prueba es mayor que el valor crítico:
+
+\[
+    19.19 > 12.59
+\]
+
+Dado que esto se cumple, se concluye que hay suficiente evidencia para rechazar la hipótesis nula, indicando que los defectos no son independientes de la línea de producción
+
+\subsection{Pruebas de una cola (Prueba de Mann-Whitney y Prueba de Wilcoxon)}
+
+Las hipótesis para la Prueba de Mann-Whitney son:
+\begin{align*}
+    H_0 & : E(X) = E(Y) \quad \text{vs} \quad H_1: E(X) < E(Y)    \\
+    H_0 & : E(X) \geq E(Y) \quad \text{vs} \quad H_1: E(X) < E(Y)
+\end{align*}
+
+Se rechaza \(H_0\) si:
+\begin{equation*}
+    \frac{T - E(T)}{\sqrt{\text{Var}(T)}} \leq z_{\alpha}
+\end{equation*}
+
+Para la Prueba Wilcoxon, las hipótesis son:
+\begin{align*}
+    H_0 & : E(X) = E(Y) \quad \text{vs} \quad H_1: E(X) > E(Y)    \\
+    H_0 & : E(X) \leq E(Y) \quad \text{vs} \quad H_1: E(X) > E(Y)
+\end{align*}
+
+Se rechaza \(H_0\) si:
+\begin{equation*}
+    \frac{T - E(T)}{\sqrt{\text{Var}(T)}} \geq z_{\alpha}
+\end{equation*}
+
+En ambos casos, \( T \) es el estadístico de prueba y \( z_{\alpha} \) es el valor crítico de la distribución normal estándar para un nivel de significancia \( \alpha \).
+
+
+\subsection{Pruebas que se deben usar en cada ejercicio de la tarea}
+
+\begin{enumerate}
+    \item Prueba de Mann-Whitney
+    \item No menciono
+    \item No menciono
+    \item No menciono
+    \item No menciono
+    \item No menciono
+    \item No menciono
+    \item Ejercicio 8 (Pistas)\\
+          $\tau_{x,y} = \frac{z(P-Q)}{n(n-1)} = \dots = 1 - \frac{4Q}{n(n-1)}$\\
+          $p+a = \frac{n(n-1)}{2}$
+    \item No menciono
+    \item No menciono
+\end{enumerate}
+\subsubsection*{Fin Unidad 1}
+\newpage
 \end{document}

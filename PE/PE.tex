@@ -9,6 +9,8 @@
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows, automata, positioning, quotes}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -676,7 +678,132 @@ Sustituyendo los valores, obtenemos:
 \[ m_k \approx 41.59 \]
 Por lo tanto, el número esperado de apuestas antes de la ruina del jugador A con una moneda cargada es aproximadamente \textbf{41.59} apuestas.
 
+\newpage
+
+\section{Cadenas de Markov}
+
+Objetivo: El alumno explicará las cadenas de Markov, sus propiedades de transición en una y varias unidades de tiempo, las ecuaciones de Chapman-Kolmogorov, el análisis matricial de estas probabilidades, y las clasificaciones de los estados utilizando la teoría de grafos. Asimismo, se abordará el comportamiento asintótico con el fin de aplicar estos conceptos a casos básicos.
+
+\vspace{.25cm}
+
+En términos intuitivos, una cadena de Markov es un tipo de proceso estocástico que posee un número finito de estados. Las probabilidades de transición a cada estado dependen únicamente del estado actual, no de la secuencia de eventos que condujo a él.
+
+\subsection*{Definición}
+Un proceso estocástico \( X_t \) tiene la propiedad de Markov si y solo si la probabilidad de transitar al estado \( j \) en el tiempo \( t+1 \), dado el estado actual \( i \) en el tiempo \( t \), es independiente de la trayectoria pasada. Esto se expresa matemáticamente como:
+\[ P(X_{t+1} = j | X_0 = k_0, X_1 = k_1, \ldots, X_{t-1} = k_{t-1}, X_t = i) = P(X_{t+1} = j | X_t = i) \]
+para \( t = 0, 1, 2, \ldots \).
+
+Esta propiedad, conocida como la propiedad Markoviana, establece que la probabilidad condicional de cualquier evento futuro, dados los eventos pasados y el estado actual, es independiente de los eventos pasados y depende únicamente del estado presente.
+
+\subsection*{Definición}
+Un proceso estocástico es una \textit{cadena de Markov} si satisface la propiedad Markoviana.
+
+\subsection{Probabilidades de Transición}
+
+Las probabilidades condicionales \( P(X_{t+1} = j | X_t = i) \) en una cadena de Markov se llaman probabilidades de transición (de un paso).
+
+Si para cada \( i \) y \( j \), se cumple que \( P(X_{t+1} = j | X_t = i) = P(X_1 = j | X_0 = i) \) para todo \( t \geq 1 \), entonces se dice que las probabilidades de transición de un paso son estacionarias. Es decir, tener probabilidades de transición estacionarias implica que las probabilidades de transición no cambian con el tiempo.
+
+Obsérvese además que la existencia de probabilidades de transición de un paso estacionarias, implica que para cada \( i \) y \( j \) y para todo \( n \geq 0 \), se tiene que
+\[ P(X_{t+n} = j | X_t = i) = P(X_n = j | X_0 = i) \]
+para todo \( t \geq 0 \).
+
+A estas probabilidades de transición se les llama probabilidades de transición de \( n \) pasos.
 
 \vspace{0.25cm}
+
+Para simplificar la notación de las probabilidades de transición estacionarias, sea
+\[ p_{ij} = P(X_{t+1} = j | X_t = i) \]
+\[ p_{ij}^{(n)} = P(X_{t+n} = j | X_t = i) \]
+
+Cuando \( n=1 \), observe que \( p_{ij}^{(1)} = p_{ij} \).
+
+Cuando \( n=0 \), \( p_{ij}^{(0)} \) es \( P(X_0 = j | X_0 = i) \) que es igual a 1 cuando \( i=j \) y 0 en otro caso.
+
+\newpage
+
+Estas probabilidades, como cualquier otra, deben ser no negativas y, como el proceso debe hacer una transición a algún estado, deben satisfacer las siguientes propiedades:
+
+\begin{enumerate}
+    \item \( p_{ij}^{(n)} \geq 0 \) para todo \( i, j \) y \( n=0,1,2,\ldots \)
+    \item \( \sum_{j=0}^{S} p_{ij}^{(n-1)} = 1 \) para todo \( i \), y \( n=0,1,2,\ldots \)
+\end{enumerate}
+
+\vspace{.25cm}
+
+Una notación conveniente para representar las probabilidades de transición de \( n \) pasos es la forma matricial:
+
+\[
+    \mathbf{P}^{(n)} =
+    \begin{pmatrix}
+        p_{00}^{(n)} & p_{01}^{(n)} & \cdots & p_{0m}^{(n)} \\
+        p_{10}^{(n)} & p_{11}^{(n)} & \cdots & p_{1m}^{(n)} \\
+        \vdots       & \vdots       & \ddots & \vdots       \\
+        p_{m0}^{(n)} & p_{m1}^{(n)} & \cdots & p_{mm}^{(n)}
+    \end{pmatrix}
+\]
+
+Esta es la \textit{Matriz de Transición} en \( n \) pasos.
+
+Cuando \( n=1 \), el superíndice \( n \) no se escribe y se hace referencia a esta como una matriz de transición simple.
+
+\subsection{Ejemplo}
+
+El clima en un pueblo puede cambiar rápidamente de un día a otro. Sin embargo, las posibilidades de tener un clima seco mañana, es de alguna forma, mayor si hoy está seco, es decir, si no llueve. En particular, la probabilidad de que mañana esté seco es de 0.8 si hoy está seco, pero es de solo 0.6 si hoy llueve. Estas probabilidades no cambian si se considera la información acerca del clima en los días anteriores a hoy.
+
+Defina espacio de estados, conjunto paramétrico e indique la matriz y el diagrama de transición.
+
+
+\subsection*{Espacio de Estados}
+Definimos el espacio de estados como:
+\[ S = \{ \text{Seco}, \text{Lluvioso} \} \]
+
+\subsection*{Conjunto Paramétrico}
+Las probabilidades de transición son las siguientes:
+\begin{align*}
+    p_{\text{seco, seco}}         & = 0.8 \\
+    p_{\text{seco, lluvioso}}     & = 0.2 \\
+    p_{\text{lluvioso, seco}}     & = 0.6 \\
+    p_{\text{lluvioso, lluvioso}} & = 0.4
+\end{align*}
+
+\subsection*{Matriz de Transición}
+La matriz de transición $P$ para el sistema es:
+\[ P = \begin{pmatrix}
+        0.8 & 0.2 \\
+        0.6 & 0.4
+    \end{pmatrix} \]
+
+\subsection*{Diagrama de Transición}
+El diagrama de transición no se puede representar gráficamente en este documento, pero se describe como sigue:
+\begin{itemize}
+    \item Dos estados: "Seco" y "Lluvioso".
+    \item Transiciones desde "Seco" a "Seco" con probabilidad 0.8, y de "Seco" a "Lluvioso" con probabilidad 0.2.
+    \item Transiciones desde "Lluvioso" a "Seco" con probabilidad 0.6, y de "Lluvioso" a "Lluvioso" con probabilidad 0.4.
+\end{itemize}
+
+\subsection{Ejemplo}
+
+Consideremos un profesor que decide si realizará un examen en su clase o no. El profesor nunca realiza exámenes en días consecutivos. Si un día no hay examen, entonces el profesor puede decidir realizar un examen el día siguiente con cierta probabilidad.
+
+\subsection*{Espacio de Estados}
+Definimos el espacio de estados como:
+\[ S = \{ \text{Examen}, \text{No Examen} \} \]
+
+\subsection*{Conjunto Paramétrico}
+Las probabilidades de transición son las siguientes:
+\begin{align*}
+    p_{\text{Examen, No Examen}}    & = 1   \\
+    p_{\text{Examen, Examen}}       & = 0   \\
+    p_{\text{No Examen, Examen}}    & = 0.5 \\
+    p_{\text{No Examen, No Examen}} & = 0.5
+\end{align*}
+
+\subsection*{Matriz de Transición}
+La matriz de transición \( P \) para el sistema es:
+\[ P = \begin{pmatrix}
+        0   & 1   \\
+        0.5 & 0.5
+    \end{pmatrix} \]
 
 \end{document}

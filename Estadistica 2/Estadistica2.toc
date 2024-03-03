@@ -34,3 +34,8 @@
 \contentsline {subsection}{\numberline {9.2}Coeficiente de Correlación de Spearman}{20}{subsection.9.2}%
 \contentsline {section}{\numberline {10}26/02/2024}{22}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Tau de Kendall}{22}{subsection.10.1}%
+\contentsline {section}{\numberline {11}01/03/3034}{24}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Tablas de contingencia}{24}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Ejemplo 9}{25}{subsubsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.2}Pruebas de una cola (Prueba de Mann-Whitney y Prueba de Wilcoxon)}{27}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Pruebas que se deben usar en cada ejercicio de la tarea}{27}{subsection.11.3}%

@@ -326,6 +326,64 @@ Despejamos \(Y(s)\):
     Y(s) = \frac{2s+9}{(s + 4)^2}
 \]
 
+\[\frac{2s+9}{(s + 4)^2} = \frac{A}{s+4} + \frac{B}{(s+4)^2}\]
+
+\[2s+9 = A(s+4) + B\]
+
+\[2s+9 = As+4A + B\]
+
+\[2s+9 = A(s+4) + B\]
+
+Para $s=-4$
+
+\[2(-4)+9 = A(-4+4) + B\]
+
+\[-8 + 9 = A(0) + B\]
+
+\[1 = B\]
+
+Como sabemos que $B=1$
+
+\[2s+9 = A(s+4) + 1\]
+
+Para $s=1$
+
+\[2(1)+9 = A(1+4) + 1\]
+
+\[11 = A5 + 1\]
+
+\[2 = A\]
+
+Por lo tanto los valores de $A$ y $B$ son
+
+\[A=2 \hspace{.5cm} B=1\]
+
+\[\frac{2s+9}{(s + 4)^2} = \frac{2}{s+4} + \frac{1}{(s+4)^2}\]
+
+Ahora aplicamos la tranfsormada inversa de laplace
+\begin{align*}
+    \mathcal{L}^{-1}\{\frac{2}{s+4}\} + \mathcal{L}^{-1}\{\frac{1}{(s+4)^2}\} = 2\mathcal{L}^{-1}\{\frac{1}{s+4}\} + \mathcal{L}^{-1}\{\frac{1}{(s+4)^2}\}
+\end{align*}
+
+Sabemos:
+
+\[ \mathcal{L}^{-1}[\frac{1}{s-a}] = e^{at} \hspace{1cm} \mathcal{L}^{-1}[\frac{1}{(s-a)^n}] = \frac{t^{n-1}e^{at}}{(n-1)!}\]
+
+Por lo tanto:
+
+\begin{align*}
+    \mathcal{L}^{-1}\left\{\frac{2}{s+4}\right\} + \mathcal{L}^{-1}\left\{\frac{1}{(s+4)^2}\right\} & = 2e^{-4t} + \frac{t^{2-1}e^{-4t}}{(2-1)!} \\
+                                                                                                    & = 2e^{-4t} + \frac{te^{-4t}}{1!}           \\
+                                                                                                    & = 2e^{-4t} + te^{-4t}                      \\
+                                                                                                    & = e^{-4t}(2+t)
+\end{align*}
+
+
+Podemos confirmar este resultado con Mathematica
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{../ED 2/image.png}
+\end{center}
 \newpage
 
 \subsubsection{Problema 2}
@@ -364,6 +422,59 @@ Resolviendo para \(Y(s)\):
 \[
     Y(s) = \frac{1}{s(s - 1)} - \frac{1}{(s-1)^3}
 \]
+
+Ahora debemos buscar las fracciones parciales de:
+\[
+    \frac{1}{s(s - 1)} - \frac{1}{(s-1)^3}
+\]
+
+Calculamos las fracciones parciales de $\frac{1}{s(s - 1)}$
+
+\[ \frac{1}{s(s - 1)} = \frac{A}{s} + \frac{B}{s-1}\]
+
+\[ 1 = A(s-1) + Bs\]
+
+Para $s=0$
+
+\[ 1 = A(0-1) + B(0)\]
+
+\[ 1 = -A\]
+
+\[A = -1\]
+
+Para $s=1$
+
+\[ 1 = A(1-1) + B(1)\]
+
+\[ 1 = A(0) + B\]
+
+\[ 1 = B\]
+
+\[ \frac{1}{s(s - 1)} = -\frac{1}{s} + \frac{1}{s-1}\]
+
+Ahora aplicamos la tranfsormada inversa de laplace
+
+\begin{align*}
+    -\mathcal{L}^{-1}\{\frac{1}{s}\} +  \mathcal{L}^{-1}\{\frac{1}{s-1}\} - \mathcal{L}^{-1}\{\frac{1}{(s-1)^3}\}
+\end{align*}
+
+Sabemos:
+
+\[ \mathcal{L}^{-1}[\frac{a}{s}] = a \hspace{1cm} \mathcal{L}^{-1}[\frac{1}{(s-a)^n}] = \frac{t^{n-1}e^{at}}{(n-1)!} \hspace{1cm} \mathcal{L}^{-1}[\frac{1}{s-a}] = e^{at}\]
+
+\begin{align*}
+    -\mathcal{L}^{-1}\{\frac{1}{s}\}       & = -1                  \\
+    \mathcal{L}^{-1}\{\frac{1}{s-1}\}      & = e^t                 \\
+    -\mathcal{L}^{-1}\{\frac{1}{(s-1)^3}\} & = -\frac{t^2e^{t}}{2} \\
+\end{align*}
+
+\[-1 + e^t - \frac{t^2e^t}{2}\]
+
+Podemos confirmar este resultado con Mathematica
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{../ED 2/image2.png}
+\end{center}
 
 \newpage
 
@@ -414,8 +525,60 @@ Despejando $Y(s)$
     Y(s) = \frac{s + 3}{(s + 1)^2}
 \]
 
-\newpage
+Calculamos las fracciones parciales
 
+\[
+    \frac{s + 3}{(s + 1)^2} = \frac{A}{(s + 1)} + \frac{B}{(s + 1)^2}
+\]
+
+\[s+3 = A(s+1) + B\]
+
+Para $s=-1$
+
+\[-1+3 = A(0) + B\]
+\[2 = B\]
+
+Para $s-3$
+
+\[-3+3 = A(-3+1) + B\]
+
+\[0 = A(-2) + B\]
+
+Sabemos que $B=2$
+\[0 = A(-2) + 2\]
+\[-2A = -2\]
+\[A = 1\]
+
+\[
+    Y(s) = \frac{s + 3}{(s + 1)^2} = \frac{1}{s+1} + \frac{2}{(s+1)^2}
+\]
+
+Aplicamos la tranformada inversa de laplace
+
+\begin{align*}
+    \mathcal{L}^{-1}\{\frac{1}{s+1}\} +  2\mathcal{L}^{-1}\{\frac{1}{(s+1)^2}\}
+\end{align*}
+
+Sabemos:
+
+\[ \mathcal{L}^{-1}[\frac{1}{(s-a)^n}] = \frac{t^{n-1}e^{at}}{(n-1)!} \hspace{1cm} \mathcal{L}^{-1}[\frac{1}{s-a}] = e^{at}\]
+
+\begin{align*}
+    \mathcal{L}^{-1}\{\frac{1}{s+1}\}      & = e^{-t}   \\
+    2\mathcal{L}^{-1}\{\frac{1}{(s+1)^2}\} & = 2te^{-t} \\
+\end{align*}
+
+La solucion es:
+
+\[e^{-t} + 2te^{-t} = e^{-t}(1+2t)\]
+
+Podemos confirmar este resultado con Mathematica
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{../ED 2/image3.png}
+\end{center}
+
+\newpage
 
 \subsubsection{Problema 4}
 \[
@@ -464,6 +627,20 @@ Despejamos \(Y(s)\):
 \begin{equation*}
     Y(s) = \frac{6}{(s-2)^6}.
 \end{equation*}
+
+Aplicamos la transformada inversa de Laplace:
+\begin{align*}
+    \mathcal{L}^{-1}\left[\frac{1}{(s-a)^n}\right]  & = \frac{t^{n-1}e^{at}}{(n-1)!} \\
+    6\mathcal{L}^{-1}\left[\frac{1}{(s-2)^6}\right] & = 6\frac{t^{5}e^{2t}}{5!}      \\
+                                                    & = 6\frac{t^{5}e^{2t}}{120}     \\
+                                                    & = \frac{t^{5}e^{2t}}{20}
+\end{align*}
+
+Podemos confirmar este resultado con Mathematica
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{../ED 2/image4.png}
+\end{center}
 
 
 \newpage
@@ -515,10 +692,79 @@ Sustituyendo:
 \]
 
 \[
-    Y(s) = \frac{1}{s^2(s-3)^2} + \frac{1}{(s-3)^2}
+    Y(s)(s-3)^2 = \frac{1+s^2}{s^2}
 \]
 
+\[
+    Y(s) = \frac{1+s^2}{s^2(s-3)^2}
+\]
 
+Calculamos las fracciones parciales
+
+\[\frac{1+s^2}{s^2(s-3)^2} = \frac{A}{s} + \frac{B}{s^2} + \frac{C}{(s-3)} + \frac{D}{(s-3)^2}\]
+
+\[1+s^2 = As(s-3)^2 + B(s-3)^2 + Cs^2(s-3) + Ds^2\]
+
+Expandiendo:
+
+\[1+s^2 = As^3-6As^2+9As+Bs^2-6Bs+9B+Cs^3-3Cs^2+Ds^2\]
+\[1+s^2 = (A+C)s^3+(-6A+B-3C+D)s^2 + (9A-6B)s +9B\]
+
+\begin{align*}
+    A+C        & = 0 \\
+    -6A+B-3C+D & = 1 \\
+    9A-6B      & = 0 \\
+    9B         & =1
+\end{align*}
+
+DE este sistema observamos:
+
+\[B=\frac{1}{9}\]
+
+Sustituyendo arriba
+
+\[9A - 6(\frac{1}{9}) = 0\]
+\[9A = \frac{6}{9}\]
+\[A = \frac{6}{81}\]
+\[A = \frac{2}{27}\]
+
+Sustituyendo en la primera expresion
+
+\[A + C = 0\]
+\[\frac{2}{27} + C = 0\]
+\[ C = -\frac{2}{27}\]
+
+Resolviendo la ultima expresion
+
+\[-6A+B-3C+D = 1\]
+\[-6(\frac{2}{27})+\frac{1}{9}-3(-\frac{2}{27})+D = 1\]
+\[-\frac{12}{27} + \frac{1}{9} + \frac{6}{27} + D = 1\]
+\[-\frac{12}{27} + \frac{1}{9} + \frac{6}{27} + D = 1\]
+\[-\frac{1}{9} + D = 1\]
+\[ D = 1 + \frac{1}{9} = \frac{10}{9}\]
+
+\[\frac{1+s^2}{s^2(s-3)^2} = \frac{2/27}{s} + \frac{1/9}{s^2} + \frac{-2/27}{(s-3)} + \frac{10/9}{(s-3)^2}\]
+
+Aplicar la tranformada inversa de laplace
+
+Sabemos:
+
+\[ \mathcal{L}^{-1}[\frac{a}{s}] = a \hspace{1cm} \mathcal{L}^{-1}[\frac{1}{(s-a)^n}] = \frac{t^{n-1}e^{at}}{(n-1)!} \hspace{1cm} \mathcal{L}^{-1}[\frac{1}{s-a}] = e^{at} \hspace{1cm} \mathcal{L}^{-1}\left[\frac{1}{s^n}\right] = \frac{t^{n-1}}{(n-1)!}
+\]
+
+\[\mathcal{L}^{-1}[\frac{2/27}{s}] + \mathcal{L}^{-1}[\frac{1/9}{s^2}] + \mathcal{L}^{-1}[\frac{-2/27}{(s-3)}] + \mathcal{L}^{-1}[\frac{10/9}{(s-3)^2}]\]
+
+\begin{align*}
+    \mathcal{L}^{-1}[\frac{2/27}{s}]        & = \frac{2}{27}                                            \\
+    \mathcal{L}^{-1}[\frac{1/9}{s^2}]       & = \frac{1}{9} \cdot \frac{t^{2-1}}{(2-1)!} = \frac{1}{9}t \\
+    -2/27\mathcal{L}^{-1}[\frac{1}{(s-3)}]  & = \frac{-2}{27}e^{3t}                                     \\
+    10/9\mathcal{L}^{-1}[\frac{1}{(s-3)^2}] & = \frac{10}{9}\frac{te^{3t}}{1}
+\end{align*}
+
+La tranformada inversa de laplace completa es:
+
+\[\frac{2}{27} + \frac{1}{9}t - \frac{2}{27}e^{3t} + \frac{10}{9}te^{3t}
+\]
 \newpage
 
 
@@ -551,26 +797,60 @@ Considerando la condición inicial $y(0) = 1$ y $y'(0) = 0$, tenemos:
 
 Sustituyendo:
 
+\begin{align*}
+    s^2Y(s) - s - 4(sY(s) - 1) + 4Y(s) & = \frac{6}{s^4}                 \\
+    s^2Y(s) - s - 4sY(s) + 4 + 4Y(s)   & = \frac{6}{s^4}                 \\
+    s^2Y(s) - 4sY(s) + 4 + 4Y(s)       & = \frac{6}{s^4} + s             \\
+    Y(s)(s^2 - 4s + 4) + 4             & = \frac{6}{s^4} + s             \\
+    Y(s)(s-2)^2                        & = \frac{6}{s^4} + s - 4         \\
+    Y(s)(s-2)^2                        & = \frac{s^5-4s^4+6}{s^4}        \\
+    Y(s)                               & = \frac{s^5-4s^4+6}{s^4(s-2)^2}
+\end{align*}
+
+
+Buscamos las fracciones parciales de esta expresion
+
+\[\frac{s^5-4s^4+6}{s^4(s-2)^2} = \frac{A}{s} + \frac{B}{s^2} + \frac{C}{s^3} + \frac{D}{s^4} + \frac{E}{s-2} + \frac{F}{(s-2)^2}\]
+
+podemos calcular las fracciones parciales con \texttt{Mathematica}
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{../ED 2/image5.png}
+\end{center}
+
 \[
-    s^2Y(s) - s - 4(sY(s) - 1) + 4Y(s) = \frac{6}{s^4}
+    \frac{13}{8 (s-2)^2} + \frac{1}{4 (s-2)} + \frac{3}{2 s^4} + \frac{3}{2 s^3} + \frac{9}{8 s^2} + \frac{3}{4 s}
+\]
+
+Calculamos la inversa
+\[\mathcal{L}^{-1}[\frac{13}{8 (s-2)^2}] + \mathcal{L}^{-1}[\frac{1}{4 (s-2)}] + \mathcal{L}^{-1}[\frac{3}{2 s^4}] + \mathcal{L}^{-1}[\frac{3}{2 s^3}] + + \mathcal{L}^{-1}[\frac{9}{8 s^2}] + \mathcal{L}^{-1}[\frac{3}{4 s}]\]
+
+\[
+    \mathcal{L}^{-1}\left[\frac{13}{8 (s-2)^2}\right] = \mathcal{L}^{-1}\left[\frac{13}{8}\cdot\frac{1}{(s-2)^2}\right] = \frac{13}{8}e^{2t}t \\
+\]
+
+\[    \mathcal{L}^{-1}\left[\frac{1}{4 (s-2)}\right] = \mathcal{L}^{-1}\left[\frac{1}{4}\cdot\frac{1}{s-2}\right] = \frac{1}{4}e^{2t} \\
+\]
+
+\[\mathcal{L}^{-1}\left[\frac{3}{2 s^4}\right] = \mathcal{L}^{-1}\left[\frac{3}{2}\cdot\frac{1}{s^4}\right] = \frac{3}{2}\cdot\frac{t^3}{3!} = \frac{t^3}{4} \\
 \]
 
 \[
-    s^2Y(s) - s - 4sY(s) - 4 + 4Y(s) = \frac{6}{s^4}
+    \mathcal{L}^{-1}\left[\frac{3}{2 s^3}\right] = \mathcal{L}^{-1}\left[\frac{3}{2}\cdot\frac{1}{s^3}\right] = \frac{3}{2}\cdot\frac{t^2}{2!} = \frac{3t^2}{4} \\
 \]
 
 \[
-    Y(s)(s^2 - 4s + 4) - s = \frac{6}{s^4}
+    \mathcal{L}^{-1}\left[\frac{9}{8 s^2}\right] = \mathcal{L}^{-1}\left[\frac{9}{8}\cdot\frac{1}{s^2}\right] = \frac{9}{8}\cdot\frac{t}{1!} = \frac{9t}{8} \\
 \]
 
 \[
-    Y(s)(s-2)^2 = \frac{6}{s^4} + s
+    \mathcal{L}^{-1}\left[\frac{3}{4 s}\right] = \mathcal{L}^{-1}\left[\frac{3}{4}\cdot\frac{1}{s}\right] = \frac{3}{4}
 \]
 
-\[
-    Y(s) = \frac{6}{s^4(s-2)^2} + \frac{1}{s(s-2)^2}
-\]
-
+\begin{align*}
+    y(t) &= \mathcal{L}^{-1}\left[\frac{13}{8 (s-2)^2}\right] + \mathcal{L}^{-1}\left[\frac{1}{4 (s-2)}\right] + \mathcal{L}^{-1}\left[\frac{3}{2 s^4}\right] + \mathcal{L}^{-1}\left[\frac{3}{2 s^3}\right] + \mathcal{L}^{-1}\left[\frac{9}{8 s^2}\right] + \mathcal{L}^{-1}\left[\frac{3}{4 s}\right] \\
+    &= \frac{13}{8}e^{2t}t + \frac{1}{4}e^{2t} + \frac{t^3}{4} + \frac{3t^2}{4} + \frac{9t}{8} + \frac{3}{4}
+\end{align*}
 
 \newpage
 
@@ -720,6 +1000,12 @@ Sustituyendo:
 \]
 
 \[
+    Y(s) = \frac{1}{s(s^2-2s+2)}
+\]
+
+Espacio
+
+\[
     Y(s) = \frac{1}{s(s^2 - 2s^1 + 2)}
 \]
 
@@ -784,13 +1070,19 @@ Sustituyendo:
     Y(s)(s^2 - 2s + 5) - 4 = \frac{1}{s} + \frac{1}{s^2}
 \]
 
+\[
+    Y(s)(s^2 - 2s + 5) = \frac{1}{s} + \frac{1}{s^2} + 4
+\]
 
 \[
-    Y(s) = \frac{1}{s(s^2 - 2s + 5)} + \frac{1}{s^2(s^2 - 2s + 5)} + \frac{4}{(s^2 - 2s + 5)}
+    Y(s)(s^2 - 2s + 5) = \frac{4s^2+s+1}{s^2}
+\]
+
+\[
+    Y(s) = \frac{4s^2+s+1}{s^2(s^2 - 2s + 5)}
 \]
 
 \newpage
-
 
 \section{Funcion de impulso}
 
