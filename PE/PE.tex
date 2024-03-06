@@ -801,9 +801,126 @@ Las probabilidades de transición son las siguientes:
 
 \subsection*{Matriz de Transición}
 La matriz de transición \( P \) para el sistema es:
-\[ P = \begin{pmatrix}
+\[
+    P = \begin{pmatrix}
         0   & 1   \\
         0.5 & 0.5
-    \end{pmatrix} \]
+    \end{pmatrix}
+\]
+
+\section{Problemas de transición}
+
+\subsection{Vector de Probabilidad Inicial}
+
+El estado en que un proceso empieza puede conocerse definitivamente o puede decidirse por una regla de probabilidades. En cualquiera de los casos, deberá establecerse un vector de probabilidad inicial, tal que \( \mathbf{p} = (a_1, a_2, \ldots, a_m) \), en el que los elementos \( a_i \) son probabilidades de que el estado inicial del proceso sea \( s_i \).
+
+\subsubsection{Ejemplo}
+
+\begin{enumerate}
+    \item Si se tira una moneda normal, y se anota cada vez que sale cara o cruz, estaría claro que el vector \( \mathbf{a} = \left(\frac{1}{2}, \frac{1}{2}\right) \).
+    \item En el ejemplo de la fila de 5 asientos: A, B, C, D, E, si el proceso inicia en el estado C, el vector \( \mathbf{a} = (0, 0, 1, 0, 0) \).
+    \item De una baraja estándar de 52 cartas, la probabilidad de seleccionar cualquier carta específica es la misma. Por lo tanto, el vector de probabilidad inicial sería:
+          \[ \mathbf{a} = \left(\frac{1}{52}, \frac{1}{52}, \ldots, \frac{1}{52}\right) \]
+    \item En un proceso de Markov con tres estados \( s_1, s_2, s_3 \) y suponiendo que el sistema comienza en el estado \( s_2 \) con certeza, el vector de probabilidad inicial sería:
+          \[ \mathbf{a} = (0, 1, 0) \]
+\end{enumerate}
+
+\subsection*{Probabilidad de cualquier sucesión dada}
+
+El cálculo de esta probabilidad, conociendo la secuencia de estados que se han presentado, dependerá del tipo de problema que estudiemos:
+
+\subsection*{Lanzamiento de una moneda}
+Para el caso de la moneda, si al lanzarla 6 veces, la secuencia es cara, cruz, cara, cara, cruz, cara, la probabilidad de esta sucesión (por ser eventos independientes) sería:
+\begin{equation}
+    P(\text{cara, cruz, cara, cara, cruz, cara}) = P(\text{cara})^4 \cdot P(\text{cruz})^2 = \left(\frac{1}{2}\right)^4 \cdot \left(\frac{1}{2}\right)^2 = \frac{1}{64}
+\end{equation}
+
+\subsection*{Experimento del asiento}
+Para el caso del experimento del asiento, en donde los eventos dependen de la posición final del proceso si se tuviera la sucesión de estados C, D, C, B, A, A, A, la probabilidad de la sucesión estaría dada por:
+\begin{equation}
+    P(C, D, C, B, A, A, A) = P(C) \cdot P_{CD} \cdot P_{DC} \cdot P_{CB} \cdot P_{BA} \cdot P_{AA} \cdot P_{AA} = \left(\frac{1}{2}\right)^1 \cdot \left(\frac{1}{2}\right)^1 \cdot \left(\frac{1}{2}\right)^1 \cdot \left(\frac{1}{2}\right)^1 \cdot 1 \cdot 1 = \frac{1}{16}
+\end{equation}
+
+\subsection*{Definición de una Cadena de Markov Finita y Estacionaria}
+
+Una cadena estacionaria y finita de Markov queda completamente definida por los siguientes elementos:
+\begin{enumerate}
+    \item Un espacio de estados finito.
+    \item Una matriz \( P \) de probabilidades de transición de un solo paso estacionaria.
+    \item Un vector de probabilidad inicial \( \mathbf{a} \).
+          % Aquí puedes agregar el cuarto elemento si lo necesitas
+\end{enumerate}
+
+\section{Ecuaciones de Chapman Kolmogorov}
+
+Estas ecuaciones proporcionan un método para calcular las probabilidades de transición de ``\(n\)'' pasos:
+\[
+    P_{ij}^{(n)} = \sum_{k=0}^{m} P_{ik}^{(m)} \cdot P_{kj}^{(n-m)} \quad \text{para toda } i, j, n \text{ y } 0 \leq m \leq n
+\]
+
+Estas ecuaciones señalan que al ir del estado \(i\) al estado \(j\) en ``\(n\)'' pasos, el proceso estará en algún estado \(k\) después de exactamente \(m\) pasos (menor que \(n\)). Así, \(P_{ik}^{(m)}\) es la probabilidad condicional de que, si se comienza en el estado \(i\), el proceso vaya al estado \(k\) después de \(m\) pasos y después al estado \(j\) en \(n-m\) pasos. Al resumir estas probabilidades sobre todos los estados posibles \(k\) se obtendría \(P_{ij}^{(n)}\).
+
+Los casos especiales de \( m=1 \) y \( m=n-1 \) conducen a las expresiones:
+
+\begin{equation}
+    P_{ij}^{(n)} = \sum_{k=0}^{m} P_{ik}^{(1)} \cdot P_{kj}^{(n-1)}
+\end{equation}
+
+\begin{equation}
+    P_{ij}^{(n)} = \sum_{k=0}^{m} P_{ik}^{(n-1)} \cdot P_{kj}^{(1)}
+\end{equation}
+
+De lo cual resulta que las probabilidades de transición de \( n \) pasos se pueden obtener a partir de las probabilidades de transición de un paso, de manera recursiva.
+
+Para \( n=2 \), estas expresiones se vuelven
+\begin{equation}
+    P_{ij}^{(2)} = \sum_{k=0}^{m} P_{ik}^{(1)} \cdot P_{kj}^{(1)}
+\end{equation}
+que es la fórmula del producto de una matriz de transición consigo misma, esto es:
+\begin{equation}
+    P = P \cdot P = P^2
+\end{equation}
+
+Generalizando, se llega entonces a concluir que la matriz de transiciones de \( n \) pasos puede obtenerse elevando la matriz de transición de un paso a la potencia \( n \).
+
+\subsection*{Ejemplo}
+
+Tomando como base el ejemplo del detergente Colgate, cuya matriz de transición es:
+\[
+    P = \begin{bmatrix}
+        0.75 & 0.25 \\
+        0.45 & 0.55
+    \end{bmatrix}
+\]
+
+Suponga que la directiva de la compañía desea saber el comportamiento de las probabilidades de transición durante los dos primeros meses:
+\[
+    P^{(2)} = P \cdot P= \begin{bmatrix}
+        0.675 & 0.325 \\
+        0.585 & 0.415
+    \end{bmatrix}
+\]
+
+\subsection*{PROBABILIDADES DE TRANSICIÓN INCONDICIONALES}
+
+Se ha hecho notar que las probabilidades de transición de uno o \(n\) pasos son probabilidades condicionales, es decir \(P_{ij}^{(n)} = P(X_{n} = j | X_{0} = i)\).
+
+Si se desea la probabilidad incondicional \(P(X_{n} = j)\), se usará el vector de estado inicial \(\vec{a}\), de tal manera que esta probabilidad se calcularía:
+
+\[
+    P(X_{n} = j) = a_{0}P_{0j}^{(n)} + a_{1}P_{1j}^{(n)} + \ldots + a_{m}P_{mj}^{(n)}
+\]
+
+Retomando el ejemplo de Colgate, si la directiva quisiera saber si conviene continuar con la promoción estos dos meses si se sabe que hasta el momento el 50\% de las personas usan su detergente
+
+\[
+    \vec{a} = (0.50, 0.50)
+\]
+
+\[
+    P(X_{2} = U) = 0.5(0.675) + 0.5(0.585) = 0.63
+\]
+
+Esto implicaría que el 63\% lo usaría después de dos meses, lo que indica que sí conviene seguir con la promoción.
 
 \end{document}

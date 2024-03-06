@@ -30,3 +30,7 @@
 \contentsline {subsection}{\numberline {9.1}Probabilidades de Transición}{15}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Ejemplo}{16}{subsection.9.2}%
 \contentsline {subsection}{\numberline {9.3}Ejemplo}{17}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Problemas de transición}{17}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Vector de Probabilidad Inicial}{17}{subsection.10.1}%
+\contentsline {subsubsection}{\numberline {10.1.1}Ejemplo}{18}{subsubsection.10.1.1}%
+\contentsline {section}{\numberline {11}Ecuaciones de Chapman Kolmogorov}{19}{section.11}%
