@@ -187,7 +187,6 @@ Por lo anto las distribuciones son iguales (No se rechaza $H_0$), se acepta $H_0
 \section{Problema 5}
 Los resultados de un experimento para investigar el reconocimiento de productos, durante tres campañas publicitarias, se muestran en la siguiente tabla. Las respuestas fueron el porcentaje de 400 adultos que estaban familiarizados con el producto recién anunciado. La gráfica de probabilidad normal indicó que los datos no eran aproximadamente normales y debía usarse otro método de análisis. ¿Hay una diferencia significativa entre las tres distribuciones poblacionales de donde vinieron estas muestras?
 
-
 \begin{center}
     \begin{tabular}{c |c |c}
         \multicolumn{3}{c}{Campaña} \\
@@ -201,6 +200,46 @@ Los resultados de un experimento para investigar el reconocimiento de productos,
     \end{tabular}
 \end{center}
 
+\subsection*{Solución}
+
+Como tenemos tres muestras, las purebas de Whitney y Wilcoxon quedan descartadas, usaremos una prueba de de Kruskal-Wallis
+
+\textbf{Asignacion de rangos}
+
+\begin{center}
+    \begin{tabular}{c |c |c}
+        \multicolumn{3}{c}{Campaña}              \\
+        \hline
+        1            & 2          & 3            \\
+        $.33_{11.5}$ & $.28_{6}$  & $.21_{1.5}$  \\
+        $.29_{7}$    & $.41_{15}$ & $.30_{8}$    \\
+        $.21_{1.5}$  & $.34_{13}$ & $.26_{4}$    \\
+        $.32_{10}$   & $.39_{14}$ & $.33_{11.5}$ \\
+        $.25_{3}$    & $.27_{5}$  & $.31_{9}$    \\
+    \end{tabular}
+\end{center}
+
+\begin{table}[ht]
+    \centering
+    \caption{\textbf{Número de observaciones y suma de rangos}}
+    \begin{tabular}{cccc}
+        \toprule
+        1          & 2          & 3          \\
+        \midrule
+        $n_1 = 5$  & $n_2 = 5$  & $n_3 = 5$  \\
+        $R_1 = 33$ & $R_2 = 53$ & $R_3 = 34$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\[ H = \frac{12}{15 \times 16} \left(\frac{33^2}{5} + \frac{53^2}{5} + \frac{34^2}{5} \right) - 3(15 + 1) = 2.5399 \]
+
+Se rechaza $H_0$ si
+
+\[H > q_{X^{2}_{k-1}}(1 - \alpha)\]
+\[2.5399 > q_{X^{2}_{2}}(0.95) = 5.991\]
+
+Se rechaza \(H_0\), no hay evidencia suficiente para afirmar que existen diferencias significativas entre las distribuciones poblacionales de las tres campañas publicitarias.Esto significa que, las tres campañas parecen ser igualmente efectivas.
 
 \section{Problema 6}
 En un estudio reciente que involucró una muestra aleatoria de 300 accidentes automovilísticos, se clasificó la información de acuerdo con el tamaño del automóvil.

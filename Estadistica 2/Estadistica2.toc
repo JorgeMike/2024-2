@@ -39,5 +39,4 @@
 \contentsline {subsubsection}{\numberline {11.1.1}Ejemplo 9}{26}{subsubsection.11.1.1}%
 \contentsline {subsection}{\numberline {11.2}Pruebas de una cola (Prueba de Mann-Whitney y Prueba de Wilcoxon)}{28}{subsection.11.2}%
 \contentsline {subsection}{\numberline {11.3}Pruebas que se deben usar en cada ejercicio de la tarea}{28}{subsection.11.3}%
-\contentsline {section}{\numberline {12}04/03/2024}{29}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Introduccion a python}{29}{subsection.12.1}%
+\contentsline {section}{\numberline {12}11/03/2024}{29}{section.12}%

@@ -269,9 +269,198 @@ Definimos el \textbf{espacio de estados} \( S \) como:
 \[ S = \{ \text{Colgate}, \text{Otro} \} \]
 
 La \textbf{matriz de transición} \( P \) es:
-\[ P = \begin{pmatrix}
+\[
+    P = \begin{pmatrix}
         0.75 & 0.25 \\
         0.45 & 0.55 \\
-    \end{pmatrix} \]
+    \end{pmatrix}
+\]
+
+\section{Practica 4}
+
+\subsection*{Problema 1}
+
+Suponga que hay 3 periódicos dominicales: Excelsior, El Universal y La Prensa.
+Y suponga además que cada persona cada domingo compra solo uno de ellos. Supongase los siguiente porcentajes de cambio de periódico al paso de los años
+
+\begin{itemize}
+    \item[a)] 80\% siguen comprando el mismo periódico de un año para otro
+    \item[b)] De los lectores de Excelsior, el 15\% cambia a El Universal
+    \item[c)] De los lectores de El Universal el 10\% cambia a La Prensa
+    \item[d)] De los lectores de La Prensa, el 8\% cambian a Excelsior
+\end{itemize}
+
+Escriba la matriz de transición de un y de 3 pasos. Determine las probabilidades de las siguientes sucesiones suponiendo que el primero de los periódicos de las series tiene una probabilidad de 1:
+
+\begin{enumerate}
+    \item Excelsior-El Universal-La Prensa
+    \item La Prensa-El Universal-Excelsior
+    \item El Universal-Excelsior-La Prensa
+\end{enumerate}
+
+\subsubsection*{Solucion}
+
+\begin{itemize}
+    \item $P(E \rightarrow E) = 80\%$,
+    \item $P(E \rightarrow U) = 15\%$,
+    \item $P(E \rightarrow P) = 5\%$, dado que $100\% - 80\% - 15\% = 5\%$,
+    \item $P(U \rightarrow U) = 80\%$,
+    \item $P(U \rightarrow P) = 10\%$,
+    \item $P(U \rightarrow E) = 10\%$, dado que $100\% - 80\% - 10\% = 10\%$,
+    \item $P(P \rightarrow P) = 80\%$,
+    \item $P(P \rightarrow E) = 8\%$,
+    \item $P(P \rightarrow U) = 12\%$, dado que $100\% - 80\% - 8\% = 12\%$.
+\end{itemize}
+
+Esto nos da la matriz de transición \(P\) para 1 paso (en forma de porcentaje):
+
+\[ P = \begin{bmatrix} 0.8 & 0.15 & 0.05 \\ 0.1 & 0.8 & 0.1 \\ 0.08 & 0.12 & 0.8 \end{bmatrix} \]
+
+La matriz de transición de 3 pasos, obtenida elevando la matriz de 1 paso al cubo, es:
+
+\[ P^3 = \begin{bmatrix} 0.5594 & 0.30705 & 0.13355 \\ 0.2143 & 0.5786 & 0.2071 \\ 0.18488 & 0.26292 & 0.5522 \end{bmatrix} \]
+
+\begin{enumerate}
+    \item Excelsior-El Universal-La Prensa, $P(E \rightarrow U) * P(U \rightarrow P) = 1.5\%$
+    \item La Prensa-El Universal-Excelsior $P(P \rightarrow U) * P(U \rightarrow E) = 1.2\%$
+    \item El Universal-Excelsior-La Prensa $P(U \rightarrow E) * P(E \rightarrow P) = 0.05\%$
+\end{enumerate}
+
+\subsection*{Problema 2}
+
+Tres supermercados locales x, y, z compiten por los precios; una investigación descubre que cada mes el cambio de supermercados se da en las siguientes proporciones:
+\begin{itemize}
+    \item[a)] X conserva el 80\% de sus clientes y gana 10\% de los de Y y 2\% de los de Z
+    \item[b)] Y conserva el 70\% de sus clientes, gana 14\% de los de X y 8\% de los de Z
+    \item[c)] Z conserva el 90\% de sus clientes, gana 6\% de X y 20\% de Y
+\end{itemize}
+
+Obtener la matriz de transición para el porcentaje de cambios por mes. ¿Cuál es porcentaje de clientes que tendrá cada supermercado en septiembre, suponiendo que la matriz calculada para el mes de junio?
+
+\subsubsection*{Solucion}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|c c c|}
+        \hline
+          & x    & y    & z    \\ \hline
+        x & 0.80 & 0.14 & 0.06 \\
+        y & 0.10 & 0.70 & 0.20 \\
+        z & 0.02 & 0.08 & 0.90 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Donde la columna es la marca que obtiene el porcentaje del renglon, ejemplo la columna x en su renglon y significa que x gana el $10\%$ de sus clientes de y
+
+\newpage
+
+\subsection*{Problema 3}
+
+El departamento de estudios de mercado de una fábrica estima que el 20\% de la gente que compra un producto un mes, no lo comprará el mes siguiente. Además el 30\% de quienes no lo compren un mes lo adquirirá al mes siguiente. En una población de 1000 individuos, 100 compraron el producto el primer mes. Construya la matriz de transición e indique ¿cuántos lo comprarán el mes próximo? ¿Y dentro de dos meses?
+
+\subsubsection*{Solucion}
+
+Primero definimos la matriz de transición \(T\) y el vector de estado inicial \(\vec{v}_0\):
+
+\[
+    T = \begin{pmatrix}
+        0.8 & 0.2 \\
+        0.3 & 0.7
+    \end{pmatrix},
+    \quad
+    \vec{v}_0 = \begin{pmatrix}
+        100 \\
+        900
+    \end{pmatrix}
+\]
+
+Para calcular cuántas personas comprarán el producto el mes próximo (\(\vec{v}_1\)), multiplicamos la matriz de transición \(T\) por el vector de estado inicial \(\vec{v}_0\):
+
+\[
+    \vec{v}_1 = T \cdot \vec{v}_0 = \begin{pmatrix}
+        0.8 & 0.2 \\
+        0.3 & 0.7
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        100 \\
+        900
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        260 \\
+        740
+    \end{pmatrix}
+\]
+
+Esto significa que 260 personas comprarán el producto el mes próximo.
+
+Para calcular cuántas personas lo comprarán dentro de dos meses (\(\vec{v}_2\)), multiplicamos la matriz de transición \(T\) por el vector de estado después de 1 mes \(\vec{v}_1\):
+
+\[
+    \vec{v}_2 = T \cdot \vec{v}_1 = \begin{pmatrix}
+        0.8 & 0.2 \\
+        0.3 & 0.7
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        260 \\
+        740
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        340 \\
+        660
+    \end{pmatrix}
+\]
+
+Lo que indica que 340 personas comprarán el producto dentro de dos meses.
+
+
+\subsection*{Problema 4}
+
+En una población de 10000 habitantes, 5000 no fuman, 2500 fuman uno o menos de un paquete diario y 2500 fuman más de un paquete diario. En un mes hay un 5\% de probabilidad de que un no fumador comience a fumar un paquete diario o menos, y un 2\% de que un no fumador pase a fumar más de un paquete diario. Para los que fuman un paquete o menos, hay un 10\% de probabilidad de que dejen el tabaco y un 10\% de que pasen a fumar más de un paquete diario. Entre los que fuman más de un paquete hay un 5\% de probabilidad de que dejen el tabaco y un 10\% de que pasen a fumar un paquete o menos. Obtenga la matriz de transición e indique ¿cuántos individuos habrá de cada clase el próximo mes?
+
+Primero, definimos la matriz de transición \(T\) y el vector de estado inicial \(\vec{v}_0\):
+
+\[
+    T = \begin{pmatrix}
+        0.93 & 0.05 & 0.02 \\
+        0.10 & 0.80 & 0.10 \\
+        0.05 & 0.10 & 0.85
+    \end{pmatrix},
+    \quad
+    \vec{v}_0 = \begin{pmatrix}
+        5000 \\
+        2500 \\
+        2500
+    \end{pmatrix}
+\]
+
+Para encontrar cuántos individuos habrá de cada clase el próximo mes (\(\vec{v}_1\)), multiplicamos la matriz de transición \(T\) por el vector de estado inicial \(\vec{v}_0\):
+
+\[
+    \vec{v}_1 = T \cdot \vec{v}_0 = \begin{pmatrix}
+        0.93 & 0.05 & 0.02 \\
+        0.10 & 0.80 & 0.10 \\
+        0.05 & 0.10 & 0.85
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        5000 \\
+        2500 \\
+        2500
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        4825 \\
+        2750 \\
+        2625
+    \end{pmatrix}
+\]
+
+Esto indica que habrá 4825 individuos que no fuman, 2750 que fuman un paquete o menos al día, y 2625 que fuman más de un paquete al día el próximo mes.
+
 
 \end{document}

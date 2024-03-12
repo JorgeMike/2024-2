@@ -923,4 +923,54 @@ Retomando el ejemplo de Colgate, si la directiva quisiera saber si conviene cont
 
 Esto implicaría que el 63\% lo usaría después de dos meses, lo que indica que sí conviene seguir con la promoción.
 
+\section{Clasificacion de los estados}
+
+\subsection*{Estados accesibles}
+Se dice que el estado \( j \) es accesible desde el estado \( i \), si \( p_{ij}^{(n)} > 0 \) para alguna \( n \geq 0 \).
+
+\vspace{.25cm}
+
+Puede ser que el estado \( i \) no sea accesible desde el estado \( j \), pero el estado \( j \) sí sea accesible desde el estado \( i \). No obstante, si el estado \( j \) es accesible desde el estado \( i \) y el estado \( i \) es accesible desde el estado \( j \), entonces se dice que los estados se comunican.
+
+\textbf{En general:}
+
+\begin{enumerate}
+    \item Cualquier estado se comunica consigo mismo (porque \( p_{ii}^{(0)} = 1 \)).
+    \item Si el estado \( i \) se comunica con el estado \( j \), entonces el estado \( j \) se comunica con el estado \( i \).
+    \item Si el estado \( i \) se comunica con el estado \( j \) y el estado \( j \) se comunica con el estado \( k \), entonces el estado \( i \) se comunica con el estado \( k \).
+\end{enumerate}
+
+\subsection*{Clases y cadenas irreducibles}
+
+Como resultado de estas propiedades de comunicación, se puede hacer una partición del espacio de estados en clases separadas, donde se dice que dos estados que se comunican pertenecen a la misma clase.
+
+Si existe sólo una clase, es decir, que todos los estados se comunican, se dice que la cadena de Markov es irreducible.
+
+\subsection*{Estados ergodicos (Recurrentes)}
+
+Sea \( E \), un subespacio del espacio de estados \( S \) y \( E' \) su complementario en \( S \).
+
+Si cada estado de \( E \) puede alcanzarse desde cualquier otro estado de \( E \), pero ningún estado de \( E' \) se puede alcanzar desde cualquiera de \( E \), entonces \( E \), se llama conjunto ergódico.
+
+Una vez que un proceso se mueve hacia un conjunto ergódico ya no puede salir de él, pero se moverá a partir de entonces entre los estados del conjunto.
+
+Un estado ergódico es un elemento de un conjunto ergódico.
+
+\subsection*{Estados transitorios}
+
+Sea \( T \) un subespacio de \( S \) y \( T' \) su complementario. Si cada estado de \( T \) puede ser alcanzado desde otro estado de \( T \), y es posible, al menos, moverse de un estado \( T \) a otro de \( T' \), entonces a \( T \) se le llama conjunto transitorio.
+
+Un estado transitorio, es un elemento de un conjunto transitorio.
+
+En términos más simples, es todo estado, en el que existe la posibilidad de salir de él, y nunca regresar.
+
+\subsection*{Estados absorbentes}
+
+Si un conjunto ergódico contiene solamente un estado, el estado es llamado absorbente. Una vez que el proceso entra en ese estado, se queda en él.
+
+Cabe señalar, que toda cadena finita de Markov tiene por lo menos un conjunto ergódico, aunque pueden haber dos o más.
+
+No obstante, puede ser que no haya ningún estado transitorio.
+
+
 \end{document}
