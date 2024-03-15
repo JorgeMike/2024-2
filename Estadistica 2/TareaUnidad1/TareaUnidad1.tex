@@ -76,6 +76,53 @@ En algunas pruebas de salud en ancianos, un nuevo medicamento ha restaurado su m
     \end{tabular}
 \end{center}
 
+\begin{itemize}
+    \item $H_0: F_x = F_y$ No hay diferencia entre las distribuciones de las cantidades de sílabas sin sentido recordadas por los dos grupos de edad.
+    \item $H_1: F_x \neq F_y$ Existe una diferencia entre las distribuciones de las cantidades de sílabas sin sentido recordadas por los dos grupos de edad.
+\end{itemize}
+
+\subsection*{Ordenación de los Datos}
+
+\[
+    \{0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 7, 7, 8, 8\}
+\]
+
+\subsection*{Cálculo de Rangos}
+
+\begin{itemize}
+    \item 0: 1.5
+    \item 1: 4.5
+    \item 2: 8.5
+    \item 3: 11.5
+    \item 4: 13.5
+    \item 5: 15.0
+    \item 6: 16.0
+    \item 7: 17.5
+    \item 8: 19.5
+\end{itemize}
+
+\subsection*{Suma de rangos para cada grupo}
+
+\[ \text{20s: } 11.5 + 16 + 13.5 + 19.5 + 17.5 + 4.5 + 4.5 + 8.5 + 17.5 + 19.5 = 132.5 \]
+\[ \text{65-70s: } 4.5 + 1.5 + 13.5 + 4.5 + 8.5 + 15 + 1.5 + 8.5 + 8.5 + 11.5 = 77.5\]
+
+\[u = nm + \frac{n(n+1)}{2} - T_1\]
+\[u_1 = 10 \cdot 10 + \frac{10(10+1)}{2} - 132.5 = 22.5\]
+\[u_2 = 10 \cdot 10 + \frac{10(10+1)}{2} - 77.5 = 77.5\]
+
+\[u = min(u_1, u_2) = 22.5\]
+
+\[E(u) = \frac{10 \cdot 10}{2} = 50\]
+
+\[Var(u) = \frac{10 \cdot 10(10+10+1)}{12} = 39\]
+
+\[z = \frac{u - E(u)}{\sqrt{Var(u)}} = \frac{22.5 - 50}{\sqrt{175}} = -2.0788\]
+
+\[|z| = 2.0788\]
+
+% \[q_z(1 - \frac{\alpha}{2}) = q_z(0.975) = 1.96\]
+
+
 \section{Problema 2}
 
 El tratamiento de cáncer por medios químicos, llamado quimioterapia, mata células cancerosas y células normales. En algunos casos, la toxicidad del medicamento para el cáncer, es decir, su efecto sobre células normales, puede reducirse con la inyección simultánea de un segundo medicamento. Se realizó un estudio para determinar si la inyección de un medicamento en particular reducía los efectos dañinos de un tratamiento de quimioterapia en el tiempo de sobrevivencia de ratas. Dos grupos de 12 ratas seleccionados al azar se emplearon en un experimento en el que ambos grupos, llamémoslos A y B, recibieron la droga tóxica en una dosis lo suficientemente grande para causarles la muerte, pero, además, el grupo B recibió la antitoxina que iba a reducir el efecto tóxico de la quimioterapia en células normales. La prueba finalizó al término de 20 días, o sea, 480 horas. Los tiempos de sobrevivencia para los dos grupos de ratas, a las 4 horas más cercanas, se muestran en la tabla siguiente. ¿Los datos dan suficiente evidencia para indicar que las ratas que recibieron la antitoxina tienden a sobrevivir más después de la quimioterapia que las que no recibieron la antitoxina?
@@ -160,7 +207,7 @@ Dado que tenemos datos en pares y lo que buscamos demostar es si la distribucion
 
 \[T_{+} = 4.5+8.5+4.5+11+4.5+11+11+4.5 = 59.5\]
 \[T_{-} = 4.5+4.5+8.5 = 17.5\]
-\[T = min(T_{+}, T_{-}) = 17d.5\]
+\[T = min(T_{+}, T_{-}) = 17.5\]
 
 \[
     E(T) = \frac{n(n + 1)}{4} = \frac{12(12 + 1)}{4} = 39

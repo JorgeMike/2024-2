@@ -972,5 +972,121 @@ Cabe señalar, que toda cadena finita de Markov tiene por lo menos un conjunto e
 
 No obstante, puede ser que no haya ningún estado transitorio.
 
+\section{Comportamiento Asintotico}
+
+\subsection*{Vector de distribución estacionario}
+
+Este teorema dice que, cualquiera que sea el estado de comienzo del proceso, la probabilidad de estar en un estado dado de una cadena regular, tiene un valor constante cuando el número de pasos desde el principio toma valores elevados.
+
+Esto es, que si \( n \) es lo suficientemente grande, al calcular la matriz de transición de \( n \) pasos, todos los renglones tendrán valores idénticos, lo que significa que la probabilidad de que el sistema esté en el estado \( j \) ya no depende del estado inicial del sistema.
+
+\subsection*{definición}
+
+Para una cadena de Markov regular, el \(\lim_{n \to \infty} p_{ij}^{(n)}\) existe y es independiente de \(i\). Aún más, \(\lim_{n \to \infty} p_{ij}^{(n)} = \pi_j > 0\) donde las \(\pi_j\), satisfacen de manera única, las siguientes ecuaciones de estado estable:
+
+\begin{enumerate}
+    \item \(\pi_j = \sum_{i=0}^{M} \pi_i p_{ij}\) para \(j=0,1,2,...,M\)
+    \item \(\sum_{j=0}^{M} \pi_j = 1\)
+\end{enumerate}
+
+Las \(\pi_j\) se llaman probabilidades de estado estable, y al vector que forman se le conoce como vector de distribución estacionario.
+
+\subsection*{probabilidad de estado estable}
+
+El término de probabilidad de estado estable significa que la probabilidad de encontrar el proceso en cierto estado, después de un número grande de transiciones, tiende al valor \(\pi_j\), y es independiente de la distribución de probabilidad inicial definida por los estados.
+
+Observe que las ecuaciones de estado estable consisten en \( M+2 \) ecuaciones con \( M+1 \) incógnitas. Como el sistema tiene solución única, alguna de las ecuaciones será redundante, por lo que puede ser eliminada. Por supuesto que la ecuación que establece que la suma de los valores del vector sea igual a 1 no podría eliminarse.
+
+\subsection*{ejemplo 1}
+
+Considere el ejemplo del clima cuyas probabilidades de transición están dadas en la siguiente matriz. Obtenga el vector de estado estable.
+
+\[
+    P =
+    \begin{bmatrix}
+        0.8 & 0.2 \\
+        0.6 & 0.4 \\
+    \end{bmatrix}
+\]
+
+Sistema 1
+
+\[\pi_0 = \pi_0P_{00} + \pi_1P_{10}\]
+\[\pi_1 = \pi_0P_{01} + \pi_1P_{11}\]
+\[\pi_0 + \pi_1 = 1\]
+
+Sistema 2
+
+\[\pi_0 = \pi_0 0.8 + \pi_10.6\]
+\[\pi_1 = \pi_0 0.2 + \pi_10.4\]
+\[\pi_0 + \pi_1 = 1\]
+
+Sistema 3
+
+\[\pi_0 0.2 - \pi_10.6 = 0\]
+\[\pi_0 + \pi_1 = 1\]
+
+Solucion
+
+\[\pi_0 = 3/4 \hspace{.5cm} \pi_1 = 1/4\]
+
+Nunca deben dar numeros negativos
+\subsection*{ejemplo 2}
+
+Encontrar la distribución estacionaria para
+
+\[
+    P =
+    \begin{bmatrix}
+        0           & \frac{1}{2} & \frac{1}{2} \\
+        \frac{1}{3} & 0           & \frac{2}{3} \\
+        \frac{1}{4} & \frac{1}{4} & \frac{1}{2} \\
+    \end{bmatrix}
+\]
+
+Sistema 1
+
+\[\pi_0 = \pi_0P_{00} + \pi_1P_{10} + \pi_2P_{20}\]
+\[\pi_1 = \pi_0P_{01} + \pi_1P_{11} + \pi_2P_{21}\]
+\[\pi_2 = \pi_0P_{02} + \pi_1P_{12} + \pi_2P_{22}\]
+\[\pi_0 + \pi_1 + \pi_2 = 1\]
+
+Sistema 2
+
+\[\pi_0 = \pi_0 0 + \pi_1 1/3 + \pi_2 1/4\]
+\[\pi_1 = \pi_01/2 + \pi_1 0 + \pi_2 1/4\]
+\[\pi_2 = \pi_0 1/2 + \pi_1 2/3 + \pi_2 1/2\]
+\[\pi_0 + \pi_1 + \pi_2 = 1\]
+
+Sistema 3
+
+\[\pi_0 = \pi_0 0 + \pi_1 1/3 + \pi_2 1/4\]
+\[\pi_1 = \pi_01/2 + \pi_1 0 + \pi_2 1/4\]
+
+\[\pi_0 + \pi_1 + \pi_2 = 1\]
+
+sistema 4
+
+\[ \pi_0 - 1/3\pi_1 - 1/4\pi_2 = 0 \]
+\[ -\pi_01/2 - \pi_1 - 1/4\pi_2 = 0 \]
+\[\pi_0 + \pi_1 + \pi_2 = 1\]
+
+Solucion
+\[\pi_0 = 8/37 \hspace{.5cm} \pi_1 = 9/37 \hspace{.5cm} \pi_2 = 20/37\]
+
+\subsection*{probabilidad de estado estable}
+
+Existen otros resultados importantes respecto de las probabilidades de estado estable. En particular, si \( i \) y \( j \) son estados recurrentes que pertenecen a clases distintas, entonces \( p_{ij}^{(n)} = 0, \forall n \), lo cual es consecuencia de la definición de clase.
+
+De manera similar, si \( j \) es un estado transitorio entonces \( \lim_{n \to \infty} p_{ij}^{(n)} = 0 \) para todo \( i \). De este modo, la probabilidad de encontrar el proceso en un estado transitorio después de un número grande de transiciones tiende a 0.
+
+
+\subsection*{costo promedio esperado por unidad de tiempo}
+
+Suponga que se incurre en un costo \( C(X_t) \) cuando el proceso se encuentra en el estado \( X_t \). Entonces el costo promedio esperado en el que se incurre a lo largo de los primeros \( n \) períodos está dado por:
+
+\[ C(E) = \sum_{j=0}^{M} \pi_j C(j) \]
+
+Esta ecuación será de suma importancia para el tema de procesos markovianos de decisión.
 
 \end{document}

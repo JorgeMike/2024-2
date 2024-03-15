@@ -1412,7 +1412,7 @@ Los tres principios del diseño de experimentos son:
 \begin{itemize}
     \item Realizacion de replicas
     \item Aleatorizacion
-    \item Formacion de bloques 
+    \item Formacion de bloques
 \end{itemize}
 
 \subsection*{Lineamientos para diseñar experimentos}
@@ -1429,6 +1429,100 @@ Los tres principios del diseño de experimentos son:
     \item Conclusiones y recomendaciones.
 \end{itemize}
 
+\section{13/03/2024}
 
+\subsection*{Factor controlable}
+Es la característica que controlamos y cuyo efecto se desea estudiar.
 
+\subsection*{Nivel}
+Es la categoría estudiada del factor.
+
+\subsection*{Tratamientos}
+Combinaciones de los factores estudiados.
+
+\subsection*{Unidad experimental}
+Es la subdivisión del material que puede recibir un tratamiento de forma independiente.
+
+\subsection*{Variable respuesta}
+Es la característica que se va a medir en cada unidad experimental.
+
+\subsection*{Diseño experimental}
+Es la forma de asignar los tratamientos a las unidades experimentales.
+
+\subsection*{Error experimental}
+Describe la variación entre las unidades experimentales.
+
+\subsection*{Ejemplo 1}
+Supóngase que de un grupo se seleccionaron al azar 20 hombres y 20 mujeres. Después, estos grupos se dividen al azar en grupo experimental y grupo de control. Al grupo de control se le aplica una prueba después de desayunar; al grupo experimental se le aplica la misma prueba en ayuno. Identifica los factores, niveles, tratamientos de este experimento.
+
+\subsection{Análisis de varianza}
+
+El método de análisis de varianza consiste en probar si varias medidas poblacionales son iguales. Cuando las varianzas son iguales y desconocidas, de manera que las hipótesis que se contrastan son:
+
+\[H_0: \mu_1 = \dots = \mu_k\]
+\[H_1: \mu_i \neq \mu_j, \text{ para } i\neq j\]
+
+para \(k\) poblaciones normales independientes y con varianza \(\sigma^2\).
+
+\subsection{Diseño completamente aleatorizado}
+
+Es un diseño completamente aleatorio, la asignación de los tratamientos a cada unidad experimental es de forma aleatoria. Además, todas las unidades experimentales son homogéneas.
+
+\subsection{Modelo}
+
+\[y_{ij} = \mu_i + E_{ij}\]
+
+Donde \(y_{ij}\) es la variable respuesta del i-ésimo tratamiento y \(E_{ij}\) es el error experimental. En este caso, hay \(t\) tratamientos y \(r\) repeticiones.
+
+\subsection{Modelo completo}
+
+\[y_{ij} = \mu_i + E_{ij}\]
+
+Cada tratamiento tiene una media diferente, es decir, el modelo completo es la representación de \(H_1\).
+
+\subsection{Modelo reducido}
+
+\[y_{ij} = \mu + E_{ij}\]
+
+Cada tratamiento tiene la misma media, es decir, el modelo reducido es la representación de \(H_0\).
+
+El ojetivo es estimar los parametros de ambos modelos y determinar cual de los dos se ajusta mas a los datos observados.
+
+Para la solucionar este problema, se utilizaran los estimadores de minimos cuadrados que se obtienen al minimizar la suma de los cuadrados de los errores experimentales
+
+Estimador del modelo completo
+
+\[y_{ij} = \mu_{i} + E_{ij}\]
+\[E_{ij} = y_{ij} - \mu_{i}\]
+
+Por lo anterior, la suma de los cuaddrados de los errores del modelo completo es:
+
+\[ SS_{Ec} = \sum_{t}^{i=1} \sum_{r}^{j=1} (y_{ij} - \mu_{i})^2\]
+
+para una $i$ fija
+
+\[
+    \frac{d[\sum_{r}^{j=1}(y_{ij} - \mu_{i})^2]}{d\mu_i} = \frac{d [\sum_{r}^{j=1} (y^{2}_{ij} - 2y_{ij}\mu_{i} + \mu^2_{i})]}{d\mu_i} = \sum_{r}^{j=1}(-2y_{ij} + 2\mu_i)
+\]
+
+al igualar a cero se tiene que
+
+\[-2(\sum_{r}^{j=1}) = 0\]
+
+\[-2\sum_{r}^{j=1} - r \mu_i = 0\]
+
+\[\mu_i = \frac{\sum_{r}^{j=1} y_{ij}}{r}\]
+
+Estimador de modelo reducido
+
+\[ y_{ij} = \mu + E_{ij}\]
+\[E_{ij} = y_{ij} - \mu\]
+
+Por lo tanto la suma de los cuadrados de los errores del modelo reducido es
+
+\[
+    SS_{E_r} = \sum_{t}^{i=1} \sum_{r}^{j=1}(y_{ij} - \mu)^2
+\]
+
+A continuacion, encontramos el punto critico de la funcion $SS_{E_r}$
 \end{document}

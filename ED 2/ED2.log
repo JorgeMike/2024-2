@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.11.24)  6 MAR 2024 07:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.11.24)  12 MAR 2024 09:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -597,7 +597,7 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<../unam.png, id=91, 1027.84pt x 1155.31625pt>
+<../unam.png, id=95, 1027.84pt x 1155.31625pt>
 File: ../unam.png Graphic file (type png)
 <use ../unam.png>
 Package pdftex.def Info: ../unam.png  used on input line 35.
@@ -624,46 +624,46 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.65 \newpage
               [1] [2] [3] [4] [5] [6] [7]
-<../ED 2/image.png, id=172, 845.1575pt x 218.8175pt>
+<../ED 2/image.png, id=177, 845.1575pt x 218.8175pt>
 File: ../ED 2/image.png Graphic file (type png)
 <use ../ED 2/image.png>
-Package pdftex.def Info: ../ED 2/image.png  used on input line 385.
+Package pdftex.def Info: ../ED 2/image.png  used on input line 383.
 (pdftex.def)             Requested size: 443.57848pt x 114.8475pt.
  [8 <../ED 2/image.png>] [9]
-<../ED 2/image2.png, id=182, 859.21pt x 233.87375pt>
+<../ED 2/image2.png, id=187, 859.21pt x 233.87375pt>
 File: ../ED 2/image2.png Graphic file (type png)
 <use ../ED 2/image2.png>
-Package pdftex.def Info: ../ED 2/image2.png  used on input line 476.
+Package pdftex.def Info: ../ED 2/image2.png  used on input line 474.
 (pdftex.def)             Requested size: 443.57848pt x 120.74072pt.
  [10 <../ED 2/image2.png>] [11]
-<../ED 2/image3.png, id=192, 859.21pt x 207.77625pt>
+<../ED 2/image3.png, id=197, 859.21pt x 207.77625pt>
 File: ../ED 2/image3.png Graphic file (type png)
 <use ../ED 2/image3.png>
-Package pdftex.def Info: ../ED 2/image3.png  used on input line 578.
+Package pdftex.def Info: ../ED 2/image3.png  used on input line 576.
 (pdftex.def)             Requested size: 443.57848pt x 107.2675pt.
  [12 <../ED 2/image3.png>]
-<../ED 2/image4.png, id=199, 625.33624pt x 228.855pt>
+<../ED 2/image4.png, id=204, 625.33624pt x 228.855pt>
 File: ../ED 2/image4.png Graphic file (type png)
 <use ../ED 2/image4.png>
-Package pdftex.def Info: ../ED 2/image4.png  used on input line 642.
+Package pdftex.def Info: ../ED 2/image4.png  used on input line 640.
 (pdftex.def)             Requested size: 443.57848pt x 162.3415pt.
  [13] [14 <../ED 2/image4.png>] [15] [16] [17]
-<../ED 2/image5.png, id=221, 518.93875pt x 139.52126pt>
+<../ED 2/image5.png, id=226, 518.93875pt x 139.52126pt>
 File: ../ED 2/image5.png Graphic file (type png)
 <use ../ED 2/image5.png>
-Package pdftex.def Info: ../ED 2/image5.png  used on input line 818.
+Package pdftex.def Info: ../ED 2/image5.png  used on input line 816.
 (pdftex.def)             Requested size: 266.14978pt x 71.55939pt.
  [18 <../ED 2/image5.png>]
-<../ED 2/image7.png, id=228, 542.025pt x 207.77625pt>
+<../ED 2/image7.png, id=233, 542.025pt x 207.77625pt>
 File: ../ED 2/image7.png Graphic file (type png)
 <use ../ED 2/image7.png>
-Package pdftex.def Info: ../ED 2/image7.png  used on input line 856.
+Package pdftex.def Info: ../ED 2/image7.png  used on input line 854.
 (pdftex.def)             Requested size: 443.57848pt x 170.04472pt.
  [19 <../ED 2/image7.png>]
-<../ED 2/image8.png, id=234, 542.025pt x 207.77625pt>
+<../ED 2/image8.png, id=239, 542.025pt x 207.77625pt>
 File: ../ED 2/image8.png Graphic file (type png)
 <use ../ED 2/image8.png>
-Package pdftex.def Info: ../ED 2/image8.png  used on input line 909.
+Package pdftex.def Info: ../ED 2/image8.png  used on input line 907.
 (pdftex.def)             Requested size: 443.57848pt x 170.04472pt.
  [20 <../ED 2/image8.png>] [21] [22] [23] [24] [25] [26] (./ED2.aux
 LaTeX Info: Redefining \. on input line 22.
@@ -673,22 +673,32 @@ LaTeX Info: Redefining \% on input line 22.
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
-Package rerunfilecheck Info: File `ED2.out' has not changed.
-(rerunfilecheck)             Checksum: 6289784FCD53816562E3CB1116A79393;2946.
+
+
+Package rerunfilecheck Warning: File `ED2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ED2.out':
+(rerunfilecheck)             Before: 5AB21F382AF3FC08E18CEDDC5D476994;3093
+(rerunfilecheck)             After:  D5BA69A7D79D66B7F05EEC9E5086A442;2985.
  ) 
 Here is how much of TeX's memory you used:
- 32007 strings out of 475735
- 740693 string characters out of 5784785
+ 32009 strings out of 475735
+ 740713 string characters out of 5784785
  1869759 words of memory out of 5000000
- 52210 multiletter control sequences out of 15000+600000
+ 52211 multiletter control sequences out of 15000+600000
  517378 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,9n,103p,756b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{subsection.3.1} has been referenced but does not exist, replaced by a fixed one
+
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ED2.pdf (27 pages, 461479 bytes).
+Output written on ED2.pdf (27 pages, 462913 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 264 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 339 PDF objects out of 1000 (max. 8388607)
+ 269 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 229 words of extra memory for PDF output out of 10000 (max. 10000000)
 

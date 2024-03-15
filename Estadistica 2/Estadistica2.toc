@@ -40,3 +40,9 @@
 \contentsline {subsection}{\numberline {11.2}Pruebas de una cola (Prueba de Mann-Whitney y Prueba de Wilcoxon)}{28}{subsection.11.2}%
 \contentsline {subsection}{\numberline {11.3}Pruebas que se deben usar en cada ejercicio de la tarea}{28}{subsection.11.3}%
 \contentsline {section}{\numberline {12}11/03/2024}{29}{section.12}%
+\contentsline {section}{\numberline {13}13/03/2024}{29}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Análisis de varianza}{30}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Diseño completamente aleatorizado}{30}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Modelo}{30}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Modelo completo}{30}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Modelo reducido}{31}{subsection.13.5}%

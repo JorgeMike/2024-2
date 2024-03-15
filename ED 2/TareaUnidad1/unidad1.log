@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.11.24)  13 MAR 2024 12:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.11.24)  12 MAR 2024 09:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/alvarado/Escritorio/2024-2/PE/PE
-(/home/alvarado/Escritorio/2024-2/PE/PE.tex
+**"/home/alvarado/Escritorio/2024-2/ED 2/TareaUnidad1/unidad1"
+(/home/alvarado/Escritorio/2024-2/ED 2/TareaUnidad1/unidad1.tex
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -503,88 +503,53 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen283
 \Gm@layoutvoffset=\dimen284
 \Gm@dimlist=\toks45
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen285
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
-File: tikzlibraryautomata.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
-File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box65
-\pgfnodeparttwobox=\box66
-\pgfnodepartthreebox=\box67
-\pgfnodepartfourbox=\box68
-\pgfnodeparttwentybox=\box69
-\pgfnodepartnineteenbox=\box70
-\pgfnodeparteighteenbox=\box71
-\pgfnodepartseventeenbox=\box72
-\pgfnodepartsixteenbox=\box73
-\pgfnodepartfifteenbox=\box74
-\pgfnodepartfourteenbox=\box75
-\pgfnodepartthirteenbox=\box76
-\pgfnodeparttwelvebox=\box77
-\pgfnodepartelevenbox=\box78
-\pgfnodeparttenbox=\box79
-\pgfnodepartninebox=\box80
-\pgfnodeparteightbox=\box81
-\pgfnodepartsevenbox=\box82
-\pgfnodepartsixbox=\box83
-\pgfnodepartfivebox=\box84
-))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
-File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 20.
+Package hyperref Info: Option `colorlinks' set `true' on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count317
-\l__pdf_internal_box=\box85
-) (./PE.aux
+\l__pdf_internal_box=\box65
+) (./unidad1.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
-\openout1 = `PE.aux'.
+\openout1 = `unidad1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Info: Redefining \. on input line 33.
-LaTeX Info: Redefining \% on input line 33.
-Package hyperref Info: Link coloring ON on input line 33.
- (./PE.out) (./PE.out)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Info: Redefining \. on input line 31.
+LaTeX Info: Redefining \% on input line 31.
+Package hyperref Info: Link coloring ON on input line 31.
+ (./unidad1.out) (./unidad1.out)
 \@outlinefile=\write4
-\openout4 = `PE.out'.
+\openout4 = `unidad1.out'.
 
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count318
-\scratchdimen=\dimen286
-\scratchbox=\box86
+\scratchdimen=\dimen285
+\scratchbox=\box66
 \nofMPsegments=\count319
 \nofMParguments=\count320
 \everyMPshowfont=\toks46
 \MPscratchCnt=\count321
-\MPscratchDim=\dimen287
+\MPscratchDim=\dimen286
 \MPnumerator=\count322
 \makeMPintoPDFobject=\count323
 \everyMPtoPDFconversion=\toks47
@@ -596,7 +561,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 33.
+ on input line 31.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -632,43 +597,75 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<../unam.png, id=155, 1027.84pt x 1155.31625pt>
-File: ../unam.png Graphic file (type png)
-<use ../unam.png>
-Package pdftex.def Info: ../unam.png  used on input line 37.
+<../../unam.png, id=59, 1027.84pt x 1155.31625pt>
+File: ../../unam.png Graphic file (type png)
+<use ../../unam.png>
+Package pdftex.def Info: ../../unam.png  used on input line 35.
 (pdftex.def)             Requested size: 88.71434pt x 99.70782pt.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../unam.png>] (./PE.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../../unam.png>] (./unidad1.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write5
-\openout5 = `PE.toc'.
+\openout5 = `unidad1.toc'.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.67 \newpage
-              [1] [2{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (22.01476pt too wide) in paragraph at lines 122--123
-[]\OT1/cmr/bx/n/10 Axioma 3 (Adi-ti-vi-dad): \OT1/cmr/m/n/10 Pa-ra cual-quier se-cuen-cia de even-tos mu-tua-men-te ex-clu-yen-tes $\OML/cmm/m/it/10 E[]; E[]; E[]; []$
- []
-
-[3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
-Overfull \hbox (14.0175pt too wide) in paragraph at lines 985--986
-[]\OT1/cmr/m/n/10 Para una ca-de-na de Mar-kov re-gu-lar, el $[][] \OML/cmm/m/it/10 p[]$ \OT1/cmr/m/n/10 exis-te y es in-de-pen-dien-te de $\OML/cmm/m/it/10 i$\OT1/cmr/m/n/10 . A^^Sun m^^Sas, $[][] \OML/cmm/m/it/10 p[] \OT1/cmr/m/n/10 =
- []
-
-[21] [22] [23] (./PE.aux
+l.111 \end{enumerate}
+                      [1] [2] [3]
+<../../ED 2/image.png, id=112, 845.1575pt x 218.8175pt>
+File: ../../ED 2/image.png Graphic file (type png)
+<use ../../ED 2/image.png>
+Package pdftex.def Info: ../../ED 2/image.png  used on input line 215.
+(pdftex.def)             Requested size: 443.57848pt x 114.8475pt.
+ [4 <../../ED 2/image.png>] [5]
+<../../ED 2/image2.png, id=122, 859.21pt x 233.87375pt>
+File: ../../ED 2/image2.png Graphic file (type png)
+<use ../../ED 2/image2.png>
+Package pdftex.def Info: ../../ED 2/image2.png  used on input line 306.
+(pdftex.def)             Requested size: 443.57848pt x 120.74072pt.
+ [6 <../../ED 2/image2.png>] [7]
+<../../ED 2/image3.png, id=133, 859.21pt x 207.77625pt>
+File: ../../ED 2/image3.png Graphic file (type png)
+<use ../../ED 2/image3.png>
+Package pdftex.def Info: ../../ED 2/image3.png  used on input line 408.
+(pdftex.def)             Requested size: 443.57848pt x 107.2675pt.
+ [8 <../../ED 2/image3.png>]
+<../../ED 2/image4.png, id=139, 625.33624pt x 228.855pt>
+File: ../../ED 2/image4.png Graphic file (type png)
+<use ../../ED 2/image4.png>
+Package pdftex.def Info: ../../ED 2/image4.png  used on input line 472.
+(pdftex.def)             Requested size: 443.57848pt x 162.3415pt.
+ [9] [10 <../../ED 2/image4.png>] [11] [12] [13]
+<../../ED 2/image5.png, id=163, 518.93875pt x 139.52126pt>
+File: ../../ED 2/image5.png Graphic file (type png)
+<use ../../ED 2/image5.png>
+Package pdftex.def Info: ../../ED 2/image5.png  used on input line 648.
+(pdftex.def)             Requested size: 266.14978pt x 71.55939pt.
+ [14 <../../ED 2/image5.png>]
+<../../ED 2/image7.png, id=170, 542.025pt x 207.77625pt>
+File: ../../ED 2/image7.png Graphic file (type png)
+<use ../../ED 2/image7.png>
+Package pdftex.def Info: ../../ED 2/image7.png  used on input line 686.
+(pdftex.def)             Requested size: 443.57848pt x 170.04472pt.
+ [15 <../../ED 2/image7.png>]
+<../../ED 2/image8.png, id=176, 542.025pt x 207.77625pt>
+File: ../../ED 2/image8.png Graphic file (type png)
+<use ../../ED 2/image8.png>
+Package pdftex.def Info: ../../ED 2/image8.png  used on input line 739.
+(pdftex.def)             Requested size: 443.57848pt x 170.04472pt.
+ [16 <../../ED 2/image8.png>] [17] [18] [19] (./unidad1.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -676,22 +673,22 @@ LaTeX Info: Redefining \% on input line 22.
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
-Package rerunfilecheck Info: File `PE.out' has not changed.
-(rerunfilecheck)             Checksum: 1C9B0CB023A6A7267F9FB507A77DD146;6362.
+Package rerunfilecheck Info: File `unidad1.out' has not changed.
+(rerunfilecheck)             Checksum: DBA805C04611C3E7688000653D0024A4;1634.
  ) 
 Here is how much of TeX's memory you used:
- 33268 strings out of 475735
- 778085 string characters out of 5784785
- 1867759 words of memory out of 5000000
- 53364 multiletter control sequences out of 15000+600000
- 522857 words of font info for 70 fonts, out of 8000000 for 9000
+ 31970 strings out of 475735
+ 740482 string characters out of 5784785
+ 1868759 words of memory out of 5000000
+ 52193 multiletter control sequences out of 15000+600000
+ 517378 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,103p,751b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on PE.pdf (24 pages, 456905 bytes).
+ 99i,9n,103p,773b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on unidad1.pdf (20 pages, 436484 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
- 429 compressed objects within 5 object streams
- 137 named destinations out of 1000 (max. 500000)
- 314 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 255 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
