@@ -204,6 +204,65 @@ Sujeto a:
     x_2 + x_5        & = 2 \\
 \end{align*}
 
+\section{15/03/2024}
+\subsection*{Fase 1 - Encontrar una SBF inicial}
+
+\begin{itemize}
+    \item Esquina noroeste
+    \item Costo mínimo
+    \item Vogel
+\end{itemize}
+
+\subsection*{Fase 2 - Optimizar la solución encontrada en la fase 1}
+
+\begin{itemize}
+    \item Verificar si
+          \[p + q - 1 = \text{Número de celdas marcadas}\]
+\end{itemize}
+
+Si no (caso degenerado), paso 2; si sí, paso 3.
+
+2) Convertir las celdas no marcadas hasta validar \(p + q - 1 = \text{número de celdas}\). La elección de las variables no básicas es:
+
+\begin{itemize}
+    \item Elija la celda no marcada de costo mínimo.
+    \item Si desde esta no existen caminos cerrados (circuitos), etiquétela asignándole un envío de E.
+    \item De otra manera, intente con la siguiente celda de costo mínimo.
+\end{itemize}
+
+3) Condición de optimalidad
+
+Evalue la factibilidad del dual para las variables básicas
+
+\[u_i + v_j = c_{ij}\]
+
+Para las variables no básicas
+
+\[u_i + v_j \leq c_{ij}\]
+
+Si se verifican, esta SBF es óptima. Presente conclusiones; sino, vaya al paso 4.
+
+4) Entre las celdas que violan \(u_i + v_j \leq c_{ij}\), evalúe
+\[|c_{ij} - u_i - v_j|\] y elija la de mayor valor.
+
+5) (Pivote) Desde esta, trace un circuito asignando de manera alternada \(+ , -\) de modo que elija el mínimo entre los envíos de celdas negativas y sume esta cantidad a cada celda. Esto produce una nueva SBF.
+
+6) Ejecute el paso 3.
+
+\subsection*{Ejemplo}
+
+La siguiente tabla representa un PT. encuentre una SBF inicial aplicando costo minimo y apartir de esta encuetre el optimo
+
+\begin{tabular}{c|c|c|c|c|c|c}
+            & $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ & suministros \\ \hline
+    $u_1$   & 10    & 2     & 3     & 15    & 9     & 35          \\ \hline
+    $u_2$   & 5     & 10    & 15    & 2     & 4     & 40          \\ \hline
+    $u_3$   & 15    & 5     & 14    & 7     & 15    & 20          \\ \hline
+    $u_4$   & 20    & 15    & 13    & 25    & 8     & 30          \\ \hline
+    Demanda & 20    & 20    & 40    & 10    & 35    & 125=125     \\
+\end{tabular}
+
+
 \section*{Palabras Clave}
 
 \begin{itemize}

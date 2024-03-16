@@ -1089,4 +1089,88 @@ Suponga que se incurre en un costo \( C(X_t) \) cuando el proceso se encuentra e
 
 Esta ecuación será de suma importancia para el tema de procesos markovianos de decisión.
 
+\section{Tiempos de primera pasada}
+
+Con frecuencia es necesario conocer cuántas transiciones son necesarias para llegar de un estado a otro por primera vez. A este tiempo se le conoce como tiempo de primera pasada.
+
+De igual manera, a veces queremos saber cuántas transiciones son necesarias para regresar a un estado por primera vez, a lo que se le llama tiempo de recurrencia.
+
+Considérese un ejemplo, donde el registro de la cadena de Markov es:
+\[ X_0 = 3, X_1 = 2, X_2 = 1, X_3 = 0, X_4 = 3, X_5 = 1 \]
+
+En este caso, el tiempo de primera pasada para ir del estado 3 al estado 1 es 2; el tiempo de primera pasada para ir del estado 3 al estado 0 es 3 y el tiempo de recurrencia del estado 3 es 4.
+
+Para obtener el tiempo promedio de primera pasada de un estado \( i \) a un estado \( j \):
+\[ \mu_{ij} = 1 + \sum_{k \neq j} p_{ik} \cdot \mu_{kj} \]
+
+Esta ecuación reconoce que la primera transición del estado \( i \) puede ser al estado \( j \) o algún otro estado \( k \). Si es el estado \( j \), el tiempo de primera pasada es 1. Dado que la primera transición es a algún estado \( k \) (distinto de \( j \)), lo que ocurre con probabilidad \( p_{ik} \), el tiempo esperado de primera pasada condicional del estado \( i \) al estado \( j \) es \( 1 + \mu_{kj} \). Al combinar estos hechos y sumar todas las posibilidades de la primera transición es que se llega a esta ecuación.
+
+Para obtener el tiempo de recurrencia del estado \( i \):
+\[ \mu_{ii} = \frac{1}{\pi_i} \]
+\newpage
+\section*{Ejemplos}
+
+\subsection*{Ejemplo 1}
+Dada la matriz de transición, calcule el primer tiempo de transición para ir del estado 0 al estado 1. También el tiempo de recurrencia de 2.
+
+\[
+    P = \begin{pmatrix}
+        0.2 & 0.2 & 0.6 \\
+        0.8 & 0.1 & 0.1 \\
+        0.7 & 0   & 0.3 \\
+    \end{pmatrix}
+\]
+
+Estan pidiendo $\mu_{01}$ y $\mu_{22}$
+
+\[\mu_{01} = 1 + P_{00}\mu_{01} + P_{02}\mu_{21}\]
+\[\mu_{21} = 1 + P_{20}\mu_{01} + P_{22}\mu_{21}\]
+
+\[\mu_{01} = 1 + 0.2\mu_{01} + 0.6\mu_{21}\]
+\[\mu_{21} = 1 + 0.7\mu_{01} + 0.3\mu_{21}\]
+
+\[0.8\mu_{01} - 0.6\mu_{21} = 1\]
+\[-0.7\mu_{01} - 0.7\mu_{21} = 1\]
+
+\[\mu_{01} = 9.28\]
+\[\mu_{21} = 10.71\]
+
+b)
+
+\[\mu_{22} = \frac{1}{\pi_2}\]
+
+\[\pi_{0} = 0.2\pi_{0} + 0.8\pi_{1} + 0.7\pi_{2}\]
+\[\pi_{1} = 0.2\pi_{0} + 0.1\pi_{1} + 0\pi_{2}\]
+\[\pi_{2} = 0.6\pi_{0} + 0.1\pi_{1} + 0.3\pi_{2}\]
+
+\[0.8\pi_0 - 0.8\pi_1 -0.7\pi_2 = 0\]
+\[-0.2\pi_0 + 0.9\pi_1 = 0\]
+
+\[\mu_0 = 0.4736\]
+\[\mu_1 = 0.1052\]
+\[\mu_2 = 0.4210\]
+
+\[\mu_{22} = 2.37\]
+
+\subsection*{Ejemplo 2}
+
+Sea la siguiente matriz de transición, obtenga el tiempo de primera pasada de 0 a 2.
+
+\[
+    P = \begin{pmatrix}
+        0 & 1 & 0 \\
+        0 & 0 & 1 \\
+        1 & 0 & 0 \\
+    \end{pmatrix}
+\]
+
+\[\mu_{02} = 1 + P_{00}\mu_{02} + P_{01}\mu_{12}\]
+\[\mu_{12} = 1 + P_{10}\mu_{02} + P_{11}\mu_{12}\]
+
+\[\mu_{02} = 1 + 0\mu_{02} + 1\mu_{12}\]
+\[\mu_{12} = 1 + 1\mu_{02} + 0\mu_{12}\]
+
+\[\mu_{02} = 1 + \mu_{12}\]
+\[\mu_{12} = 1 + \mu_{02}\]
+
 \end{document}

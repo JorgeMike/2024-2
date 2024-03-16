@@ -539,6 +539,8 @@ El $p$-valor se calcula como la probabilidad de obtener un valor tan extremo o m
 
 Si $p\text{-valor} < \alpha$, se rechaza $H_0$
 
+\newpage
+
 \subsection*{Ejemplo 3}
 
 Investigadores reunieron datos sobre el número de admisiones hospitalarias resultantes de choques de vehículos en diferentes días. A continuación, se presentan los resultados obtenidos para los viernes 6 y los viernes 13. Se utiliza un nivel de significancia de 0.05 para probar la aserción de que los viernes 13, el número de admisiones hospitalarias por choques de vehículos no se ve afectado.
@@ -566,31 +568,38 @@ Al ordenar todos los datos de menor a mayor, obtenemos la siguiente secuencia:
     \{3_1, 4_2, 5_3, 6_4, 9_5, 10_6, 11_7, 11_8, 12_9, 12_{10}, 13_{11}, 14_{12}\}
 \]
 
-Dado que tenemos 12 datos en total, es necesario ajustar los rangos para los valores que aparecen repetidos (empates). En este caso, los valores repetidos son 11 y 12.
-
-Para los valores 11, que aparecen en las posiciones 7 y 8, el rango promedio sería $(7+8)/2 = 7.5$. Por lo tanto, el rango que corresponde a ambos 11 es 7.5.
-
-Para los valores 12, que aparecen en las posiciones 9 y 10, el rango promedio sería $(9+10)/2 = 9.5$. Así, el rango que corresponde a ambos 12 es 9.5.
+\begin{itemize}
+    \item 3: 1
+    \item 4: 2
+    \item 5: 3
+    \item 6: 4
+    \item 9: 5
+    \item 10: 6
+    \item 11: 7.5
+    \item 12: 9.5
+    \item 13: 11
+    \item 14: 12
+\end{itemize}
 
 suma de los rangos de viernes 6
-\[T_1 = 1 + 3 + 4 + 5 + 7.5 + 7.5 = 28\]
+\[T_1 = 5 + 4 + 7.5 + 7.5 + 1 + 3 = 28\]
 
 suma de los rangos de viernes 13
-\[T_2 = 2 + 6 + 9.5 + 9.5 + 11 + 12 = 50\]
+\[T_2 = 11 + 9.5 + 12 + 6 + 2 + 9.5 = 50\]
 
 $n=6$
 $m=6$
 
-\textbf{Por que $n$ y $m$ son 6?}
-
-En el contexto del análisis estadístico presentado, n y m representan los tamaños de las muestras de los dos grupos que se están comparando: las admisiones hospitalarias en viernes 6 y viernes 13, respectivamente. En este caso, ambos n y m son igual a 6 porque hay exactamente 6 datos (o observaciones) para cada uno de los dos grupos.
-
 entonces
 
 \[u_1 = nm + \frac{n(n+1)}{2} - T_1\]
-\[u_1 = 6*6 + \frac{6(7+1)}{2} - 28 = 29\]
+\[u_2 = nm + \frac{m(m+1)}{2} - T_2\]
 
-\[u_2\ = 7\]
+\vspace{.25cm}
+
+\[u_1 = 6*6 + \frac{6(6+1)}{2} - 28 = 29\]
+\[u_2 = 6*6 + \frac{6(6+1)}{2} - 50 = 7\]
+
 
 \[u = min(u_1, u_2) = 7\]
 
@@ -598,7 +607,7 @@ entonces
 
 \textbf{Continuacion de la clase pasada}
 
-\[E(u) = 18\]
+\[E(u) = \frac{nm}{2} =18\]
 
 \[Var(u) = 39\]
 
@@ -685,7 +694,7 @@ Se rechaza $H_0$ con un nivel de significancia$\alpha$, si
 o
 \[\text{p-valor} = 2\mathbb{P}(z > |z|) < \alpha\]
 
-\textbf{Ejemplo 4}
+\subsection*{Ejemplo 4}
 
 Los numeros de fusibles electricos defectuosos producidos por las lineas A y B se registraron a diario durante 10 dias, con los siguientes resultados:
 
@@ -738,7 +747,7 @@ Estas T son la suma de los rangos
 
 Se rechaza $H_0$ si
 
-\[|z| > q_z()\]
+\[|z| > q_z(1 - \frac{\alpha}{2})\]
 
 \[2.5993 > 1.96\]
 
@@ -884,8 +893,11 @@ Donde $N$ es el número total de observaciones. Para este caso:
 \subsection*{Conclusión}
 
 Se rechaza $H_0$ si
+
 \[H > q_{X^{2}_{k-1}}(1 - \alpha)\]
-\[1.70395 > q_{X^{2}_{k-1}}(0.95) = 7.815\]
+\[q_{X^{2}_{k-1}}(0.95) = 7.815\]
+\[1.70395 > 7.815\]
+
 No rechazamos $H_0$. Por lo tanto, concluimos que no hay evidencia suficiente para afirmar que existen diferencias significativas entre las zonas en cuanto al cociente entre el precio de venta y el valor catastral de las propiedades.
 
 La expresión para el valor crítico de la distribución chi-cuadrado con 3 grados de libertad es:
@@ -1525,4 +1537,41 @@ Por lo tanto la suma de los cuadrados de los errores del modelo reducido es
 \]
 
 A continuacion, encontramos el punto critico de la funcion $SS_{E_r}$
+
+\section{15/03/2024}
+
+\subsection*{Ejemplo 2}
+
+Un ingeniero de desarrollo de productos tiene interes en investigar la resistencia a la tension de una fibra que se usara para hacer playeras. El ingeniero sabe por experiencia previa que la resistencia a la tension se afecta por el peso porcentual de algodon utilizado en la mezcla de materiales de fibra. Ademas sospecha que al aumentar el contenido de algodon se incrementara la resistencia, al menos en un principio el ingeriero decide probar ejemplares en cinco niveles del peso porcentual del algodon :$15,20,25,30,35 \%$ Tambien decide probar 5 ejemplares en cada nivel del contenido de algodon. Los resultados que obtuvo, se muestra en la siguiente tabla
+
+\subsection*{Datos}
+\begin{table}[ht]
+    \centering
+    \caption{Verifica que los siguientes datos se distribuyen como una normal estándar con un nivel de significancia $\alpha=0.05$}
+    \begin{tabular}{ccccc}
+        \toprule
+        15\% & 20\% & 25\% & 30\% & 35\% \\
+        \midrule
+        7    & 12   & 14   & 19   & 7    \\
+        7    & 17   & 18   & 25   & 10   \\
+        15   & 12   & 18   & 22   & 11   \\
+        11   & 18   & 19   & 19   & 15   \\
+        9    & 18   & 19   & 23   & 11   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{itemize}
+    \item $\bar{Y_1} = 9.8$
+    \item $\bar{Y_2} = 15.4$
+    \item $\bar{Y_3} = 17.6$
+    \item $\bar{Y_4} = 21.6$
+    \item $\bar{Y_5} = 10.8$
+    \item $\bar{Y} = 15.04$
+\end{itemize}
+
+\[SS\text{Tratamiento} = \sum_{t}^{i=1}\sum_{r}^{j=1}(\bar{Y_i} - \bar{Y})^2\]
+\[SS\text{Tratamiento} = r \sum_{t}^{i=1} (\bar{Y_i} - \bar{Y})^2\]
+\[SS\text{Tratamiento} = 5 \left[(9.8 - 15.04)^2 + (15.4-15.04)^2 + (17.6 - 15.04)^2 \dots = 475.76\right]\]
+
 \end{document}

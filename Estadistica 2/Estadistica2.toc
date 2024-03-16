@@ -23,26 +23,27 @@
 \contentsline {subsubsection}{\numberline {5.2.1}Para 2 Poblaciones}{10}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}Para Más de 2 Poblaciones}{11}{subsubsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.3}Prueba de Mann-Whitney}{11}{subsection.5.3}%
-\contentsline {section}{\numberline {6}16/02/2024}{13}{section.6}%
+\contentsline {section}{\numberline {6}16/02/2024}{14}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Prueba de Wilcoxon}{14}{subsection.6.1}%
-\contentsline {section}{\numberline {7}19/02/2024}{16}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Prueba de Kruskal-Wallis}{16}{subsection.7.1}%
-\contentsline {section}{\numberline {8}21/02/2024}{19}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Pruebas basadas en corridas}{19}{subsection.8.1}%
-\contentsline {section}{\numberline {9}23/02/2024}{21}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Pruebas de Independencia}{21}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Coeficiente de Correlación de Spearman}{21}{subsection.9.2}%
-\contentsline {section}{\numberline {10}26/02/2024}{23}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Tau de Kendall}{23}{subsection.10.1}%
-\contentsline {section}{\numberline {11}01/03/3034}{25}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Tablas de contingencia}{25}{subsection.11.1}%
-\contentsline {subsubsection}{\numberline {11.1.1}Ejemplo 9}{26}{subsubsection.11.1.1}%
-\contentsline {subsection}{\numberline {11.2}Pruebas de una cola (Prueba de Mann-Whitney y Prueba de Wilcoxon)}{28}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Pruebas que se deben usar en cada ejercicio de la tarea}{28}{subsection.11.3}%
-\contentsline {section}{\numberline {12}11/03/2024}{29}{section.12}%
-\contentsline {section}{\numberline {13}13/03/2024}{29}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Análisis de varianza}{30}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Diseño completamente aleatorizado}{30}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}Modelo}{30}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}Modelo completo}{30}{subsection.13.4}%
-\contentsline {subsection}{\numberline {13.5}Modelo reducido}{31}{subsection.13.5}%
+\contentsline {section}{\numberline {7}19/02/2024}{17}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Prueba de Kruskal-Wallis}{17}{subsection.7.1}%
+\contentsline {section}{\numberline {8}21/02/2024}{20}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Pruebas basadas en corridas}{20}{subsection.8.1}%
+\contentsline {section}{\numberline {9}23/02/2024}{22}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Pruebas de Independencia}{22}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Coeficiente de Correlación de Spearman}{22}{subsection.9.2}%
+\contentsline {section}{\numberline {10}26/02/2024}{24}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Tau de Kendall}{24}{subsection.10.1}%
+\contentsline {section}{\numberline {11}01/03/3034}{26}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Tablas de contingencia}{26}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Ejemplo 9}{27}{subsubsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.2}Pruebas de una cola (Prueba de Mann-Whitney y Prueba de Wilcoxon)}{29}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Pruebas que se deben usar en cada ejercicio de la tarea}{29}{subsection.11.3}%
+\contentsline {section}{\numberline {12}11/03/2024}{30}{section.12}%
+\contentsline {section}{\numberline {13}13/03/2024}{30}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Análisis de varianza}{31}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Diseño completamente aleatorizado}{31}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Modelo}{31}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Modelo completo}{31}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Modelo reducido}{32}{subsection.13.5}%
+\contentsline {section}{\numberline {14}15/03/2024}{33}{section.14}%

@@ -9,3 +9,4 @@
 \contentsline {subsection}{\numberline {2.4}Conjuntos Convexos}{2}{subsection.2.4}%
 \contentsline {section}{\numberline {3}02/02/2024}{4}{section.3}%
 \contentsline {section}{\numberline {4}09/02/2024}{5}{section.4}%
+\contentsline {section}{\numberline {5}15/03/2024}{5}{section.5}%

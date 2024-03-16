@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{geometry}
+\usepackage{tikz}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -64,8 +65,130 @@
 
 \newpage
 
-\section{Problema 1}
+\section{Elementos de procesos estocasticos}
 
+\subsection{Definición de procesos estocasticos}
+
+\subsubsection{Ejercicio 1}
+
+Sea \(X_t\) el resultado de la suma sucesiva (acumulada) del lanzamiento de dos dados con solo tres caras. Se realizan 2 lanzamientos.
+
+\begin{enumerate}
+    \item Defina \(S\) y \(T\)
+    \item Calcule las probabilidades asociadas a cada valor de \(X_1\) y \(X_2\)
+\end{enumerate}
+
+\textbf{Nota}
+
+$S$ es el conjunto de todos los estados posibles (Conjunto de estados)
+$T$
+
+\subsubsection{Solucion ejercicio 1}
+
+\textbf{Indice 1}
+\begin{itemize}
+    \item \(S = \{2,3,4,5,6\}\)
+    \item \(T = \{1,2\}\)
+\end{itemize}
+
+\textbf{Indice 2}
+
+\begin{tabular}{c|c}
+    suma de dos lan zamientos & Resultado \\
+    \hline
+    1+1                       & 2         \\
+    1+2                       & 3         \\
+    1+3                       & 4         \\
+    2+1                       & 3         \\
+    2+2                       & 4         \\
+    2+3                       & 5         \\
+    3+1                       & 4         \\
+    3+2                       & 5         \\
+    3+3                       & 6         \\
+\end{tabular}
+
+\begin{itemize}
+    \item $\mathbb{P}(X_t = 2) = 1/9$
+    \item $\mathbb{P}(X_t = 3) = 2/9$
+    \item $\mathbb{P}(X_t = 4) = 3/9$
+    \item $\mathbb{P}(X_t = 5) = 2/9$
+    \item $\mathbb{P}(X_t = 6) = 1/9$
+\end{itemize}
+
+\newpage
+
+\subsection{Clasificación de procesos estocasticos}
+
+\subsubsection{Ejercicio 2}
+
+Indique la clasificación de cada proceso estocástico, considerándolo de acuerdo a la naturaleza de su conjunto de estados y conjunto paramétrico. Indique los valores de \( s \) y \( t \).
+
+\begin{enumerate}
+    \item Es el proceso estocástico que contabiliza la cantidad de lluvia que cae en la ciudad de México cada día.
+          \[S = \{x \in \mathbb{R} : x \geq \mathbb{0}\}\]
+          \[T = \{1,2,3,\dots\} \text{Cada los dias}\]
+    \item Es el proceso estocástico que indica la cantidad de impresoras descompuestas en cada departamento de la FES Acatlán.
+          \[S = \{0,1,2,3,\dots\} \]
+          \[T = \{1,2,3\} \text{Cada departamento de la FES}\]
+    \item Es el proceso estocástico que calcula el porcentaje de enfermos de dengue por colonia en Pachuca, Hidalgo.
+          \[S = \{x : x \in [0, 100]\} \]
+          \[T = \{1,2,3,\dots,N\} \text{N es el numero de colonias}\]
+    \item Es el proceso estocástico que mide el tiempo que tarda en caer la n-ésima pelota lanzada desde el techo de una casa.
+          \[S = \{x \in \mathbb{R} : x > 0\}\]
+          \[ T = \{1,2,3,\dots\} \text{ correspondiente a cada n-ésima pelota lanzada} \]
+    \item Es el proceso estocástico que mide el tiempo de clase diaria que imparte un profesor.
+          \[ S = \{x \in \mathbb{R} : x \geq 0\} \]
+          \[ T = \{1,2,3,\dots\} \text{ representando cada día de clase} \]
+    \item Es el proceso estocástico que mide la cantidad de agua que existe en una cisterna en un instante específico.
+          \[ S = \{x \in \mathbb{R} : x \geq 0\} \]
+          \[ T = \{t \in \mathbb{R} : t \geq 0\} \text{ representando el tiempo continuo} \]
+    \item Es el proceso estocástico que mide el promedio de calificaciones de un grupo de alumnos durante cada semestre, en una carrera que dura 10 semestres.
+          \[ S = \{x \in [0, 100]\} \]
+          \[ T = \{1,2,3,\dots,10\} \text{ cada semestre de la carrera} \]
+    \item Es el proceso estocástico que indica la posición de un elevador de 5 pisos en un instante de tiempo definido.
+          \[ S = \{1,2,3,4,5\} \]
+          \[ T = \mathbb{R}^+ \text{ tiempo continuo} \]
+    \item Es el proceso estocástico que determina el marcador de un partido de tenis, durante 5 sets.
+          \[ S = \text{Conjunto de posibles marcadores en tenis} \]
+          \[ T = \{1,2,3,4,5\} \text{ correspondiente a cada set del partido} \]
+    \item Es el proceso estocástico que mide el porcentaje de llenado individual de 40 botellas en un período de 10 segundos.
+          \[ S = \{x \in [0, 100]\} \]
+          \[ T = \{t \in \mathbb{R} : 0 \leq t \leq 10\} \]
+\end{enumerate}
+
+\subsection{Ejemplos de procesos estocasticos}
+
+\subsubsection{Ejercicio 3 - Tarea 1}
+
+En cada ejercicio determine \( S \), \( T \) y si es posible, las probabilidades de transición (como fórmula, tabla o gráfica)
+
+\begin{enumerate}
+    \item Un alumno realiza apuestas de \$10 con una probabilidad ``\( p \)'' de ganar, una probabilidad ``\( q \)'' de perder y una probabilidad ``\( r \)'' de quedarse igual. Inicia el juego con un capital de \$100. Se retira del juego si pierde todo su capital o si lo duplica. Sea \( X_t \) el capital del alumno después de la t-ésima apuesta.
+          \[ S = \{0, 10, 20, \dots, 200\} \]
+          \[ T = \{1,2,3,\dots\} \text{Numero de apuestas}\]
+          \begin{center}
+              \includegraphics[width=0.6\linewidth]{./imagenes/image.png}
+          \end{center}
+    \item Suponer que al final de cada año escolar un estudiante tiene que repetir el año o pasar al curso siguiente. Considere que se requiere un mínimo de 3 años para completar el nivel académico.
+          \[ S = \{1,2,3\} \text{Cada uno de los semestres que va a cursar}\]
+          \[T = \{1,2,3,\dots\}\text{evaluacion al final de cada año que determina si el alumno pasa o no}\]
+          \begin{center}
+              \includegraphics[width=0.6\linewidth]{./imagenes/image2.png}
+          \end{center}
+    \item Suponer que se lleva un control del comportamiento del dólar en cada día, considerando que baja, sube o se mantiene.
+          \[S = {\text{Baja}, \text{Sube}, \text{Se mantiene}}\]
+          \[T = {1,2,3,\dots} \text{Dias en los que s ehace la medicion}\]
+    \item Constrúyase un proceso para estudiar el escrutinio de los votos de una justa electoral entre sólo 2 candidatos.
+          \[T = \{1,2\dots, n\} \text{Numero de votos a contar}\]
+    \item Una fábrica tiene 2 máquinas, pero en cualquier día dado no se usa más que una. Esta máquina tiene una probabilidad constante \( p \) de sufrir una avería, y si así sucede, la avería ocurre la final del trabajo del día. Se emplea un solo hombre para repararla. A este hombre le toma 2 días reparar la máquina y sólo trabaja en una máquina a la vez. Considere que \( X_t \) es el proceso estocástico que registra al final del día \( t \), el número de días que serán necesarios para que ambas máquinas trabajen.
+          \[T = \{1,2,3,\dots\} \text{Dias en los que se eobserva la disponibilidad}\]
+\end{enumerate}
+
+\subsection{Conceptos básicos de procesos estocasticos}
+
+\subsubsection{Ejercicio 4 - Ejercicios de clase, procesos de bernoulli y caminata aleatoria}
+
+\subsection*{Problema 1}
 Demuestre que para un $N_n$ definido en un proceso de Bernoulli, la varianza, $\text{Var}(N_n)$, es igual a $npq$
 Sea \( X \) el número de éxitos, entonces:
 \[ E(N_n) = np \]
@@ -104,25 +227,25 @@ Entonces la varianza es
 
 \[Var(N_n) = npq\]
 
-\section{Problema 2}
+\subsection*{Problema 2}
 
 Demuestre que la funcion generatriz de momentos de la caminata aleatoria es $M(t) = (pe^t + qe^{-t}) * n$. Recuerda que la funcion generatriz de momentos es: $m(t) = E(e^{tx})$
 
 
-\subsection*{Paso 1: Definición de la Función Generatriz de Momentos}
+\subsubsection*{Paso 1: Definición de la Función Generatriz de Momentos}
 La función generatriz de momentos $m(t)$ de una variable aleatoria $X$ se define como:
 \[ m(t) = E[e^{tX}] \]
 
-\subsection*{Paso 2: Aplicación a la Caminata Aleatoria}
+\subsubsection*{Paso 2: Aplicación a la Caminata Aleatoria}
 Para un solo paso $X_i$ de la caminata, donde $X_i = +1$ con probabilidad $p$ y $X_i = -1$ con probabilidad $q$, la función generatriz de momentos es:
 \[ m_i(t) = E[e^{tX_i}] = pe^{t(+1)} + qe^{t(-1)} = pe^t + qe^{-t} \]
 
-\subsection*{Paso 3: Función Generatriz de Momentos para $n$ Pasos}
+\subsubsection*{Paso 3: Función Generatriz de Momentos para $n$ Pasos}
 Considerando que la caminata aleatoria está compuesta por $n$ pasos independientes y que la función generatriz de momentos para la suma de variables aleatorias independientes es el producto de sus funciones generatriz de momentos individuales, la función generatriz de momentos para la caminata aleatoria completa, $M(t)$, es:
 \[ M(t) = (m_i(t))^n = (pe^t + qe^{-t})^n \]
 
 
-\section{Problema 3}
+\subsection*{Problema 3}
 
 Demuestre que para $n,k \in \{1,2,3,\dots\}$
 
@@ -140,22 +263,26 @@ En un ensayo solo puede ocurrir un éxito o un fracaso:
 La fórmula se reduce a:
 \[ P\{N_{n+1} = k\} = p \cdot P\{N_n = k-1\} + q \cdot P\{N_n = k\} \]
 
-\section{Problema 4}
+\newpage
+
+\subsubsection{Ejercicio 5 - Ejercicios caminata aleatoria y distribucion de probabilidad}
+
+\subsection*{Problema 1}
 
 Demuestre la formula de probabilidades de transicion de una caminata alaeatoria simple usando ahora los pasos que se dan a la izquierda
 
-\section{Problema 5}
+\subsection*{Problema 2}
 
 Para una caminata aleatoria simple \(X_n\) sobre los enteros, demuestre que:
 \[ P(X_{n+1} = x) = pP(X_n = x - 1) + qP(X_n = x + 1) \]
 
 Sugerencia: Sustituya los parámetros de las probabilidades en la fórmula de probabilidades de transición de una caminata aleatoria y con álgebra verifique la igualdad.
 
-\section{Problema 6}
+\subsection*{Problema 3}
 
 Una partícula realiza una caminata aleatoria simétrica sobre los enteros empezando en 0. Encuentre la probabilidad de que la partícula no se encuentre nuevamente en el origen en el sexto paso.
 
-\section{Practica 2}
+\subsubsection{Ejercicio 6 - Practica 2: Caminata aleatoria}
 
 \subsection*{Problema 1}
 
@@ -173,6 +300,10 @@ La probabilidad de que la partícula se encuentre en la posición 8 después de 
     P\{X_{10} = 8 | X_0 = 3\} = \binom{10}{\frac{10 + 8 - 3}{2}} \left(\frac{2}{3}\right)^{\frac{10 + 8 - 3}{2}} \left(\frac{1}{3}\right)^{\frac{10 - 8 + 3}{2}},
 \]
 dado que \( \frac{10 + 8 - 3}{2} \) no es un número entero, la probabilidad es 0. esto se debe a que no se puede llegar a una posicion par dando un numero par de pasos desde una posicion inicial impar
+
+\[
+    P\{X_{10} = 8 | X_0 = 3\} = 0
+\]
 
 \subsubsection*{Punto b}
 
@@ -211,11 +342,75 @@ lo que representa una probabilidad del 7.03125\%.
 
 \subsubsection*{Punto b}
 
-No es posible llegar a una posicion impar danndo un numero par de pasos
+\[
+    P\{X_{13} = 3 | X_0 = 0\} = \binom{13}{8} \left(\frac{1}{2}\right)^{8} \left(\frac{1}{2}\right)^{5} = 0.1571,
+\]
+
+\[
+    P\{X_{13} =7 | X_0 = 0\} = \binom{13}{10} \left(\frac{1}{2}\right)^{10} \left(\frac{1}{2}\right)^{3} = 0.0349,
+\]
+
+\[
+    P\{X_{13} = 3 | X_0 = 0\} \cup  P\{X_{13} =7 | X_0 = 0\} = 0.1571 + 0.0349 = 0.1920
+\]
 
 \subsubsection*{Punto c}
 
 No es posible llegar a una posicion par dando un numero impar de pasos
+
+\subsection*{Problema 3}
+
+Considere una persona que bajo los efectos del alcohol da pasos hacia
+delante con probabilidad de $0.57$ y hacia atrás con probabilidad
+complementaria, sobre una calle que puede referenciarse con los números
+enteros. Él sale de la cantina que se encuentra en la posición $-3$. Su casa se
+encuentra en la posición $4$. La casa de su mejor amigo en la posición $2$ y un
+Oxxo en el origen. Considere la probabilidad de que el borracho, saliendo de
+la cantina:
+
+\begin{itemize}
+    \item[a)] se encuentre en su casa después de $5$ pasos.
+    \item[b)] se encuentre en su casa después de $13$ pasos.
+    \item[c)] llegue al Oxxo para comprar más alcohol después de $5$ pasos.
+    \item[d)] no ``caiga en la casa de su mejor amigo'' en $9$ pasos.
+\end{itemize}
+
+\subsubsection*{Punto a}
+
+\[
+    P\{X_{5} = 4 | X_0 = -3\} = \binom{5}{\frac{5+4+3}{2}} \left(0.57\right)^{\frac{5+4+3}{2}} \left(0.43\right)^{\frac{5-4-3}{2}}
+\]
+
+El numero de pasos para llegar de \(-3\) a \(4\) es de minimo 7 por lo tanto con 5 pasos no se puede llegar
+
+\subsubsection*{Punto b}
+
+\begin{align*}
+    P\{X_{13} = 4 \mid X_0 = -3\} & = \binom{13}{\frac{13+4-(-3)}{2}} \left(0.57\right)^{\frac{13 + 4 - (-3)}{2}} \left(0.43\right)^{\frac{13 - 4 + (-3)}{2}} \\
+                                  & = \binom{13}{\frac{14}{2}} \left(0.57\right)^{\frac{14}{2}} \left(0.43\right)^{\frac{6}{2}}                               \\
+                                  & = \binom{13}{7} \left(0.57\right)^{7} \left(0.43\right)^{3}                                                               \\
+                                  & = 0.2120
+\end{align*}
+
+\subsubsection*{Punto c}
+
+\begin{align*}
+    P\{X_{5} = 0 \mid X_0 = -3\} & = \binom{5}{\frac{5 + 0-(-3)}{2}} \left(0.57\right)^{\frac{5 + 0 - (-3)}{2}} \left(0.43\right)^{\frac{5 - 0 + (-3)}{2}} \\
+                                 & = \binom{5}{\frac{8}{2}} \left(0.57\right)^{\frac{8}{2}} \left(0.43\right)^{\frac{2}{2}}                                \\
+                                 & = \binom{5}{4} \left(0.57\right)^{4} \left(0.43\right)                                                                  \\
+                                 & = 0.2269
+\end{align*}
+
+\subsubsection*{Punto d}
+
+\begin{align*}
+    P\{X_{9} = 2 \mid X_0 = -3\} & = \binom{9}{\frac{9 + 2 -(-3)}{2}} \left(0.57\right)^{\frac{9 + 2 - (-3)}{2}} \left(0.43\right)^{\frac{9 - 2 + (-3)}{2}} \\
+                                 & = \binom{5}{\frac{14}{2}} \left(0.57\right)^{\frac{14}{2}} \left(0.43\right)^{\frac{4}{2}}                               \\
+                                 & = \binom{5}{7} \left(0.57\right)^{4} \left(0.43\right)^{2}                                                               \\
+                                 & = 0.1302
+\end{align*}
+
+La probabilidad de que no caiga es $1-0.1302 = 0.8698$
 
 \section{Cadena de markov}
 
