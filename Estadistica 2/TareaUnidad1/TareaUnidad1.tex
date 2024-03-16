@@ -106,7 +106,8 @@ En algunas pruebas de salud en ancianos, un nuevo medicamento ha restaurado su m
 \[ \text{20s: } 11.5 + 16 + 13.5 + 19.5 + 17.5 + 4.5 + 4.5 + 8.5 + 17.5 + 19.5 = 132.5 \]
 \[ \text{65-70s: } 4.5 + 1.5 + 13.5 + 4.5 + 8.5 + 15 + 1.5 + 8.5 + 8.5 + 11.5 = 77.5\]
 
-\[u = nm + \frac{n(n+1)}{2} - T_1\]
+\subsection*{Estadisticos $U$}
+
 \[u_1 = 10 \cdot 10 + \frac{10(10+1)}{2} - 132.5 = 22.5\]
 \[u_2 = 10 \cdot 10 + \frac{10(10+1)}{2} - 77.5 = 77.5\]
 
@@ -118,7 +119,9 @@ Calculando la \textbf{esperanza} tenemos:
 
 Calculando la \textbf{varianza} tenemos:
 
-\[Var(u) = \frac{10 \cdot 10(10+10+1)}{12} = 39\]
+\[Var(u) = \frac{10 \cdot 10(10+10+1)}{12} = 175\]
+
+Calculando \textbf{z} tenemos:
 
 \[z = \frac{u - E(u)}{\sqrt{Var(u)}} = \frac{22.5 - 50}{\sqrt{175}} = -2.0788\]
 
@@ -137,10 +140,10 @@ Realizando la prueba \( |z| > q_Z \left(1 - \frac{\alpha}{2} \right) \) obtenemo
 De igual manera podemos hacer la prueba calculando el p-valor correspondiente.
 
 \begin{align*}
-    \text{p-valor} &= 2P(Z > 2.0788) \\
-    &= 2 \left[1 - P(Z < 2.0788)\right] \\
-    &= 2 \left[0.01881\right] \\
-    &= 0.03763
+    \text{p-valor} & = 2P(Z > 2.0788)                   \\
+                   & = 2 \left[1 - P(Z < 2.0788)\right] \\
+                   & = 2 \left[0.01881\right]           \\
+                   & = 0.03763
 \end{align*}
 
 Sabemos que se rechaza $H_0$ (Se acepta $H_1$) si se cumple
@@ -149,7 +152,7 @@ Sabemos que se rechaza $H_0$ (Se acepta $H_1$) si se cumple
 
 \vspace*{.25cm}
 
-En este caso la condicion 
+En este caso la condicion
 
 \[0.03763 < 0.05\]
 
@@ -177,6 +180,96 @@ El tratamiento de cáncer por medios químicos, llamado quimioterapia, mata cél
         120                & 196                     \\
     \end{tabular}
 \end{center}
+
+\subsection*{Ordenación de los Datos}
+
+\[ \{ 72, 76, 84, 92, 92, 96, 104, 120, 128, 140, 144, 168, 180, 184, 184, 188, 196, 244, 368, 380, 440, 480, 480, 480 \} \]
+
+\subsection*{Cálculo de Rangos}
+
+\begin{itemize}
+    \item 72: 1
+    \item 76: 2
+    \item 84: 3
+    \item 92: 4.5
+    \item 96: 6
+    \item 104: 7
+    \item 120: 8
+    \item 128: 9
+    \item 140: 10
+    \item 144: 11
+    \item 168: 12
+    \item 180: 13
+    \item 184: 14.5
+    \item 188: 16
+    \item 196: 17
+    \item 244: 18
+    \item 368: 19
+    \item 380: 20
+    \item 440: 21
+    \item 480: 23
+\end{itemize}
+
+\subsection*{Suma de rangos para cada grupo}
+\[ \text{Quimioterapia: } 3.0 + 9.0 + 12.0 + 4.5+ 14.5+ 4.5+ 2.0+ 7.0+ 1.0+ 13.0+ 11.0+ 8.0 = 89.5 \]
+\[ \text{Quimioterapia + droga: } 10.0+ 14.5+ 19.0+ 6.0+ 23.0+ 16.0+ 23.0+ 18.0+ 21.0+ 20.0+ 23.0+ 17.0 = 210.5\]
+
+\subsection*{Estadisticos $U$}
+
+\[
+    U_1 = 12*12 + \frac{12(12+1)}{2} - 89.9 = 132.5
+\]
+\[
+    U_2 = 12*12 + \frac{12(12+1)}{2} - 210.5 = 11.5
+\]
+
+\[
+    U = \min(U_1, U_2) = 11.5
+\]
+
+\subsection*{Esperanza, varianza y z}
+
+\[
+    E(u) = \frac{12*12}{2} = 72
+\]
+\[
+    Var(u) = \frac{12*12(12+12+1)}{12} = 300
+\]
+\[
+    z = \frac{11.5 - 72}{\sqrt{300}} = -3.4929
+\]
+\[
+    |z| = 3.4929
+\]
+
+\subsection*{conclusiónes}
+
+Se rechaza la hipótesis nula $H_0$ con un nivel de significancia $\alpha$, si el valor absoluto de $Z$ es mayor que el cuantil crítico $q_z(1-\frac{\alpha}{2})$ de la distribución normal estándar:
+
+\[
+    |Z| > q_z\left(1-\frac{\alpha}{2}\right)
+\]
+
+\[
+    q_Z (0.975) = 1.959964
+\]
+
+\[
+    3.4929 > 1.959964
+\]
+Se rechaza H0, se acepta H1. Las distribuciones son diferentes.
+
+De igual manera podemos hacer la prueba calculando el p-valor correspondiente. Si $p\text{-valor} < \alpha$, se rechaza $H_0$
+
+\begin{align*}
+    \text{p-valor} & = 2P(Z > 3.4929)                   \\
+                   & = 2 \left[1 - P(Z < 3.4929)\right] \\
+                   & = 0.00047
+\end{align*}
+
+\[0.00047 < 0.05\]
+
+Por lo tanto se confirma que se rechaza H0 y se acepta H1
 
 \section{Problema 3}
 
@@ -245,10 +338,10 @@ Dado que tenemos datos en pares y lo que buscamos demostar es si la distribucion
     E(T) = \frac{n(n + 1)}{4} = \frac{12(12 + 1)}{4} = 39
 \]
 \[
-    Var(T) = \frac{n(n + 1)(2n + 1)}{24} = \frac{12(12 + 1)(2(12) + 1)}{24} =169
+    Var(T) = \frac{n(n + 1)(2n + 1)}{24} = \frac{12(12 + 1)(2(12) + 1)}{24} = 162.5
 \]
 \[
-    z = \frac{T - E(T)}{\sqrt{Var(T)}} = \frac{17.5 - 39}{\sqrt{169}} = -1.65385
+    z = \frac{T - E(T)}{\sqrt{Var(T)}} = \frac{14.5 - 39}{\sqrt{162.5}} = -1.9219
 \]
 
 Tomando $\alpha = 0.05$
@@ -316,7 +409,8 @@ Como tenemos tres muestras, las purebas de Whitney y Wilcoxon quedan descartadas
 Se rechaza $H_0$ si
 
 \[H > q_{X^{2}_{k-1}}(1 - \alpha)\]
-\[2.5399 > q_{X^{2}_{2}}(0.95) = 5.991\]
+\[q_{X^{2}_{2}}(0.95) = 5.991\]
+\[2.5399 > 5.991\]
 
 Se rechaza \(H_0\), no hay evidencia suficiente para afirmar que existen diferencias significativas entre las distribuciones poblacionales de las tres campañas publicitarias.Esto significa que, las tres campañas parecen ser igualmente efectivas.
 
