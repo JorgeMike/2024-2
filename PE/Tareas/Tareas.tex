@@ -3,13 +3,9 @@
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{amsfonts}
 \usepackage{hyperref}
-\usepackage{textcomp}
-\usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{geometry}
-\usepackage{tikz}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -83,7 +79,7 @@ Sea \(X_t\) el resultado de la suma sucesiva (acumulada) del lanzamiento de dos 
 $S$ es el conjunto de todos los estados posibles (Conjunto de estados)
 $T$
 
-\subsubsection{Solucion ejercicio 1}
+\subsubsection*{Solucion ejercicio 1}
 
 \textbf{Indice 1}
 \begin{itemize}
@@ -412,9 +408,15 @@ El numero de pasos para llegar de \(-3\) a \(4\) es de minimo 7 por lo tanto con
 
 La probabilidad de que no caiga es $1-0.1302 = 0.8698$
 
+\newpage
+
 \section{Cadena de markov}
 
-\subsection{Problema 1}
+\subsection{Definicion, Probabilidades de transicion, Analisis matricial}
+
+\subsubsection{Ejercicio 7 - Ejercicios de cadenas de markov, matriz y diagrama de transicion}
+
+\subsection*{Problema 1}
 
 Considere el modelo del valor de una acción. Al final de un día dado se registra el precio. Si la acción subió la probabilidad de que suba mañana es de 0.7. Si la acción bajó, la probabilidad de que suba mañana es de sólo 0.5. (Por simplicidad, cuando una acción permanezca con el mismo valor, se considerará un aumento)
 
@@ -422,23 +424,23 @@ El \textbf{espacio de estados} \( S \) es definido como:
 
 \[ S = \{ \text{Sube}, \text{Baja} \} \]
 
-Donde:
-\begin{itemize}
-    \item "Sube" indica que el precio de la acción sube o permanece igual (considerado como aumento).
-    \item "Baja" indica que el precio de la acción baja.
-\end{itemize}
-
 % Matriz de Transición
 La \textbf{matriz de transición} \( P \) representa las probabilidades de pasar de un estado a otro. Para este modelo, la matriz es:
 \[ P = \begin{pmatrix} 0.7 & 0.3 \\ 0.5 & 0.5 \end{pmatrix} \]
 
 Donde:
-\begin{itemize}
-    \item La primera fila \( \begin{pmatrix} 0.7 & 0.3 \end{pmatrix} \) representa las probabilidades de transición desde el estado "Sube": Si hoy el precio subió (o se mantuvo igual), la probabilidad de que suba mañana es de 0.7 y la de que baje es de 0.3.
-    \item La segunda fila \( \begin{pmatrix} 0.5 & 0.5 \end{pmatrix} \) representa las probabilidades de transición desde el estado "Baja": Si hoy el precio bajó, la probabilidad de que suba mañana es de 0.5 y la de que baje es también de 0.5.
-\end{itemize}
 
-\subsection{Problema 2}
+- El primer renglón representa la probabilidad de transición cuando la acción sube:
+- $0.7$ es la probabilidad de que la acción suba nuevamente mañana.
+- $0.3$ es la probabilidad de que la acción baje mañana.
+
+- El segundo renglón representa la probabilidad de transición cuando la acción baja:
+- $0.5$ es la probabilidad de que la acción suba mañana.
+- $0.5$ es la probabilidad de que la acción baje nuevamente mañana.
+
+En resumen, el primer renglón de la matriz se refiere a las probabilidades cuando la acción está en estado "Sube", y el segundo renglón se refiere a las probabilidades cuando la acción está en estado "Baja"
+
+\subsection*{Problema 2}
 
 Suponga ahora que el modelo de mercado de acciones se cambia de manera que el hecho de que una acción suba o no mañana, depende de si subió o no hoy y ayer. En particular, si la acción subió los dos días, ayer y hoy, la probabilidad de que suba mañana es de 0.9. Si la acción subió hoy, pero ayer bajó, la probabilidad de que mañana suba es de 0.6. Si la acción bajó hoy pero ayer subió la probabilidad de que mañana suba es de 0.5. Si bajó durante estos 2 días, la probabilidad de que mañana suba es de 0.3.
 
@@ -455,7 +457,7 @@ Considere solo 4 estados, SUBIÓ-SUBIÓ, SUBIÓ-BAJÓ, BAJÓ-SUBIÓ, BAJÓ-BAJÓ
     \end{bmatrix}
 \]
 
-\subsection{Problema 3}
+\subsection*{Problema 3}
 
 La compañía Colgate ha estado promoviendo un nuevo tipo de detergente. El resultado de dicha promoción es que el 75\% de las personas que usan el detergente durante un período de un mes continúan utilizándolo. De las personas que usan otro detergente durante un período de un mes, un 45\% cambia al detergente de Colgate al mes siguiente.
 
@@ -471,7 +473,36 @@ La \textbf{matriz de transición} \( P \) es:
     \end{pmatrix}
 \]
 
-\section{Practica 4}
+\subsubsection{Ejercicio 8 - Ejercicios de cadenas de markov, matrices de transicion  de n pasos y probabilidades incondicionales}
+
+\subsection*{Problema 1}
+
+considere un experimento donde se encuentran 5 sillas etiquetadas como a, b, c, d, e. una persona que se encuentra sentada en c debe moverse de un asiento a otro en base al lanzamiento de un dado y sus movimientos están definidos por la siguiente regla:
+
+\begin{itemize}
+    \item[a)] si no está al final de los asientos, se mueve a la izquierda si sale 1 o 2, se mueve a la derecha si sale 3 o 4 y se queda donde está si sale 5 o 6
+    \item[b)] si está al final de los asientos, vuelve a c si sale un número impar y se queda donde está si sale un número par
+\end{itemize}
+
+escribir la matriz de transición con estas reglas. obtener la matriz de transición de 4 pasos. calcule las probabilidades de las siguientes secuencias:
+
+\begin{enumerate}
+    \item[a)] \( c, d, e, c, d, a, c \)
+    \item[b)] \( c, b, d, e, e \)
+\end{enumerate}
+
+\subsection*{Problema 2}
+
+Una tienda de fotografía tiene un problema de inventario. La tienda tiene en almacén un modelo especial de cámara que puede solicitar cada semana. Sean \( d_1, d_2, \ldots \) las demandas respectivas de la cámara (el número de unidades que se venderían si hay cámaras en el inventario) durante la primera, segunda semanas, etc... Suponga que las \( d_t \) son variables aleatorias independientes idénticamente distribuidas como una distribución de Poisson con \( \lambda = 1 \) sea \( x_t \) el número de cámaras disponibles al final de la semana \( t \) la política de pedidos es que al final de cada semana \( t \) la tienda hace un pedido que le entregan al momento de abrir la tienda el lunes. El pedido es de 3 cámaras si \( x_t = 0 \) y no se ordena ninguna cámara si \( x_t > 0 \) obtenga
+
+\begin{itemize}
+    \item[a)] la matriz y diagrama de transición
+    \item[b)] la matriz de transición de 3 pasos
+    \item[c)] indique ¿cuál es la probabilidad de que no haya cámaras en inventario 2 semanas después dado que se tiene una cámara al final de una semana?
+    \item[d)] indique ¿cuál es la probabilidad incondicional de que haya 3 cámaras en inventario 2 semanas después sabiendo que \( a=(0.25, 0.25, 0.25, 0.25) \)?
+\end{itemize}
+
+\subsubsection{Ejercicio 8 - Practica 4: Caminata aleatoria}
 
 \subsection*{Problema 1}
 
@@ -547,8 +578,6 @@ Obtener la matriz de transición para el porcentaje de cambios por mes. ¿Cuál 
 \end{table}
 
 Donde la columna es la marca que obtiene el porcentaje del renglon, ejemplo la columna x en su renglon y significa que x gana el $10\%$ de sus clientes de y
-
-\newpage
 
 \subsection*{Problema 3}
 
@@ -656,6 +685,44 @@ Para encontrar cuántos individuos habrá de cada clase el próximo mes (\(\vec{
 \]
 
 Esto indica que habrá 4825 individuos que no fuman, 2750 que fuman un paquete o menos al día, y 2625 que fuman más de un paquete al día el próximo mes.
+
+\subsection{Clasificación de estados}
+
+\subsubsection{Ejercicio 8 - Ejercicios de clasificación de cadenas  de markov y estados}
+
+Este ejercicio se vio durante la clase
+
+\subsection{Comportamiento asintotico}
+
+\subsubsection{Ejercicio 9 - Ejercicios de distribución estacionaria}
+
+\subsection*{Problema 1}
+
+Un agente comercial realiza su trabajo en tres ciudades a, b y c. Para evitar desplazamientos innecesarios está todo el día en la misma ciudad y allí pernocta, desplazándose a otra ciudad al día siguiente, si no tiene suficiente trabajo. Después de estar trabajando un día en c, la probabilidad de tener que seguir trabajando en ella al día siguiente es 0.4, la de tener que viajar a b es 0.4 y la de tener que ir a a es 0.2. Si el viajante duerme un día en b, con probabilidad de 0.2 tendrá que seguir trabajando en la misma ciudad al día siguiente, en el 60\% de los casos viajará a c, mientras que irá a a con probabilidad 0.2. Por último, si el gente comercial trabaja todo un día en a, permanecerá en esa misma ciudad, al día siguiente, con una probabilidad de 0.1, irá a b con una probabilidad de 0.3 y a c con una probabilidad de 0.6. ¿Cuáles son los porcentajes de días en los que el agente comercial está en cada una de las tres ciudades?
+
+\subsection*{Problema 2}
+
+Suponga que toda la industria de refresco produce dos colas: coca cola y pepsi cola. Cuando una persona ha comprado coca cola hay una probabilidad de 90\% de que siga comprándola la vez siguiente. Si una persona compró pepsi, hay 80\% de posibilidad de que repita la vez siguiente. Encuentre el vector de distribución estacionaria.
+
+
+\subsubsection{Ejercicio 10 - Ejercicios de tiempo de primera pasada}
+
+\subsection*{Problema 1}
+En la industria de la cerveza ligera, 3 marcas comparten aproximadamente un alto porcentaje de las ventas: La Sudco, Mills y Shotz. Estas tres marcas compiten en forma intensa por los clientes de la cerveza ligera. Se hizo un estudio y se mostró que después de 3 meses 50\% de los clientes de la Sudco seguían prefiriéndola, 30\% preferían la Mills y 20\% la Shotz. De los clientes de la Mills 60\% prefieren la Mills, 30\% la Sudco y 10\% la Shotz. De los clientes de la Shotz 40\% prefieren su marca, 30\% la Sudco y 30\% la Mills. Calcule el tiempo de primera transición de la Shotz a la Sudco.
+
+\subsection*{Problema 2}
+Una compañía que se dedica a la renta de autobuses, ha dividido su área de servicio en 3: norte, centro y sur. De un estudio reciente obtuvo la matriz de transición:
+\[
+    T=
+    \begin{bmatrix}
+          & N   & C   & S   \\
+        N & 0.2 & 0.3 & 0.5 \\
+        C & 0.3 & 0.4 & 0.3 \\
+        S & 0.2 & 0.4 & 0.4
+    \end{bmatrix}
+\]
+
+La compañía desea saber cuál es el tiempo promedio que se requiere para que un autobús rentado en el norte llegue al centro. Así también, desea saber el tiempo promedio necesario para que un autobús rentado en el sur, regrese al sur.
 
 
 \end{document}

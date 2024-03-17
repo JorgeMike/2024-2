@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.11.24)  14 MAR 2024 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.11.24)  17 MAR 2024 14:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -597,7 +597,7 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<../../unam.png, id=27, 1027.84pt x 1155.31625pt>
+<../../unam.png, id=35, 1027.84pt x 1155.31625pt>
 File: ../../unam.png Graphic file (type png)
 <use ../../unam.png>
 Package pdftex.def Info: ../../unam.png  used on input line 35.
@@ -607,11 +607,11 @@ Package pdftex.def Info: ../../unam.png  used on input line 35.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../../unam.png>] (./ExamenUnidad1.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
@@ -623,7 +623,30 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.66 \newpage
-              [1] [2] (./ExamenUnidad1.aux
+              [1]
+<./image4.png, id=58, 706.64pt x 652.4375pt>
+File: ./image4.png Graphic file (type png)
+<use ./image4.png>
+Package pdftex.def Info: ./image4.png  used on input line 128.
+(pdftex.def)             Requested size: 310.50357pt x 286.68512pt.
+ [2]
+<./image.png, id=70, 444.66125pt x 136.51pt>
+File: ./image.png Graphic file (type png)
+<use ./image.png>
+Package pdftex.def Info: ./image.png  used on input line 153.
+(pdftex.def)             Requested size: 266.14978pt x 81.70665pt.
+ [3 <./image4.png> <./image.png>]
+<./image2.png, id=79, 528.97626pt x 125.46875pt>
+File: ./image2.png Graphic file (type png)
+<use ./image2.png>
+Package pdftex.def Info: ./image2.png  used on input line 161.
+(pdftex.def)             Requested size: 266.14978pt x 63.12859pt.
+<./image3.png, id=80, 928.46875pt x 630.355pt>
+File: ./image3.png Graphic file (type png)
+<use ./image3.png>
+Package pdftex.def Info: ./image3.png  used on input line 183.
+(pdftex.def)             Requested size: 310.50357pt x 210.80713pt.
+ [4 <./image2.png> <./image3.png>] [5] (./ExamenUnidad1.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -632,21 +655,21 @@ LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
 Package rerunfilecheck Info: File `ExamenUnidad1.out' has not changed.
-(rerunfilecheck)             Checksum: B7A7DCFB6800E700858611F10FC3120B;312.
+(rerunfilecheck)             Checksum: F55076B169A3F7048895A10AAA4613CE;432.
  ) 
 Here is how much of TeX's memory you used:
- 31865 strings out of 475735
- 738533 string characters out of 5784785
- 1856759 words of memory out of 5000000
- 52124 multiletter control sequences out of 15000+600000
+ 31903 strings out of 475735
+ 739151 string characters out of 5784785
+ 1861759 words of memory out of 5000000
+ 52155 multiletter control sequences out of 15000+600000
  517210 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,5n,103p,780b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on ExamenUnidad1.pdf (3 pages, 262980 bytes).
+ 99i,6n,103p,780b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on ExamenUnidad1.pdf (6 pages, 446764 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 144 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
+ 16 named destinations out of 1000 (max. 500000)
+ 94 words of extra memory for PDF output out of 10000 (max. 10000000)
 

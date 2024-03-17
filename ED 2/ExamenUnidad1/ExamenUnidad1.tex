@@ -64,19 +64,126 @@
 \tableofcontents
 
 \newpage
+\section{2}
+Demuestre que la Transformada de Laplace de una convolución de dos funciones es
 
+\[
+    \mathcal{L} \{ f*g \} = F(s)G(s) \quad \text{donde} \quad f*g = \int_{0}^{t} f(\tau) g(t - \tau) d\tau
+\]
 \section{3}
 Observe entonces que
-\[
-\mathcal{L}^{-1}\{F(s)G(s)\} = \int_0^{\infty} f(\tau)g(t - \tau) \, d\tau,
-\]
-determine la Transformada Inversa de Laplace de
 
+\[
+    \mathcal{L}^{-1}\{F(s)G(s)\} = \int_0^{\infty} f(\tau)g(t - \tau) \, d\tau,
+\]
+Determine la Transformada Inversa de Laplace de
+
+\subsection{3.1}
+\[
+    F(s) = \frac{7}{s^4}, \quad G(s) = \frac{2}{(s^2-4s+13)}
+\]
+\subsection*{Solucion}
+
+Calculando $\mathcal{L}^{-1}\left\{F(s)\right\} $
+
+\[
+    \mathcal{L}^{-1}\left\{\frac{7}{s^4}\right\} = \frac{t^{4-1}}{(4-1)!} = \frac{7t^3}{6}
+\]
+
+Calculando $\mathcal{L}^{-1}\left\{G(s)\right\} $
+
+\[
+    \mathcal{L}^{-1}\left\{\frac{2}{(s^2-4s+13)}\right\} = 2\mathcal{L}^{-1}\left\{\frac{1}{(s-2)^2+3^2}\right\}
+\]
+
+Usando
+
+\[
+    \mathcal{L}^{-1}\left\{ \frac{1}{(s - a)^2 + b^2} \right\} = e^{at} \sin(bt)
+\]
+
+\[
+    2\mathcal{L}^{-1}\left\{\frac{1}{(s-2)^2+3^2}\right\} =  2 e^{2t} \cos(3t)
+\]
+
+Por lo tanto nuestras $f(t)$ y $g(t)$ son
+
+\[
+    f(t) = \frac{7t^3}{6}, \quad g(t) =2 e^{2t} \cos(3t)
+\]
+
+Por lo tanto la convolucion es:
+
+\[
+    f(t) \ast g(t) = \int_{0}^{t} f(\tau) \cdot g(t - \tau) \, d\tau
+\]
+
+Sustituyendo las funciones:
+
+\[
+    f(t) \ast g(t) = \int_{0}^{t} \frac{7\tau^3}{6} \cdot 2 e^{2(t - \tau)} \cos(3(t - \tau)) \, d\tau
+\]
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{./image4.png}
+\end{center}
 
 \subsection{3.4}
 \[
     F(s) = \frac{7s^2+7s-14}{s^6+3s^4+3s^2+1}, \quad G(s) = \frac{2}{s^2}
 \]
+
+\subsection*{Solucion}
+
+Dado $G(s) = \frac{2}{s^2}$, podemos aplicar directamente la definición para encontrar la transformada inversa de Laplace:
+
+\[
+    \mathcal{L}^{-1}\left\{\frac{2}{s^2}\right\} = \frac{t^{2-1}}{(2-1)!} = 2t = g(t)
+\]
+
+Para $F(s) = \frac{7s^2+7s-14}{s^6+3s^4+3s^2+1}$, primero observamos que el denominador puede ser reescrito como $(s^2 + 1)^3$. Entonces, tenemos:
+
+\[
+    F(s) = \frac{7s^2 + 7s -14}{(s^2 + 1)^3}
+\]
+
+La descomposición en fracciones parciales de $F(s)$ nos da:
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{./image.png}
+\end{center}
+
+\[F(s) = \frac{7(s-3)}{(s^2 + 1)^3} + \frac{7}{(s^2 + 1)^2}\]
+
+Para encontrar la transformada inversa de Laplace, aplicamos las reglas correspondientes para cada término:
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{./image2.png}
+\end{center}
+
+\[
+    \mathcal{L}^{-1}\left\{\frac{7(s-3)}{(s^2 + 1)^3} + \frac{7}{(s^2 + 1)^2}\right\} = -\frac{7}{8} \left((-5 + t) t\cos(t) - (-5+t+3t^2)\sin(t)\right) = f(t)
+\]
+
+El producto de convolución, que es la transformada inversa de Laplace del producto de $F(s)$ y $G(s)$, se define como:
+
+\[
+    \mathcal{L}^{-1}\{F(s)G(s)\} = \int_0^{\infty} f(\tau)g(t - \tau) \, d\tau
+\]
+
+donde $f(t)$ y $g(t)$ son las transformadas inversas de Laplace de $F(s)$ y $G(s)$ respectivamente. En este caso, necesitaríamos calcular la integral:
+
+\[
+    \int_0^{\infty} \left(-\frac{7}{8} \left((-5 + \tau) \tau\cos(\tau) - (-5+\tau+3\tau^2)\sin(\tau)\right)\right)(2(t - \tau)) \, d\tau
+\]
+
+Al resover esta integral obtendremos la transformada de laplace
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{./image3.png}
+\end{center}
+
+En esta caputra podemos confirmar que realizar la inversa de laplace de $F(s)$ y $G(s)$ para obtener $f(t)$ y $g(t)$ y despues calcular su convolucion da el mismo resultado que calcular la inversa de $F(s)$ y $G(s)$
 
 \section{4}
 Encuentre la solución de las siguientes ecuaciones diferenciales.
