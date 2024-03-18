@@ -65,7 +65,7 @@
 
 \subsection{Definición de procesos estocasticos}
 
-\subsubsection{Ejercicio 1}
+\subsubsection{Ejercicio 1 - Resuelto}
 
 Sea \(X_t\) el resultado de la suma sucesiva (acumulada) del lanzamiento de dos dados con solo tres caras. Se realizan 2 lanzamientos.
 
@@ -73,11 +73,6 @@ Sea \(X_t\) el resultado de la suma sucesiva (acumulada) del lanzamiento de dos 
     \item Defina \(S\) y \(T\)
     \item Calcule las probabilidades asociadas a cada valor de \(X_1\) y \(X_2\)
 \end{enumerate}
-
-\textbf{Nota}
-
-$S$ es el conjunto de todos los estados posibles (Conjunto de estados)
-$T$
 
 \subsubsection*{Solucion ejercicio 1}
 
@@ -115,7 +110,7 @@ $T$
 
 \subsection{Clasificación de procesos estocasticos}
 
-\subsubsection{Ejercicio 2}
+\subsubsection{Ejercicio 2 - Resuelto}
 
 Indique la clasificación de cada proceso estocástico, considerándolo de acuerdo a la naturaleza de su conjunto de estados y conjunto paramétrico. Indique los valores de \( s \) y \( t \).
 
@@ -154,31 +149,41 @@ Indique la clasificación de cada proceso estocástico, considerándolo de acuer
 
 \subsection{Ejemplos de procesos estocasticos}
 
-\subsubsection{Ejercicio 3 - Tarea 1}
+\subsubsection{Ejercicio 3 - Tarea 1, Ejemplos de procesos estocástico}
 
 En cada ejercicio determine \( S \), \( T \) y si es posible, las probabilidades de transición (como fórmula, tabla o gráfica)
 
-\begin{enumerate}
-    \item Un alumno realiza apuestas de \$10 con una probabilidad ``\( p \)'' de ganar, una probabilidad ``\( q \)'' de perder y una probabilidad ``\( r \)'' de quedarse igual. Inicia el juego con un capital de \$100. Se retira del juego si pierde todo su capital o si lo duplica. Sea \( X_t \) el capital del alumno después de la t-ésima apuesta.
-          \[ S = \{0, 10, 20, \dots, 200\} \]
-          \[ T = \{1,2,3,\dots\} \text{Numero de apuestas}\]
-          \begin{center}
-              \includegraphics[width=0.6\linewidth]{./imagenes/image.png}
-          \end{center}
-    \item Suponer que al final de cada año escolar un estudiante tiene que repetir el año o pasar al curso siguiente. Considere que se requiere un mínimo de 3 años para completar el nivel académico.
-          \[ S = \{1,2,3\} \text{Cada uno de los semestres que va a cursar}\]
-          \[T = \{1,2,3,\dots\}\text{evaluacion al final de cada año que determina si el alumno pasa o no}\]
-          \begin{center}
-              \includegraphics[width=0.6\linewidth]{./imagenes/image2.png}
-          \end{center}
-    \item Suponer que se lleva un control del comportamiento del dólar en cada día, considerando que baja, sube o se mantiene.
-          \[S = {\text{Baja}, \text{Sube}, \text{Se mantiene}}\]
-          \[T = {1,2,3,\dots} \text{Dias en los que s ehace la medicion}\]
-    \item Constrúyase un proceso para estudiar el escrutinio de los votos de una justa electoral entre sólo 2 candidatos.
-          \[T = \{1,2\dots, n\} \text{Numero de votos a contar}\]
-    \item Una fábrica tiene 2 máquinas, pero en cualquier día dado no se usa más que una. Esta máquina tiene una probabilidad constante \( p \) de sufrir una avería, y si así sucede, la avería ocurre la final del trabajo del día. Se emplea un solo hombre para repararla. A este hombre le toma 2 días reparar la máquina y sólo trabaja en una máquina a la vez. Considere que \( X_t \) es el proceso estocástico que registra al final del día \( t \), el número de días que serán necesarios para que ambas máquinas trabajen.
-          \[T = \{1,2,3,\dots\} \text{Dias en los que se eobserva la disponibilidad}\]
-\end{enumerate}
+\subsection*{Problema 1}
+Un alumno realiza apuestas de \$10 con una probabilidad ``\( p \)'' de ganar, una probabilidad ``\( q \)'' de perder y una probabilidad ``\( r \)'' de quedarse igual. Inicia el juego con un capital de \$100. Se retira del juego si pierde todo su capital o si lo duplica. Sea \( X_t \) el capital del alumno después de la t-ésima apuesta.
+\[ S = \{0, 10, 20, \dots, 200\} \]
+\[ T = \{1,2,3,\dots\} \text{Numero de apuestas} \leftarrow \text{PENDIENTE, si es este?}\]
+\begin{center}
+    \includegraphics[width=0.6\linewidth]{./imagenes/image.png}
+\end{center}
+\subsection*{Problema 2}
+Suponer que al final de cada año escolar un estudiante tiene que repetir el año o pasar al curso siguiente. Considere que se requiere un mínimo de 3 años para completar el nivel académico.
+\[ S = \{1,2,3\} \text{Cada uno de los semestres que va a cursar}\]
+\[T = \{1,2,3,\dots\}\text{evaluacion al final de cada año que determina si el alumno pasa o no}\]
+\begin{center}
+    \includegraphics[width=0.6\linewidth]{./imagenes/image2.png}
+\end{center}
+\subsection*{Problema 3}
+
+Suponer que se lleva un control del comportamiento del dólar en cada día, considerando que baja, sube o se mantiene.
+\[S = {\text{Baja}, \text{Sube}, \text{Se mantiene}}\]
+\[T = {1,2,3,\dots} \text{Dias en los que s ehace la medicion}\]
+
+DIAGRAMA PENDIENTE
+\subsection*{Problema 4}
+
+Constrúyase un proceso para estudiar el escrutinio de los votos de una justa electoral entre sólo 2 candidatos.
+\[s = {} \text{PENDIENTE}\]
+\[T = \{1,2\dots, n\} \text{Numero de votos a contar}\]
+\subsection*{Problema 5}
+
+Una fábrica tiene 2 máquinas, pero en cualquier día dado no se usa más que una. Esta máquina tiene una probabilidad constante \( p \) de sufrir una avería, y si así sucede, la avería ocurre la final del trabajo del día. Se emplea un solo hombre para repararla. A este hombre le toma 2 días reparar la máquina y sólo trabaja en una máquina a la vez. Considere que \( X_t \) es el proceso estocástico que registra al final del día \( t \), el número de días que serán necesarios para que ambas máquinas trabajen.
+\[s = {} \text{PENDIENTE}\]
+\[T = \{1,2,3,\dots\} \text{Dias en los que se eobserva la disponibilidad}\]
 
 \subsection{Conceptos básicos de procesos estocasticos}
 
@@ -267,6 +272,8 @@ La fórmula se reduce a:
 
 Demuestre la formula de probabilidades de transicion de una caminata alaeatoria simple usando ahora los pasos que se dan a la izquierda
 
+PENDIENTE
+
 \subsection*{Problema 2}
 
 Para una caminata aleatoria simple \(X_n\) sobre los enteros, demuestre que:
@@ -274,9 +281,13 @@ Para una caminata aleatoria simple \(X_n\) sobre los enteros, demuestre que:
 
 Sugerencia: Sustituya los parámetros de las probabilidades en la fórmula de probabilidades de transición de una caminata aleatoria y con álgebra verifique la igualdad.
 
+PENDIENTE
+
 \subsection*{Problema 3}
 
 Una partícula realiza una caminata aleatoria simétrica sobre los enteros empezando en 0. Encuentre la probabilidad de que la partícula no se encuentre nuevamente en el origen en el sexto paso.
+
+PENDIENTE
 
 \subsubsection{Ejercicio 6 - Practica 2: Caminata aleatoria}
 

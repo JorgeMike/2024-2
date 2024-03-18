@@ -416,7 +416,6 @@ Se rechaza \(H_0\), no hay evidencia suficiente para afirmar que existen diferen
 
 \section{Problema 6}
 En un estudio reciente que involucró una muestra aleatoria de 300 accidentes automovilísticos, se clasificó la información de acuerdo con el tamaño del automóvil.
-
 \begin{center}
     \begin{tabular}{c| c c c}
                                & Pequeño & Mediano & Grande \\
@@ -447,6 +446,11 @@ Con estos datos,  ¿puedes afirmar que la frecuencia de accidentes depende del  
 \begin{align*}
      & \sum\limits_{i} 0.26391753 + 0.21993127 + 1.33058419 + 0.12610837 + 0.10509031 + 0.63579639 = 2.68142806
 \end{align*}
+Se rechaza \( H_0 \) si \( X^2 > Q_{X^2}((r-1)(c-1))^{(1-\alpha)} \)
+\[ 2.68142806 > Q_{X^2}((r-1)(c-1))^{(1-\alpha)} = Q_{X^2}((1)(2))^{(0.95)} = 0.103 \]
+Se rechaza \( H_0 \) si \( \text{P-valor} < \alpha \)
+\[ \text{P-valor} = 1 - P\left(z < \frac{2.6814 - E(X_2^2)}{\sqrt{Var(X_2^2)}}\right) = 1 - P\left(z < \frac{2.6814 - 2}{\sqrt{4}}\right) = 1 - 0.34071 = 0.6593 \]
+\[ 0.6593 \not\leq 0.05 \]
 $\therefore$ Se acepta $H_0$, lo que significa que el tamaño del automóvil si afecta, por ende es más seguro un auto grande o mediano que uno pequeño.
 
 \section{Problema 7}
