@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.11.24)  12 MAR 2024 09:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.19)  21 MAR 2024 08:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -678,7 +678,7 @@ Package rerunfilecheck Info: File `unidad1.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  31970 strings out of 475735
- 740482 string characters out of 5784785
+ 740482 string characters out of 5784786
  1868759 words of memory out of 5000000
  52193 multiletter control sequences out of 15000+600000
  517378 words of font info for 50 fonts, out of 8000000 for 9000

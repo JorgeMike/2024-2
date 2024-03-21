@@ -711,6 +711,57 @@ Este ejercicio se vio durante la clase
 
 Un agente comercial realiza su trabajo en tres ciudades a, b y c. Para evitar desplazamientos innecesarios está todo el día en la misma ciudad y allí pernocta, desplazándose a otra ciudad al día siguiente, si no tiene suficiente trabajo. Después de estar trabajando un día en c, la probabilidad de tener que seguir trabajando en ella al día siguiente es 0.4, la de tener que viajar a b es 0.4 y la de tener que ir a a es 0.2. Si el viajante duerme un día en b, con probabilidad de 0.2 tendrá que seguir trabajando en la misma ciudad al día siguiente, en el 60\% de los casos viajará a c, mientras que irá a a con probabilidad 0.2. Por último, si el gente comercial trabaja todo un día en a, permanecerá en esa misma ciudad, al día siguiente, con una probabilidad de 0.1, irá a b con una probabilidad de 0.3 y a c con una probabilidad de 0.6. ¿Cuáles son los porcentajes de días en los que el agente comercial está en cada una de las tres ciudades?
 
+\[
+    P = \begin{bmatrix}
+        P(a|a) & P(b|a) & P(c|a) \\
+        P(a|b) & P(b|b) & P(c|b) \\
+        P(a|c) & P(b|c) & P(c|c)
+    \end{bmatrix}
+    = \begin{bmatrix}
+        0.1 & 0.3 & 0.6 \\
+        0.2 & 0.2 & 0.6 \\
+        0.2 & 0.4 & 0.4
+    \end{bmatrix}
+\]
+
+\begin{align*}
+    \pi_a & = 0.1\pi_a + 0.2\pi_b + 0.2\pi_c \\
+    \pi_b & = 0.3\pi_a + 0.2\pi_b + 0.4\pi_c \\
+    \pi_c & = 0.6\pi_a + 0.6\pi_b + 0.4\pi_c \\
+    1     & = \pi_a + \pi_b + \pi_c
+\end{align*}
+
+Reorganizando el sistema
+
+\begin{align*}
+    -0.9\pi_a + 0.2\pi_b + 0.2\pi_c & = 0 \\
+    0.3\pi_a - 0.8\pi_b + 0.4\pi_c  & = 0 \\
+    0.6\pi_a + 0.6\pi_b - 0.6\pi_c  & = 0 \\
+    \pi_a + \pi_b + \pi_c           & = 1
+\end{align*}
+
+\begin{align*}
+    \begin{pmatrix}
+        -0.9 & 0.2  & 0.2  \\
+        0.3  & -0.8 & 0.4  \\
+        0.6  & 0.6  & -0.6 \\
+        1    & 1    & 1    \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        \pi_a \\
+        \pi_b \\
+        \pi_c \\
+    \end{pmatrix}
+     & =
+    \begin{pmatrix}
+        0 \\
+        0 \\
+        0 \\
+        1 \\
+    \end{pmatrix}
+\end{align*}
+
+
 \subsection*{Problema 2}
 
 Suponga que toda la industria de refresco produce dos colas: coca cola y pepsi cola. Cuando una persona ha comprado coca cola hay una probabilidad de 90\% de que siga comprándola la vez siguiente. Si una persona compró pepsi, hay 80\% de posibilidad de que repita la vez siguiente. Encuentre el vector de distribución estacionaria.

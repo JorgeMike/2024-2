@@ -53,7 +53,10 @@
         \vspace{1cm}
 
         \textbf{\large Autor:} \\
-        Jorge Miguel Alvarado Reyes \\
+        Jorge Miguel Alvarado Reyes - 421010301 \\
+        Samuel Eduardo Mariche Wajsfeld - 421040001 \\
+        Jiménez Pineda Leydi Monserrat - 421089037 \\
+        Monroy Alarcon Omar Ulises - 421098277\\
         \vspace{.5cm}
         \normalsize \today
 
@@ -270,7 +273,7 @@ De igual manera podemos hacer la prueba calculando el p-valor correspondiente. S
 \[0.00047 < 0.05\]
 
 Por lo tanto se confirma que se rechaza H0 y se acepta H1
-
+\newpage
 \section{Problema 3}
 
 Dos chefs, A y B, calificaron 22 comidas en una escala del 1 al 10. Los datos se muestran en la tabla. ¿Los datos dan suficiente evidencia para indicar que uno de los chefs tiende a dar calificaciones más altas que el otro?
@@ -291,6 +294,60 @@ Dos chefs, A y B, calificaron 22 comidas en una escala del 1 al 10. Los datos se
         11     & 6 & 9 & 22     & 5 & 3  \\
     \end{tabular}
 \end{center}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{ccccc}
+        \toprule
+        Linea A & Linea B & $| A - B|$ & Rango & R con signo \\
+        \midrule
+        6       & 8       & 2          & 13    & -13         \\
+        4       & 5       & 1          & 5.5   & -5.5        \\
+        7       & 4       & 3          & 18    & 18          \\
+        8       & 7       & 1          & 5.5   & 5.5         \\
+        2       & 3       & 1          & 5.5   & -5.5        \\
+        7       & 4       & 3          & 18    & 18          \\
+        9       & 9       & 0          & 0     & 0           \\
+        7       & 8       & 1          & 5.5   & -5.5        \\
+        2       & 5       & 3          & 18    & -18         \\
+        4       & 3       & 1          & 5.5   & 5.5         \\
+        6       & 9       & 3          & 18    & -18         \\
+        8       & 5       & 3          & 18    & 18          \\
+        4       & 2       & 2          & 13    & 13          \\
+        3       & 3       & 0          & 0     & 0           \\
+        6       & 8       & 2          & 13    & -13         \\
+        9       & 10      & 1          & 5.5   & -5.5        \\
+        9       & 8       & 1          & 5.5   & 5.5         \\
+        4       & 6       & 2          & 13    & -13         \\
+        4       & 3       & 1          & 5.5   & 5.5         \\
+        5       & 4       & 1          & 5.5   & 5.5         \\
+        3       & 2       & 1          & 5.5   & 5.5         \\
+        5       & 3       & 2          & 13    & 13          \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\[T_{+} = 113\]
+\[T_{-} = 97\]
+
+\[T = min(T_{+}, T_{-}) = 97\]
+
+\[
+    E(T) = \frac{n(n + 1)}{4} = \frac{22(22 + 1)}{4} = 126.5
+\]
+
+\[
+    Var(T) = \frac{n(n + 1)(2n + 1)}{24} = 948.75
+\]
+
+\[
+    z = \frac{T - E(T)}{\sqrt{Var(T)}} -0.9577366819967589
+\]
+
+\[\alpha = 0.05\]
+
+\[q_z(1 - \frac{\alpha}{2}) = 1.96\]
+
+En este caso Se rechaza H1, se acepta H0. Las distribuciones son iguales
 
 \section{Problema 4}
 Dos métodos para controlar el tránsito, A y B, se usaron en cada una de n = 12 cruceros durante una semana y los números de accidentes que ocurrieron durante ese tiempo se registraron. El orden de uso (cuál se emplearía para la primera semana) se seleccionó de una manera aleatoria. Se desea saber si los datos dan suficiente evidencia para indicar una diferencia en las distribuciones de porcentajes de accidentes para los métodos A y B de control de tránsito.
@@ -412,7 +469,7 @@ Se rechaza $H_0$ si
 \[q_{X^{2}_{2}}(0.95) = 5.991\]
 \[2.5399 > 5.991\]
 
-Se rechaza \(H_0\), no hay evidencia suficiente para afirmar que existen diferencias significativas entre las distribuciones poblacionales de las tres campañas publicitarias.Esto significa que, las tres campañas parecen ser igualmente efectivas.
+No rechaza \(H_0\)
 
 \section{Problema 6}
 En un estudio reciente que involucró una muestra aleatoria de 300 accidentes automovilísticos, se clasificó la información de acuerdo con el tamaño del automóvil.

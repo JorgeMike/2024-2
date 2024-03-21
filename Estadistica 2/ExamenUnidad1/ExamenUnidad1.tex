@@ -1,0 +1,260 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{geometry}
+\usepackage{booktabs}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=green,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\geometry{
+  top=3cm,
+  bottom=3cm,
+  left=3cm,
+  right=3cm
+}
+
+\title{Estadística 2}
+\author{Jorge Miguel Alvarado Reyes}
+\date{16 Agosto 2023}
+
+\setlength{\parindent}{0pt}
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.2\textwidth]{../../unam.png}
+        \vspace*{.5cm}
+
+        \LARGE
+        \textbf{Universidad Nacional Autónoma de México}
+
+        \vspace{0.5cm}
+        \LARGE
+        Facultad de Estudios Superiores Acatlán
+
+        \vspace{2cm}
+
+        \textbf{Estadística 2} \\
+        Tarea unidad 1
+
+        \vfill
+
+        \vspace{1cm}
+
+        \textbf{\large Autor:} \\
+        Jorge Miguel Alvarado Reyes - 421010301 \\
+        \vspace{.5cm}
+        \normalsize \today
+
+    \end{center}
+\end{titlepage}
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Problema 1}
+
+En un estudio de calidad se realizaron pruebas a tres tipos de cronometros. La siguiente tabla muestra miles de ciclos (Encendido-apagado-reinicio) sobrevividos hasta que alguna parte del mecanismo fallo (Natrella 1963) Prueba si hay una diferencia significativa entre los tios y si la hay, determina cuales tipos son significativamente diferentes.\\
+Utiliza pruebas no parametricas
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{ccccc}
+        \toprule
+        Tipo 1 & Tipo 2 & Tipo 3 \\
+        \midrule
+        1.7    & 13.6   & 13.4   \\
+        1.9    & 19.8   & 20.09  \\
+        6.1    & 25.2   & 25.1   \\
+        12.5   & 46.2   & 29.7   \\
+        16.5   & 46.2   & 46.9   \\
+        25.1   & 61.1   &        \\
+        30.5   &        &        \\
+        42.1   &        &        \\
+        82.5   &        &        \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Usaremos una prueba de Kruskal Wallis ya que tenemos mas de 2 muestras
+
+\subsection*{Ordenamos los datos}
+
+\[[1{.}7, 1{.}9, 6{.}1, 12{.}5, 13{.}4, 13{.}6, 16{.}5, 19{.}8, 20{.}9, 25{.}1, 25{.}1, 25{.}2, 29{.}7, 30{.}5, 42{.}1, 46{.}2, 46{.}2, 46{.}9, 61{.}1, 82{.}5]\]
+
+\subsection*{Asigancion de rangos por grupo:}
+
+\textbf{Tipo 1}
+
+\[[ 1, 2, 3, 4, 7, 10{.}5, 14, 15, 20 ]\]
+
+\textbf{Tipo 2}
+
+\[[6, 8, 12, 16{.}5, 16{.}5, 19]\]
+
+\textbf{Tipo 3}
+
+\[[5, 9, 10{.}5, 13,  18]\]
+
+\subsection*{Suma de rangos por grupo}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{cccc}
+        \toprule
+        1            & 2          & 3            \\
+        \midrule
+        $n_1 = 9$    & $n_2 = 6$  & $n_3 = 5$    \\
+        $R_1 = 76.5$ & $R_2 = 78$ & $R_3 = 55.5$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection*{Calculo de $H$}
+
+\[ H = \frac{12}{20(20 + 1)} \left(\frac{76.5^2}{9} + \frac{78^2}{6} + \frac{55.5^2}{5}\right) - 3(20 + 1) = 2.1514 \]
+
+Sabemos que se rechaza $H_0$ si
+\[H > q_{X^{2}_{k-1}}(1 - \alpha)\]
+\[q_{X^{2}_{2}}(0.95) = 5.991\]
+\[2.1514 > 5.991\]
+
+Como no se cumple esta condicion decimos que no se rechaza $H_0$
+
+\subsection*{P-valor}
+
+El cálculo del p-valor se realiza como sigue:
+\[\text{p-valor} = \mathbb{P}(X^2_2 > 2.1514)\]
+
+Calculando el $p$-valor con python tenemos:
+
+$p_ value = stats.chi2.sf(H, 3 - 1) = 0.3411$
+
+Si el p-valor es menor que $alpha$ se rechaza la hipotesis nula:
+
+\[0.3411 < 0.05\]
+
+Dado que esto no se cumple comprobamos que no se rechaza la hipotesis nula $H_0$
+
+\subsection*{Conclusion}
+Los datos no muestran diferencias significativas en la durabilidad de los tres tipos de cronómetros analizados.
+
+\subsection*{Codigo}
+
+El codigo de python que se uso para realizar estas operaciones se encuentra en el siguiente colab:
+
+\url{https://colab.research.google.com/drive/10OOvmzhso1w9tStfjbpuY8CG4xY-YWW8#scrollTo=DImERoM3CBUz}
+
+\newpage
+
+\section{Problema 2}
+
+Los datos en la siguiente tabla fueron tomados de un articulo en el New York Times (20 abril 2001), La raza de la victima afecta la sentencia del asesino, los datos provienen de un estudio  de todos los casos de homicidio en Carolina del Norte durante el periodo 1993-1997 en los  que era posible que una condena por asesinato resultara sobre la pena de muerte. Tales datos han desempeñado un papel importante en el debate sobre la pena de muerte en los Estados Unidos, el unico pais occidental rico que la impone. Prueba que la raza de la victima y la raza del acusado eran independientes de si el acusado recibio la pena de muerte por homicidio en Carolina del Norte durante los años 1993-1997 y da tus conclusiónes al respecto
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Raza del acusado & Raza de la victima & Penas de muerte & No penas de muerte \\
+        \hline
+        No blanco        & Blanco             & 33              & 251                \\
+        Blanco           & Blanco             & 33              & 508                \\
+        No blanco        & No blanco          & 29              & 587                \\
+        Blanco           & No blanco          & 4               & 76                 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Frecuencias observadas
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Raza del acusado & Raza de la victima & Penas de muerte & No penas de muerte & Total \\
+        \hline
+        No blanco        & Blanco             & 33              & 251                & 284   \\
+        Blanco           & Blanco             & 33              & 508                & 541   \\
+        No blanco        & No blanco          & 29              & 587                & 616   \\
+        Blanco           & No blanco          & 4               & 76                 & 80    \\
+        \hline
+        Total            &                    & 99              & 1422               & 1521  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Frecuencias esperadas
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Raza del acusado & Raza de la victima & Penas de muerte        & No penas de muerte       & Total \\
+        \hline
+        No blanco        & Blanco             & $\frac{99(284)}{1521}$ & $\frac{1422(284)}{1521}$ & 284   \\
+        Blanco           & Blanco             & $\frac{99(541)}{1521}$ & $\frac{1422(541)}{1521}$ & 541   \\
+        No blanco        & No blanco          & $\frac{99(616)}{1521}$ & $\frac{1422(616)}{1521}$ & 616   \\
+        Blanco           & No blanco          & $\frac{99(80)}{1521}$  & $\frac{1422(80)}{1521}$  & 80    \\
+        \hline
+        Total            &                    & 99                     & 1422                     & 1521  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Raza del acusado & Raza de la victima & Penas de muerte & No penas de muerte & Total \\
+        \hline
+        No blanco        & Blanco             & 18.49           & 265.51             & 284   \\
+        Blanco           & Blanco             & 35.21           & 505.79             & 541   \\
+        No blanco        & No blanco          & 40.09           & 575.91             & 616   \\
+        Blanco           & No blanco          & 5.21            & 74.79              & 80    \\
+        \hline
+        Total            &                    & 99              & 1422               & 1521  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\[
+    X^2 = \frac{(33-18.49)^2}{18.49} + \frac{(251-265.51)^2}{265.51} + \frac{(33-35.21)^2}{35.21} + \frac{(508-505.79)^2}{505.79} + \frac{(29-40.09)^2}{40.09} +
+\]
+
+\[ \frac{(587-575.91)^2}{575.91} + \frac{(4-5.21)^2}{5.21} + \frac{(76-74.79)^2}{74.79} = 15.9225\]
+
+Valor critico:
+
+\[
+    q_{(X^2)_{(r-1)(c-1)}^{1-\alpha}} = q_{(X^2_(4-1)(2-1))^(0.95)} = q_{(X^2_3)^(0.95)} 
+\]
+
+Calculando con python:
+
+\begin{equation}
+    critical_value = stats.chi2.ppf(0.95, 3) = 7.814727903251179\\
+\end{equation}
+
+\[X^2 > q_{(X^2_3)^{0.95}}\]
+
+\[15.9225 > 7.8147\]
+
+rechazamos la hipótesis nula (\( H_0 \)). Esto indica que existe una relación estadísticamente significativa entre la raza del acusado y la raza de la víctima y las decisiones de sentencia de muerte.
+
+
+\end{document}
