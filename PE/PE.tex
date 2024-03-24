@@ -1158,9 +1158,9 @@ Sea la siguiente matriz de transición, obtenga el tiempo de primera pasada de 0
 
 \[
     P = \begin{pmatrix}
-        0 & 1 & 0 \\
-        0 & 0 & 1 \\
-        1 & 0 & 0 \\
+        1/2 & 1/2 & 0   \\
+        0   & 1/3 & 2/3 \\
+        1/3 & 1/3 & 1/3 \\
     \end{pmatrix}
 \]
 
@@ -1190,6 +1190,25 @@ donde \( f_{kk} = 1 \) y \( f_{ik} = 0 \), si el estado \( i \) es absorbente e 
 Suponga que dos jugadores A y B con 2 pesos cada uno, juegan de tal forma que van a apostar 1 peso cada vez, hasta que uno de ellos quiebre. La probabilidad de que A gane una apuesta es \( \frac{1}{3} \), por lo que la probabilidad de que B gane es \( \frac{2}{3} \). Si se inicia en el estado 2, obtenga la probabilidad de absorción hacia el estado 0.
 
 Obtenga además, la probabilidad de que A termine con 4 pesos, cuando comienza con 2.
+
+
+\subsection{Practica 5}
+
+\text{1. Una urna contiene dos bolas sin pintar. Se selecciona una bola al azar y se lanza una moneda. Si la bola elegida no está pintada y la moneda produce cara, pintamos la bola de rojo. Si la moneda produce cruz la pintamos de negro. Si la bola ya está pintada, entonces cambiamos el color de la bola de rojo a negro o de negro a rojo, independientemente de si la moneda produce cara o cruz.} \\
+\text{a) Obtenga matriz de transición} \\
+\text{b) Obtenga el vector de distribución estacionaria} \\
+\text{Tip: Identifique a cada estado como vectores con el siguiente formato} \ (S,R,N), \text{donde} \ S \ \text{es el número de bolas sin pintar,} \ R \ \text{es el número de bolas rojas y} \ N \ \text{es el número de bolas negras que hay en la urna.}
+
+\[
+    P = \begin{bmatrix}
+        0 & 0.5 & 0    & 0   & 0.5  & 0    \\
+        0 & 0   & 0.25 & 0.5 & 0.25 & 0    \\
+        0 & 0   & 0    & 0   & 0.5  & 0.5  \\
+        0 & 0.5 & 0.25 & 0   & 0    & 0.25 \\
+        0 & 0   & 1    & 0   & 0    & 0    \\
+        0 & 0   & 1    & 0   & 0    & 0
+    \end{bmatrix}
+\]
 
 
 \end{document}

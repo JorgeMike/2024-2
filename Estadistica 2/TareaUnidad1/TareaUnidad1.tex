@@ -559,6 +559,8 @@ Valor de la tabla K-S = 0.32 \\
 Por lo que $Q_n(1-\alpha), n=25, \alpha=0.01 \rightarrow 0.382 \not\leq 0.32$ \\
 $\therefore$ Se rechaza $H_0$, lo que significa que los datos no provienen de una distribución normal.
 
+\newpage
+
 \section{Problema 8}
 
 Demuestra que el coeficiente de la $\tau$ de Kendall es:
@@ -567,12 +569,257 @@ $$\tau=1-\frac{4Q}{n(n-1)}$$
 
 Hint: P+Q=$\frac{n(n-1)}{2}$
 
+La fórmula para calcular $\tau$ de Kendall es:
+
+\[
+    \tau = \frac{P-Q}{\sqrt{(P+Q+T)(P+Q+U)}}
+\]
+
+donde:
+
+\begin{itemize}
+    \item $P =$ pares concordantes
+    \item $Q =$ pares discordantes
+    \item $T =$ empates en el primer conjunto
+    \item $U =$ empates en el segundo conjunto
+\end{itemize}
+
+Podemos considerar que no hay empates, por lo cual:
+
+\[
+    \tau = \frac{P-Q}{\sqrt{(P+Q)(P+Q)}} = \frac{P-Q}{P + Q}
+\]
+
+Ahora como $P+Q = \frac{n(n-1)}{2}$, entonces:
+
+\[
+    \tau = \frac{P-Q}{P+Q} = \frac{P-Q}{\frac{n(n-1)}{2}} = \frac{2(P-Q)}{n(n-1)}
+\]
+
+de la hint, sabemos que $b = \frac{n(n-1)}{2} - Q$, entonces:
+
+\[
+    \frac{\frac{n(n-1)}{2} - Q - Q}{\frac{n(n-1)}{2}} = \frac{n(n-1)-4Q}{n(n-1)}
+\]
+
+\[
+    \frac{n(n-1)}{n(n-1)} - \frac{4Q}{n(n-1)} = 1-\frac{4Q}{n(n-1)}
+\]
+
+Así, llegamos a que:
+
+\[
+    \boxed{\tau = 1 - \frac{4Q}{n(n-1)}}
+\]
+
+\newpage
+
 \section{Problema 9}
 
 Investiga la prueba de Friedman y resuelve un problema práctico.
 
+\subsection*{La prueba de Friedman}
+
+La prueba de Friedman es un test no paramétrico utilizado para detectar diferencias en tratamientos a lo largo de múltiples intentos de prueba. La prueba de Friedman es aplicable cuando tienes dos o más tratamientos dependientes (relacionados) y deseas comparar sus efectos. Se utiliza comúnmente en estudios donde los mismos sujetos son sometidos a diferentes tratamientos en un orden aleatorio.
+
+Se basa en el rango que ocupan las observaciones dentro de cada uno de los bloques (donde un bloque podría ser un sujeto o unidad experimental que recibe todos los tratamientos en un orden aleatorio). En esencia, ordena las observaciones dentro de cada bloque y asigna rangos, donde el tratamiento con el mejor resultado recibe el rango más alto. Luego, evalúa si las diferencias entre los rangos de los tratamientos son mayores de lo esperado por casualidad.
+\\  \\ \\
+\textbf{PASOS DE LA PRUEBA DE FRIEDMAN.}
+
+\begin{enumerate}
+    \item Rankear los datos dentro de cada bloque: Para cada bloque (sujeto), ordena las observaciones de los tratamientos de menor a mayor y asigna rangos. En caso de empates, asigna un rango promedio.
+    \item Calcular el estadístico de Friedman: Se calcula un valor estadístico basado en la suma de los rangos asignados a cada tratamiento a través de todos los bloques. Este estadístico se compara con una distribución de Friedman para determinar si las diferencias observadas son estadísticamente significativas.
+
+          Para calcular el estadístico de Friedman, usamos la fórmula:
+
+          \[ \chi_F^2 = \frac{12}{Nk(k+1)} \sum_{j=1}^k R_j^2 - 3N(k+1) \]
+
+          donde:
+          \begin{itemize}
+              \item $N$ es el número de bloques.
+              \item $k$ es el número de tratamientos.
+              \item $R_j$ es la suma de rangos para el tratamiento $j$.
+          \end{itemize}
+
+    \item Determinar la significancia: Usar el valor estadístico calculado y compárarlo con un valor crítico de la distribución de Friedman (o usa un valor p) para determinar si hay una diferencia estadísticamente significativa entre los tratamientos.
+    \item Post-hoc (si es necesario): Si la prueba indica diferencias significativas, se pueden realizar análisis post-hoc para identificar específicamente entre qué tratamientos existen las diferencias.
+\end{enumerate}
+
+
+
+\textbf{EJEMPLO}
+
+Supongamos que un investigador desea comparar la efectividad de tres dietas (A, B y C) en la pérdida de peso. Cinco individuos son sometidos a cada una de las dietas durante tres meses, uno después del otro en un orden aleatorio. La pérdida de peso (en kilogramos) se registra para cada dieta en cada individuo.
+
+\begin{center}
+    \begin{tabular}{ c c c c }
+        Participante & Dieta A & Dieta B & Dieta C \\
+        \hline
+        1            & 3       & 5       & 2       \\
+        2            & 4       & 3       & 5       \\
+        3            & 2       & 4       & 3       \\
+        4            & 5       & 2       & 4       \\
+        5            & 1       & 3       & 2       \\
+    \end{tabular}
+\end{center}
+
+\textbf{1.- Rankear los datos:} Dentro de cada fila (participante), se asignan rangos a las pérdidas de peso, donde el mayor peso perdido recibe el rango más alto.
+
+Para cada participante, comparamos las pérdidas de peso obtenidas con las tres dietas y asignamos rangos.
+
+\textbf{2.-Ordenamos las pérdidas de peso de menor a mayor para cada participante}
+Asignamos rangos a estas pérdidas de peso, donde la mayor pérdida de peso recibe el rango más alto. En caso de empates, se asignarían rangos promedio, pero no aplican en este caso.
+
+La asignación de rangos queda de la siguiente manera:
+
+\begin{center}
+    \begin{tabular}{ c c c c }
+        Participante & Dieta A (Rango) & Dieta B (Rango) & Dieta C (Rango) \\
+        \hline
+        1            & 2               & 3               & 1               \\
+        2            & 2               & 3               & 1               \\
+        3            & 3               & 1               & 2               \\
+        4            & 2               & 1               & 3               \\
+        5            & 3               & 1               & 2               \\
+    \end{tabular}
+\end{center}
+
+
+
+\textbf{Paso 2: Calcular el Estadístico de Friedman}
+
+Para calcular el estadístico de Friedman, usamos la fórmula:
+
+\[ \chi_F^2 = \frac{12}{Nk(k+1)} \sum_{j=1}^k R_j^2 - 3N(k+1) \]
+
+donde:
+\begin{itemize}
+    \item $N$ es el número de bloques (participantes, en este caso 5).
+    \item $k$ es el número de tratamientos (dietas, en este caso 3).
+    \item $R_j$ es la suma de rangos para el tratamiento $j$.
+\end{itemize}
+
+El estadístico de Friedman calculado para nuestro ejemplo es aproximadamente 0.4. Este valor se utiliza para evaluar si existen diferencias significativas entre los tratamientos (en este caso, las dietas).
+
+
+\textbf{Paso 3: Determinar la Significancia}
+
+Para determinar si las diferencias entre las dietas son estadísticamente significativas, comparamos el valor del estadístico de Friedman calculado (0.4) con el valor crítico de la distribución de $\chi^2$ correspondiente a los grados de libertad $k-1$ (donde $k$ es el número de tratamientos, es decir, 3 en nuestro caso, lo que nos da 2 grados de libertad) y el nivel de significancia deseado (comúnmente 0.05).
+
+El valor $p$ es  aproximadamente 0.819. Dado que este valor $p$ es mayor que 0.05, concluimos que no hay evidencia suficiente para rechazar la hipótesis nula, lo que significa que no hay diferencias estadísticamente significativas en la efectividad de las tres dietas en términos de pérdida de peso.
+
+\newpage
+
 \section{Problema 10}
 
 Investiga la prueba de independencia basada en el coeficiente de Pearson y resuelve un problema práctico.
+
+\subsection*{La prueba de independencia basada en el coeficiente de correlación de Pearson}
+
+La prueba de independencia basada en el coeficiente de correlación de Pearson es una técnica estadística utilizada para evaluar si existe una relación lineal entre dos variables cuantitativas. El coeficiente de correlación de Pearson, denotado como $r$, mide el grado y la dirección de la relación lineal entre dos variables. Su valor varía entre -1 y 1, donde:
+
+\begin{itemize}
+    \item $r=1$ indica una correlación positiva perfecta: a medida que una variable aumenta, la otra también lo hace en proporción directa.
+    \item $r=-1$ indica una correlación negativa perfecta: a medida que una variable aumenta, la otra disminuye en proporción directa.
+    \item $r=0$ sugiere que no hay correlación lineal entre las variables.
+\end{itemize}
+
+\subsection*{Teoría}
+
+La correlación de Pearson se calcula usando la fórmula:
+\[ r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}} \]
+
+donde:
+\begin{itemize}
+    \item $x_i$ e $y_i$ son los valores individuales de las variables $X$ e $Y$,
+    \item $\bar{x}$ y $\bar{y}$ son las medias de $X$ e $Y$, respectivamente.
+\end{itemize}
+
+Para probar la independencia utilizando el coeficiente de Pearson, se realiza una prueba de hipótesis:
+\begin{itemize}
+    \item Hipótesis nula ($H_0$): No hay relación lineal entre las dos variables (es decir, $r=0$).
+    \item Hipótesis alternativa ($H_1$): Existe una relación lineal entre las dos variables (es decir, $r \neq 0$).
+\end{itemize}
+
+El valor de $r$ se utiliza para calcular un valor $t$, que luego se compara con un valor crítico de la distribución $t$ con $n-2$ grados de libertad (donde $n$ es el número de pares de datos). La fórmula para calcular el valor $t$ es:
+\[ t = \frac{r\sqrt{n-2}}{\sqrt{1-r^2}} \]
+
+\subsection*{Pasos Necesarios}
+
+\begin{enumerate}
+    \item Calcular el coeficiente de correlación de Pearson ($r$) entre las dos variables usando la fórmula proporcionada.
+    \item Calcular el valor $t$ usando el valor de $r$ y el número total de pares de datos ($n$).
+    \item Determinar el valor $p$ asociado con el valor $t$ calculado, utilizando la distribución $t$ con $n-2$ grados de libertad.
+    \item Concluir si se rechaza o no la hipótesis nula basándose en el valor $p$ y el nivel de significancia elegido (comúnmente, 0.05).
+\end{enumerate}
+
+\textbf{EJEMPLO PRACTICO}
+
+Supongamos que queremos investigar la relación entre las horas estudiadas y las calificaciones obtenidas por un grupo de 10 estudiantes.  \\
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{ccc}
+        \hline
+        Estudiante & Horas Estudiadas (X) & Calificación (Y) \\
+        \hline
+        1          & 1                    & 2                \\
+        2          & 2                    & 3                \\
+        3          & 3                    & 6                \\
+        4          & 4                    & 8                \\
+        5          & 5                    & 10               \\
+        6          & 6                    & 12               \\
+        7          & 7                    & 14               \\
+        8          & 8                    & 16               \\
+        9          & 9                    & 18               \\
+        10         & 10                   & 20               \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\textbf{Paso 1: Calcular el Coeficiente de Correlación de Pearson ($r$)}
+
+Primero, necesitamos calcular las medias ($\bar{x}$ y $\bar{y}$) de las horas estudiadas y las calificaciones, respectivamente.
+
+Luego, aplicamos la fórmula del coeficiente de Pearson:
+\[ r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}} \]
+
+
+Donde $x_i$ e $y_i$ son los valores individuales de las horas estudiadas y las calificaciones, respectivamente.
+
+\textbf{Paso 2: Calcular el Valor $t$}
+
+Con el valor de $r$ calculado, procedemos a calcular el valor $t$ usando la fórmula:
+\[ t = \frac{r\sqrt{n-2}}{\sqrt{1-r^2}} \]
+Donde $n$ es el número de pares de datos (en este caso, 10).
+
+\textbf{Paso 3: Determinar el Valor $p$}
+
+Utilizamos el valor $t$ calculado y el número de grados de libertad ($n-2$) para determinar el valor $p$ asociado, lo cual nos dirá si la correlación observada es estadísticamente significativa.
+
+Ahora, hagamos los cálculos paso a paso. Comenzaremos calculando las medias de $X$ e $Y$, y luego aplicaremos estos valores en la fórmula de Pearson para obtener $r$. Finalmente, calcularemos el valor $t$ y determinaremos el valor $p$.
+
+
+\textbf{Paso 1: Calcular el Coeficiente de Correlación de Pearson ($r$)}
+
+\begin{itemize}
+    \item Media de las horas estudiadas ($\bar{x}$): 5.5
+    \item Media de las calificaciones ($\bar{y}$): 10.9
+    \item Utilizando estos valores y la fórmula de Pearson, calculamos el coeficiente de correlación de Pearson ($r$) como aproximadamente 0.999. Esto indica una correlación positiva muy fuerte entre las horas estudiadas y las calificaciones.
+\end{itemize}
+
+\textbf{Paso 2: Calcular el Valor $t$}
+
+\begin{itemize}
+    \item Aplicando el valor de $r$ en la fórmula del valor $t$, obtenemos un valor $t$ de aproximadamente 60.53. Este valor se utilizará para evaluar la significancia de la correlación.
+\end{itemize}
+
+\textbf{Paso 3: Determinar el Valor $p$}
+
+\begin{itemize}
+    \item El valor $p$ asociado con el valor $t$ calculado y 8 grados de libertad (10 pares de datos menos 2) es aproximadamente $6.17 \times 10^{-12}$. Este valor $p$ es significativamente menor que el nivel de significancia estándar de 0.05, lo que indica que la correlación observada es estadísticamente significativa.
+\end{itemize}
+
+Estos cálculos muestran que hay una relación lineal positiva muy fuerte entre las horas estudiadas y las calificaciones obtenidas por los estudiantes, y esta relación
 
 \end{document}
